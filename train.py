@@ -51,15 +51,15 @@ def train(model, optimizer, scheduler, loss_function,
             
             
             model.zero_grad() # Resetting the gradients of the previous step
-            for batch_inputs, batch_masks, batch_labels in tuple(b.to(device) for b in batch):
-                predictions = model(batch_inputs, batch_masks)
-                loss_function.add_batch(references=batch_labels, predictions=predictions)
-                # print("outputs size = ", outputs.size())
-                # print("outputs size squeezed = ", outputs.squeeze().size())
-                # print(outputs.squeeze())
-                # print("labels size squeezed = ", batch_labels.squeeze().size())
-                # print(batch_labels)
-                # print(batch_labels.squeeze())
+            batch_inputs, batch_masks, batch_labels = tuple(b.to(device) for b in batch):
+            predictions = model(batch_inputs, batch_masks)
+            loss_function.add_batch(references=batch_labels, predictions=predictions)
+            # print("outputs size = ", outputs.size())
+            # print("outputs size squeezed = ", outputs.squeeze().size())
+            # print(outputs.squeeze())
+            # print("labels size squeezed = ", batch_labels.squeeze().size())
+            # print(batch_labels)
+            # print(batch_labels.squeeze())
             loss = loss_function.compute()
             total_training_loss += loss.item()
             loss.backward()
