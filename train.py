@@ -72,7 +72,6 @@ def train(model, optimizer, scheduler, loss_function,
 
 if __name__ == "__main__":
     # Set parameters
-    base_model_output_size = 768
     n_classes = 1
     batch_size = 32
     max_length = 1024
@@ -93,18 +92,23 @@ if __name__ == "__main__":
     if model_name == "byt5-small": # 300M params
         base_model = T5EncoderModel.from_pretrained("google/byt5-small")
         tokenizer = AutoTokenizer.from_pretrained("google/byt5-small")
+        base_model_output_size = 1472
     # elif model_name == "byt5-base": #580 params
     #     base_model = T5EncoderModel.from_pretrained("google/byt5-base")
     #     tokenizer = AutoTokenizer.from_pretrained("google/byt5-base")
+    #     base_model_output_size = 1536
     # elif model_name == "byt5-large": # 1.2B params
     #     base_model = T5EncoderModel.from_pretrained("google/byt5-large")
     #     tokenizer = AutoTokenizer.from_pretrained("google/byt5-large")
+    #     base_model_output_size = 1536
     # elif model_name == "byt5-xl": # 3.7B params
     #     base_model = T5EncoderModel.from_pretrained("google/byt5-xl")
     #     tokenizer = AutoTokenizer.from_pretrained("google/byt5-xl")
+    #     base_model_output_size = 2560
     # elif model_name == "byt5-xxl": # 13B params
     #     base_model = T5EncoderModel.from_pretrained("google/byt5-xxl")
     #     tokenizer = AutoTokenizer.from_pretrained("google/byt5-xxl")
+    #     base_model_output_size = 4672
     
     # Load data
     train_dataloader = create_dataloaders(tokenizer, train_data, max_length, batch_size)
