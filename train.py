@@ -76,8 +76,10 @@ if __name__ == "__main__":
     n_classes = 1
     batch_size = 32
     max_length = 1024
-    train_data = pd.DataFrame({"description":["Cs is Tungsten structured and crystallizes in the cubic Im̅3m space group. Cs is bonded in a body-centered cubic geometry to eight equivalent Cs atoms. All Cs–Cs bond lengths are 5.29 Å.", "Pd is Copper structured and crystallizes in the cubic Fm̅3m space group. Pd is bonded to twelve equivalent Pd atoms to form a mixture of edge, face, and corner-sharing PdPd₁₂ cuboctahedra. All Pd–Pd bond lengths are 2.80 Å."],
-    "value":[0.038769612068965564, 0.0]})
+    train_data = pd.DataFrame({"description":["Cs is Tungsten structured and crystallizes in the cubic Im̅3m space group. Cs is bonded in a body-centered cubic geometry to eight equivalent Cs atoms. All Cs–Cs bond lengths are 5.29 Å.",
+    "Pd is Copper structured and crystallizes in the cubic Fm̅3m space group. Pd is bonded to twelve equivalent Pd atoms to form a mixture of edge, face, and corner-sharing PdPd₁₂ cuboctahedra. All Pd–Pd bond lengths are 2.80 Å.",
+    "Pd is Copper structured and crystallizes in the cubic Fm̅3m space group. Pd is bonded to twelve equivalent Pd atoms to form a mixture of edge, face, and corner-sharing PdPd₁₂ cuboctahedra. All Pd–Pd bond lengths are 2.80 Å."],
+    "value":[0.038769612068965564, 0.0, 0.0]})
     # valid_data = pd.read_csv()
     # test_data = pd.read_csv()
 
