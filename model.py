@@ -25,12 +25,12 @@ class ByT5Reggressor(nn.Module):
         print("-"*20)
 
         last_hidden_state = hidden_states.last_hidden_state
-        # print("last_hidden_state_shape = ", last_hidden_state.size())
+        print("last_hidden_state_shape = ", last_hidden_state.size())
         print(last_hidden_state)
         print("-"*20)
 
         outputs = self.regressor(last_hidden_state) # Feed the regression model only the last  hidden state of ByT5 model
-        # print("outputs_shape = ", outputs.size())
+        print("outputs_shape = ", outputs.size())
         print(outputs)
         print("-"*20)
 
