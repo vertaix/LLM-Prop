@@ -63,6 +63,7 @@ def train(model, optimizer, scheduler, loss_function,
                 loss_function.add(references=refs, predictions=preds)
             loss = loss_function.compute()
             total_training_loss += loss['mae']
+            print("loss=",loss)
             loss.backward()
             # clip_grad_norm(model.parameters(), clip_value) # Preventing vanishing/exploding gradient issues
             optimizer.step()
