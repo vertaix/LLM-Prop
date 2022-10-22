@@ -51,7 +51,7 @@ def train(model, optimizer, scheduler, loss_function,
             
             
             model.zero_grad() # Resetting the gradients of the previous step
-            batch_inputs, batch_masks, batch_labels = tuple(b.to(device) for b in batch):
+            batch_inputs, batch_masks, batch_labels = tuple(b.to(device) for b in batch)
             predictions = model(batch_inputs, batch_masks)
             loss_function.add_batch(references=batch_labels, predictions=predictions)
             # print("outputs size = ", outputs.size())
