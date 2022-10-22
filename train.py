@@ -49,16 +49,18 @@ def train(model, optimizer, scheduler, loss_function,
                 # Check progress
                 print(f"Batch {step}/{len(train_dataloader)}. Elapsed time:{elapsed_time}")
             
-            batch_inputs, batch_masks, batch_labels = tuple(b.to(device) for b in batch)
+            
             model.zero_grad() # Resetting the gradients of the previous step
-            outputs = model(batch_inputs, batch_masks)
-            print("outputs size = ", outputs.size())
-            print("outputs size squeezed = ", outputs.squeeze().size())
-            print(outputs.squeeze())
-            print("labels size squeezed = ", batch_labels.squeeze().size())
-            print(batch_labels)
-            print(batch_labels.squeeze())
-            loss = loss_function.compute(outputs.squeeze(), batch_labels.squeeze())
+            for batch_inputs, batch_masks, batch_labels in tuple(b.to(device) for b in batch):
+                predictions = model(batch_inputs, batch_masks)
+                loss_function.add_batch(references=batch_labels, predictions=predictions)
+                # print("outputs size = ", outputs.size())
+                # print("outputs size squeezed = ", outputs.squeeze().size())
+                # print(outputs.squeeze())
+                # print("labels size squeezed = ", batch_labels.squeeze().size())
+                # print(batch_labels)
+                # print(batch_labels.squeeze())
+            loss = loss_function.compute()
             total_training_loss += loss.item()
             loss.backward()
             # clip_grad_norm(model.parameters(), clip_value) # Preventing vanishing/exploding gradient issues
