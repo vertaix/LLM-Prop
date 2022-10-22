@@ -1,0 +1,4 @@
+torch==1.12.1+cpu
+pandas==1.2.0
+evaluate==0.3.0
+transformers==4.23.1
