@@ -163,7 +163,7 @@ if __name__ == "__main__":
     # Define the loss functions: using "mean absolute error:mae" and "mean square error:mse" losses
     loss_type = "mae"
     if loss_type == "mae":
-        loss_function = nn.L1loss()
+        loss_function = nn.L1Loss()
     elif loss_type == "mse":
         loss_function = nn.MSELoss()
 
