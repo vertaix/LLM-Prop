@@ -30,7 +30,7 @@ class ByT5Reggressor(nn.Module):
         print(last_hidden_state)
         print("-"*20)
 
-        input_embedding = torch.sum(last_hidden_state, 1) # [batch_size, D_in] --> getting the embedding of the output by summing up the embeddings of the output characters 
+        input_embedding = torch.sum(last_hidden_state, 1)/last_hidden_state.size()[1] # [batch_size, D_in] --> getting the embedding of the output by averaging the embeddings of the output characters 
         print("input_embedding = ", input_embedding.size())
         print(input_embedding)
         print("-"*20)
