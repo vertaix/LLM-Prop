@@ -22,9 +22,11 @@ from utils import *
 from dataset import create_dataloaders
 
 def train(model, optimizer, scheduler, loss_function, 
-          epochs, train_dataloader, device, clip_value=2):
+          epochs, train_dataloader, valid_dataloader, device, clip_value=2):
     
     training_starting_time = time.time()
+    training_stats = []
+    validation_predictions = []
 
     for epoch in range(epochs):
         print(f"========== Epoch {epoch+1}/{epochs} =========")
@@ -76,9 +78,56 @@ def train(model, optimizer, scheduler, loss_function,
         print(f"Average training loss = {average_training_loss}")
         print(f"Training for this epoch took {training_time}")
 
+        # Validation
+        print("")
+        print("Running Validation")
+
+        valid_start_time = time.time()
+
+        model.eval()
+
+        total_eval_loss = 0
+        eval_steps = 0
+
+        for step, batch in enumerate(valid_dataloader):
+            batch_inputs, batch_masks, batch_labels = tuple(b.to(device) for b in batch)
+            with torch.no_grad():
+                predictions = model(batch_inputs, batch_masks)
+                loss = loss_function(predictions, batch_labels) 
+            total_eval_loss += loss.item()
+            predictions = predictions.detach().cpu().numpy()
+            # batch_labels = batch_labels.to("cpu").numpy()
+        average_valid_loss = total_eval_loss / len(valid_dataloader)
+        valid_ending_time = time.time()
+        validation_time = valid_ending_time-valid_start_time
+        print(f"Average validation loss = {average_valid_loss}")
+        print(f"validation took {time_format(validation_time)}")
+
+        training_stats.append(
+            {
+                "epoch": epoch + 1,
+                "training loss": average_training_loss,
+                "validation loss": average_valid_loss,
+                "training time": training_time,
+                "validation time": validation_time
+            }
+        )
+
+        validation_predictions.append(
+            {
+                f"epoch{epoch+1}": predictions
+            }
+        )
+            
+
     train_ending_time = time.time()
-    print(f"Finetuning {model_name} took {time_format(train_ending_time-training_starting_time)}")
-    # return model
+    total_training_time = train_ending_time-training_starting_time
+
+    print("")
+    print("Training complete")
+    print(f"Finetuning {model_name} took {time_format(total_training_time)}")
+    
+    return training_stats, validation_predictions
 
 if __name__ == "__main__":
     # Set parameters
@@ -89,6 +138,10 @@ if __name__ == "__main__":
     "Pd is Copper structured and crystallizes in the cubic Fm̅3m space group. Pd is bonded to twelve equivalent Pd atoms to form a mixture of edge, face, and corner-sharing PdPd₁₂ cuboctahedra. All Pd–Pd bond lengths are 2.80 Å.",
     "Pd is Copper structured and crystallizes in the cubic Fm̅3m space group. Pd is bonded to twelve equivalent Pd atoms to form a mixture of edge, face, and corner-sharing PdPd₁₂ cuboctahedra. All Pd–Pd bond lengths are 2.80 Å."],
     "value":[0.038769612068965564, 0.0, 0.0]})
+
+    valid_data = pd.DataFrame({"description":["Cs is Tungsten structured and crystallizes in the cubic Im̅3m space group. Cs is bonded in a body-centered cubic geometry to eight equivalent Cs atoms. All Cs–Cs bond lengths are 5.29 Å.",
+    "Pd is Copper structured and crystallizes in the cubic Fm̅3m space group. Pd is bonded to twelve equivalent Pd atoms to form a mixture of edge, face, and corner-sharing PdPd₁₂ cuboctahedra. All Pd–Pd bond lengths are 2.80 Å."],
+    "value":[0.038769612068965564, 0.0]})
     # valid_data = pd.read_csv()
     # test_data = pd.read_csv()
 
@@ -122,7 +175,7 @@ if __name__ == "__main__":
     
     # Load data
     train_dataloader = create_dataloaders(tokenizer, train_data, max_length, batch_size)
-    # valid_dataloader = create_dataloaders(tokenizer, valid_data, max_length, batch_size)
+    valid_dataloader = create_dataloaders(tokenizer, valid_data, max_length, batch_size)
     # test_dataloader = create_dataloaders(tokenizer, test_data, max_length, batch_size)
 
     # Build a regression layer (linear/MLP) over ByT5 Encoder
@@ -167,9 +220,19 @@ if __name__ == "__main__":
     elif loss_type == "mse":
         loss_function = nn.MSELoss()
 
-    train(model, optimizer, scheduler, loss_function, 
-          epochs, train_dataloader, device, clip_value=2)
+    training_stats, validation_predictions = train(model, optimizer, scheduler, loss_function, 
+          epochs, train_dataloader, valid_dataloader, device, clip_value=2)
 
     # print the model parameters
-    print(len(list(model.learnable_parameters)))
+    # print(len(list(model.learnable_parameters)))
+
+    df_traing_stats = pd.DataFrame(data=training_stats)
+
+    df_traing_stats = df_traing_stats.set_index('epoch')
+
+    df_predictions_stats = pd.DataFrame(data=validation_predictions)
+
+    print(df_traing_stats )
+    print(df_predictions_stats)
+
 
