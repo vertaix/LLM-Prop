@@ -53,17 +53,17 @@ def train(model, optimizer, scheduler, loss_function,
             model.zero_grad() # Resetting the gradients of the previous step
             batch_inputs, batch_masks, batch_labels = tuple(b.to(device) for b in batch)
             predictions = model(batch_inputs, batch_masks)
-            print("outputs size = ", predictions.size())
-            print("outputs size squeezed = ", predictions.squeeze().size())
-            print(predictions.squeeze())
-            print("labels size squeezed = ", batch_labels.squeeze().size())
-            print(batch_labels)
-            print(batch_labels.squeeze())
-            for refs, preds in zip(batch_labels.squeeze(), predictions.squeeze()):
-                loss_function.add(references=refs, predictions=preds)
-            loss = loss_function.compute()
-            total_training_loss += loss['mae']
-            print("loss=",loss)
+            loss = loss_function(predictions, batch_labels)
+            # print("outputs size = ", predictions.size())
+            # print("outputs size squeezed = ", predictions.squeeze().size())
+            # print(predictions.squeeze())
+            # print("labels size squeezed = ", batch_labels.squeeze().size())
+            # print(batch_labels)
+            # print(batch_labels.squeeze())
+            # for refs, preds in zip(batch_labels.squeeze(), predictions.squeeze()):
+            #     loss_function.add(references=refs, predictions=preds)
+            # loss = loss_function.compute()
+            total_training_loss += loss.item()
             loss.backward()
             # clip_grad_norm(model.parameters(), clip_value) # Preventing vanishing/exploding gradient issues
             optimizer.step()
@@ -144,7 +144,8 @@ if __name__ == "__main__":
     # Define the optimizer
     optimizer = AdamW(
         model.parameters(),
-        lr = 0.001 # will check if it is needed to add "eps=1e-8" after lr
+        lr = 0.001, # will check if it is needed to add "eps=1e-8" after lr
+        eps = 1e-8
     )
     
     # Set the number of epochs
@@ -162,9 +163,9 @@ if __name__ == "__main__":
     # Define the loss functions: using "mean absolute error:mae" and "mean square error:mse" losses
     loss_type = "mae"
     if loss_type == "mae":
-        loss_function = evaluate.load("mae")
+        loss_function = nn.L1loss()
     elif loss_type == "mse":
-        loss_function = evaluate.load("mse")
+        loss_function = nn.MSELoss()
 
     train(model, optimizer, scheduler, loss_function, 
           epochs, train_dataloader, device, clip_value=2)
