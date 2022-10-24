@@ -126,8 +126,8 @@ if __name__ == "__main__":
     # Set parameters
     # Specify the task
     property_name = "formation_energy" # Default
-    mat_prop_dir = "data/property/{property_name}/mat_ids_property"
-    mat_descr_dir = "data/property/{property_name}/mat_ids_description"
+    mat_prop_dir = f"data/property/{property_name}/mat_ids_property"
+    mat_descr_dir = f"data/property/{property_name}/mat_ids_description"
 
     n_classes = 1
     batch_size = 32

@@ -12,7 +12,8 @@ from utils import *
 np.random.seed(42)
 
 def extract_mat_id(dir):
-    dir_split = dir.split("/")
+    # dir_split = dir.split("/")
+    dir_split = dir.split("\\")
     get_mat_id = dir_split[len(dir_split)-1].split(".")[0]
     return get_mat_id
 
@@ -25,7 +26,7 @@ def load_data(mat_prop_dir, mat_descr_dir):
     mat_is_stable = []
     mat_description = []
 
-    mat_prop_dir_list = glob.glob(f"{mat_prop_dir}+/*.json") 
+    mat_prop_dir_list = glob.glob(f"{mat_prop_dir}/*.json") 
     mat_descr_dir_list = glob.glob(f"{mat_descr_dir}/*.json")
 
     if len(mat_prop_dir_list) == len(mat_descr_dir_list):
@@ -33,16 +34,19 @@ def load_data(mat_prop_dir, mat_descr_dir):
             mat_prop_id = extract_mat_id(mat_prop_dir_list[i])
             mat_descr_id = extract_mat_id(mat_descr_dir_list[i])
             if mat_prop_id == mat_descr_id:
-                mat_prop_dict = readJSON(mat_prop_dir_list[i])
-                mat_descr_dict = readJSON(mat_descr_dir_list[i])
-
-                mat_ids_list.append(mat_prop_dict["material_id"])
-                mat_formula_list.append(mat_prop_dict["property"]["formula_pretty"])
-                mat_formation_energy.append(mat_prop_dict["property"]["formation_energy_per_atom"])
-                mat_energy_above_hull.append(mat_prop_dict["property"]["energy_above_hull"])
-                mat_energy_per_atom.append(mat_prop_dict["property"]["energy_per_atom"])
-                mat_is_stable.append(mat_prop_dict["property"]["is_stable"])
-                mat_description.append(mat_descr_dict["data"][0]["description"])
+                mat_prop_dict = readJSON(mat_prop_dir_list[i].replace("\\","/"))
+                mat_descr_dict = readJSON(mat_descr_dir_list[i].replace("\\","/"))
+                
+                if len(mat_descr_dict["data"][0]) != 2:
+                    continue
+                else:
+                    mat_ids_list.append(mat_prop_dict["material_id"])
+                    mat_formula_list.append(mat_prop_dict["property"]["formula_pretty"])
+                    mat_formation_energy.append(mat_prop_dict["property"]["formation_energy_per_atom"])
+                    mat_energy_above_hull.append(mat_prop_dict["property"]["energy_above_hull"])
+                    mat_energy_per_atom.append(mat_prop_dict["property"]["energy_per_atom"])
+                    mat_is_stable.append(mat_prop_dict["property"]["is_stable"])
+                    mat_description.append(mat_descr_dict["data"][0]["description"])
 
             else:
                 continue
