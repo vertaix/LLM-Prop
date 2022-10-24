@@ -2,8 +2,90 @@
 A function to prepare the dataloaders
 """
 # Import packages
+import glob
 import torch
+import pandas as pd
+import numpy as np
 from torch.utils.data import DataLoader, TensorDataset
+from utils import *
+
+np.random.seed(42)
+
+def extract_mat_id(dir):
+    dir_split = dir.split("/")
+    get_mat_id = dir_split[len(dir_split)-1].split(".")[0]
+    return get_mat_id
+
+def load_data(mat_prop_dir, mat_descr_dir):
+    mat_ids_list = []
+    mat_formula_list = []
+    mat_formation_energy = []
+    mat_energy_above_hull = []
+    mat_energy_per_atom = []
+    mat_is_stable = []
+    mat_description = []
+
+    mat_prop_dir_list = glob.glob(f"{mat_prop_dir}+/*.json") 
+    mat_descr_dir_list = glob.glob(f"{mat_descr_dir}/*.json")
+
+    if len(mat_prop_dir_list) == len(mat_descr_dir_list):
+        for i in range(len(mat_prop_dir_list)):
+            mat_prop_id = extract_mat_id(mat_prop_dir_list[i])
+            mat_descr_id = extract_mat_id(mat_descr_dir_list[i])
+            if mat_prop_id == mat_descr_id:
+                mat_prop_dict = readJSON(mat_prop_dir_list[i])
+                mat_descr_dict = readJSON(mat_descr_dir_list[i])
+
+                mat_ids_list.append(mat_prop_dict["material_id"])
+                mat_formula_list.append(mat_prop_dict["property"]["formula_pretty"])
+                mat_formation_energy.append(mat_prop_dict["property"]["formation_energy_per_atom"])
+                mat_energy_above_hull.append(mat_prop_dict["property"]["energy_above_hull"])
+                mat_energy_per_atom.append(mat_prop_dict["property"]["energy_per_atom"])
+                mat_is_stable.append(mat_prop_dict["property"]["is_stable"])
+                mat_description.append(mat_descr_dict["data"][0]["description"])
+
+            else:
+                continue
+
+        df_data = pd.DataFrame(
+            {
+                "material_id": mat_ids_list,
+                "formula_pretty": mat_formula_list,
+                "formation_energy_per_atom": mat_formation_energy,
+                "energy_above_hull": mat_energy_above_hull,
+                "energy_per_atom": mat_energy_per_atom,
+                "is_stable": mat_is_stable,
+                "description": mat_description
+            }
+        )
+    else:
+        print("Directory that contains material property do not match with the directory that contains material description")
+    
+    return df_data
+
+def train_valid_test_split(mat_prop_dir, mat_descr_dir, split_ratio=[7,2,1]):
+    df_data = load_data(mat_prop_dir, mat_descr_dir)
+    train_ratio, valid_ratio, test_ratio = tuple([int((i/10)*len(df_data)) for i in split_ratio])
+    
+    ixs = np.arange(df_data.shape[0])
+    np.random.shuffle(ixs) # randomly shuffle the index
+
+    train_df_list = []
+    for ix in ixs[0:train_ratio]:
+        train_df_list.append(df_data.loc[[ix]])
+    train_data = pd.concat(train_df_list)
+
+    valid_df_list = []
+    for ix in ixs[train_ratio:valid_ratio]:
+        valid_df_list.append(df_data.loc[[ix]])
+    valid_data = pd.concat(valid_df_list)
+
+    test_df_list = []
+    for ix in ixs[valid_ratio:test_ratio]:
+        test_df_list.append(df_data.loc[[ix]])
+    test_data = pd.concat(test_df_list)
+
+    return train_data, valid_data, test_data
 
 def tokenize(tokenizer, dataframe, max_length):
     """

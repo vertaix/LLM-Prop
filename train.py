@@ -19,14 +19,14 @@ from transformers import AutoTokenizer, T5EncoderModel
 # My pre-defined functions
 from model import ByT5Reggressor
 from utils import *
-from dataset import create_dataloaders
+from dataset import train_valid_test_split, create_dataloaders
 
 def train(model, optimizer, scheduler, loss_function, 
           epochs, train_dataloader, valid_dataloader, device, clip_value=2):
     
     training_starting_time = time.time()
     training_stats = []
-    validation_predictions = []
+    validation_predictions = {}
 
     for epoch in range(epochs):
         print(f"========== Epoch {epoch+1}/{epochs} =========")
@@ -56,15 +56,6 @@ def train(model, optimizer, scheduler, loss_function,
             batch_inputs, batch_masks, batch_labels = tuple(b.to(device) for b in batch)
             predictions = model(batch_inputs, batch_masks)
             loss = loss_function(predictions, batch_labels)
-            # print("outputs size = ", predictions.size())
-            # print("outputs size squeezed = ", predictions.squeeze().size())
-            # print(predictions.squeeze())
-            # print("labels size squeezed = ", batch_labels.squeeze().size())
-            # print(batch_labels)
-            # print(batch_labels.squeeze())
-            # for refs, preds in zip(batch_labels.squeeze(), predictions.squeeze()):
-            #     loss_function.add(references=refs, predictions=preds)
-            # loss = loss_function.compute()
             total_training_loss += loss.item()
             loss.backward()
             # clip_grad_norm(model.parameters(), clip_value) # Preventing vanishing/exploding gradient issues
@@ -88,6 +79,7 @@ def train(model, optimizer, scheduler, loss_function,
 
         total_eval_loss = 0
         eval_steps = 0
+        predictions_list = []
 
         for step, batch in enumerate(valid_dataloader):
             batch_inputs, batch_masks, batch_labels = tuple(b.to(device) for b in batch)
@@ -96,6 +88,8 @@ def train(model, optimizer, scheduler, loss_function,
                 loss = loss_function(predictions, batch_labels) 
             total_eval_loss += loss.item()
             predictions = predictions.detach().cpu().numpy()
+            for i in predictions:
+                predictions_list.append(i[0])
             # batch_labels = batch_labels.to("cpu").numpy()
         average_valid_loss = total_eval_loss / len(valid_dataloader)
         valid_ending_time = time.time()
@@ -113,12 +107,11 @@ def train(model, optimizer, scheduler, loss_function,
             }
         )
 
-        validation_predictions.append(
+        validation_predictions.update(
             {
-                f"epoch{epoch+1}": predictions
+                f"epoch_{epoch+1}": predictions_list
             }
         )
-            
 
     train_ending_time = time.time()
     total_training_time = train_ending_time-training_starting_time
@@ -131,24 +124,24 @@ def train(model, optimizer, scheduler, loss_function,
 
 if __name__ == "__main__":
     # Set parameters
+    # Specify the task
+    property_name = "formation_energy" # Default
+    mat_prop_dir = "data/property/{property_name}/mat_ids_property"
+    mat_descr_dir = "data/property/{property_name}/mat_ids_description"
+
     n_classes = 1
     batch_size = 32
     max_length = 1024
-    train_data = pd.DataFrame({"description":["Cs is Tungsten structured and crystallizes in the cubic Im̅3m space group. Cs is bonded in a body-centered cubic geometry to eight equivalent Cs atoms. All Cs–Cs bond lengths are 5.29 Å.",
-    "Pd is Copper structured and crystallizes in the cubic Fm̅3m space group. Pd is bonded to twelve equivalent Pd atoms to form a mixture of edge, face, and corner-sharing PdPd₁₂ cuboctahedra. All Pd–Pd bond lengths are 2.80 Å.",
-    "Pd is Copper structured and crystallizes in the cubic Fm̅3m space group. Pd is bonded to twelve equivalent Pd atoms to form a mixture of edge, face, and corner-sharing PdPd₁₂ cuboctahedra. All Pd–Pd bond lengths are 2.80 Å."],
-    "value":[0.038769612068965564, 0.0, 0.0]})
-
-    valid_data = pd.DataFrame({"description":["Cs is Tungsten structured and crystallizes in the cubic Im̅3m space group. Cs is bonded in a body-centered cubic geometry to eight equivalent Cs atoms. All Cs–Cs bond lengths are 5.29 Å.",
-    "Pd is Copper structured and crystallizes in the cubic Fm̅3m space group. Pd is bonded to twelve equivalent Pd atoms to form a mixture of edge, face, and corner-sharing PdPd₁₂ cuboctahedra. All Pd–Pd bond lengths are 2.80 Å."],
-    "value":[0.038769612068965564, 0.0]})
-    # valid_data = pd.read_csv()
-    # test_data = pd.read_csv()
-
-    # Specify the task
-    property_name = "formation_energy" # Default 
-
     
+    train_data, valid_data, test_data = train_valid_test_split(
+        mat_descr_dir=mat_prop_dir,
+        mat_descr_dir=mat_descr_dir,
+        split_ratio=[7,2,1]
+    )
+    
+    print(f"train data = {len(train_data)} samples")
+    print(f"valid data = {len(valid_data)} samples")
+
     # Specify the model (byt5-small/byt5-base/byt5-large/byt5-3b/byt5-11b)
     model_name = "byt5-small" # Default model
 
@@ -202,7 +195,7 @@ if __name__ == "__main__":
     )
     
     # Set the number of epochs
-    epochs = 2
+    epochs = 10
 
     # Training steps = 262,144 from ByT5 paper
     # Set up the scheduler
@@ -224,15 +217,19 @@ if __name__ == "__main__":
           epochs, train_dataloader, valid_dataloader, device, clip_value=2)
 
     # print the model parameters
-    # print(len(list(model.learnable_parameters)))
+    model_trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    print(model_trainable_params)
 
     df_traing_stats = pd.DataFrame(data=training_stats)
 
     df_traing_stats = df_traing_stats.set_index('epoch')
 
-    df_predictions_stats = pd.DataFrame(data=validation_predictions)
+    df_predictions_stats = pd.DataFrame(validation_predictions)
 
     print(df_traing_stats )
     print(df_predictions_stats)
+
+    # Save the trained model for inference
+    torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}-finetuned-{regressor_type}-using-{loss_type}-loss-with-{epochs}-epochs.pt")
 
 
