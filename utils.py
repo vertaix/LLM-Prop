@@ -1,6 +1,17 @@
 import json
 import datetime
 
+def is_json(json_file):
+    """
+    Checks whether a json file is valid
+    """
+    with open(json_file, "r", encoding="utf-8") as f:
+        if  "data" in f.read():
+            dec = "True"
+        else:
+            dec = "False"
+    return dec
+
 def writeToJSON(data, where_to_save):
     """
     data: a dictionary that contains data to save
@@ -16,18 +27,18 @@ def readJSON(input_file):
     2. output
         a json objet in a form of a dictionary
     """
-    with open(input_file, "r", encoding="utf8") as infile:
-        json_object = json.load(infile)
+    with open(input_file, "r", encoding="utf-8", errors='ignore') as infile:
+        json_object = json.load(infile, strict=False)
     return json_object
 
 def writeTEXT(data, where_to_save):
-    with open(where_to_save, "w", encoding="utf8") as outfile:
+    with open(where_to_save, "w", encoding="utf-8") as outfile:
         for d in data:
             outfile.write(d)
             outfile.write("\n")
 
 def readTEXT_to_LIST(input_file):
-    with open(input_file, "r", encoding="utf8") as infile:
+    with open(input_file, "r", encoding="utf-8") as infile:
         data = []
         for line in infile:
             data.append(line)

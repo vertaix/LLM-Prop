@@ -30,24 +30,33 @@ def load_data(mat_prop_dir, mat_descr_dir):
     mat_descr_dir_list = glob.glob(f"{mat_descr_dir}/*.json")
 
     if len(mat_prop_dir_list) == len(mat_descr_dir_list):
+        not_detected_mat_decr = []
+        not_valid_json_ids = []
+
         for i in range(len(mat_prop_dir_list)):
             mat_prop_id = extract_mat_id(mat_prop_dir_list[i])
             mat_descr_id = extract_mat_id(mat_descr_dir_list[i])
             if mat_prop_id == mat_descr_id:
-                mat_prop_dict = readJSON(mat_prop_dir_list[i].replace("\\","/"))
-                mat_descr_dict = readJSON(mat_descr_dir_list[i].replace("\\","/"))
+                mat_prop_json = mat_prop_dir_list[i].replace("\\","/")
+                mat_descr_json = mat_descr_dir_list[i].replace("\\","/")
                 
-                if len(mat_descr_dict["data"][0]) != 2:
-                    continue
-                else:
-                    mat_ids_list.append(mat_prop_dict["material_id"])
-                    mat_formula_list.append(mat_prop_dict["property"]["formula_pretty"])
-                    mat_formation_energy.append(mat_prop_dict["property"]["formation_energy_per_atom"])
-                    mat_energy_above_hull.append(mat_prop_dict["property"]["energy_above_hull"])
-                    mat_energy_per_atom.append(mat_prop_dict["property"]["energy_per_atom"])
-                    mat_is_stable.append(mat_prop_dict["property"]["is_stable"])
-                    mat_description.append(mat_descr_dict["data"][0]["description"])
+                if is_json(mat_prop_json)=="True" and is_json(mat_descr_json)=="True":
+                    mat_prop_dict = readJSON(mat_prop_json)
+                    mat_descr_dict = readJSON(mat_descr_json)
 
+                    if len(mat_descr_dict["data"][0]) != 2:
+                        not_detected_mat_decr.append(mat_descr_id)
+                        continue
+                    else:
+                        mat_ids_list.append(mat_prop_dict["material_id"])
+                        mat_formula_list.append(mat_prop_dict["property"]["formula_pretty"])
+                        mat_formation_energy.append(mat_prop_dict["property"]["formation_energy_per_atom"])
+                        mat_energy_above_hull.append(mat_prop_dict["property"]["energy_above_hull"])
+                        mat_energy_per_atom.append(mat_prop_dict["property"]["energy_per_atom"])
+                        mat_is_stable.append(mat_prop_dict["property"]["is_stable"])
+                        mat_description.append(mat_descr_dict["data"][0]["description"])
+                else:
+                    not_valid_json_ids.append(mat_descr_id)
             else:
                 continue
 
@@ -62,6 +71,8 @@ def load_data(mat_prop_dir, mat_descr_dir):
                 "description": mat_description
             }
         )
+        print(f"not_detected_mat_decr = {not_detected_mat_decr}", len(not_detected_mat_decr))
+        print(f"not_valid_json_ids = {not_valid_json_ids}", len(not_valid_json_ids))
     else:
         print("Directory that contains material property do not match with the directory that contains material description")
     
