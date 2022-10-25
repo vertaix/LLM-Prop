@@ -40,7 +40,7 @@ def load_data(mat_prop_dir, mat_descr_dir):
                 mat_prop_json = mat_prop_dir_list[i].replace("\\","/")
                 mat_descr_json = mat_descr_dir_list[i].replace("\\","/")
                 
-                if is_json(mat_prop_json)=="True" and is_json(mat_descr_json)=="True":
+                if is_json(mat_descr_json)=="True":
                     mat_prop_dict = readJSON(mat_prop_json)
                     mat_descr_dict = readJSON(mat_descr_json)
 
