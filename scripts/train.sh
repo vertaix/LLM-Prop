@@ -9,6 +9,6 @@
 #SBATCH --mail-type=end
 #SBATCH --mail-user=rn3004@princeton.edu
 
-python ../train.py
+python /train.py
 
 cat slurm-*.out | more

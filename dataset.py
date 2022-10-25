@@ -39,7 +39,7 @@ def load_data(mat_prop_dir, mat_descr_dir):
             if mat_prop_id == mat_descr_id:
                 mat_prop_json = mat_prop_dir_list[i].replace("\\","/")
                 mat_descr_json = mat_descr_dir_list[i].replace("\\","/")
-                print(mat_descr_json)
+                # print(mat_descr_json)
                 if is_json(mat_descr_json)=="True":
                     mat_prop_dict = readJSON(mat_prop_json)
                     mat_descr_dict = readJSON(mat_descr_json)
@@ -71,6 +71,9 @@ def load_data(mat_prop_dir, mat_descr_dir):
                 "description": mat_description
             }
         )
+        writeTEXT(not_valid_json_ids, "statistics/formation_energy_not_valid_json_ids.txt")
+        writeTEXT(not_detected_mat_decr, "statistics/formation_energy_not_detected_mat_decr.txt")
+        
         print(f"not_detected_mat_decr = {not_detected_mat_decr}", len(not_detected_mat_decr))
         print(f"not_valid_json_ids = {not_valid_json_ids}", len(not_valid_json_ids))
     else:

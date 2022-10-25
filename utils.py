@@ -45,6 +45,9 @@ def readTEXT_to_LIST(input_file):
             data.append(line)
     return data
 
+def saveCSV(df, where_to_save):
+    df.to_csv(where_to_save, index=False)
+
 def time_format(total_time):
     """
     Change the from seconds to hh:mm:ss

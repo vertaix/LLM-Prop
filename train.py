@@ -113,6 +113,8 @@ def train(model, optimizer, scheduler, loss_function,
             }
         )
 
+        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epochs}_epochs.pt")
+
     train_ending_time = time.time()
     total_training_time = train_ending_time-training_starting_time
 
@@ -130,7 +132,7 @@ if __name__ == "__main__":
     mat_descr_dir = f"data/property/{property_name}/mat_ids_description"
 
     n_classes = 1
-    batch_size = 32
+    batch_size = 128
     max_length = 1024
     
     train_data, valid_data, test_data = train_valid_test_split(
@@ -222,14 +224,19 @@ if __name__ == "__main__":
 
     df_traing_stats = pd.DataFrame(data=training_stats)
 
-    df_traing_stats = df_traing_stats.set_index('epoch')
+    # df_traing_stats = df_traing_stats.set_index('epoch')
 
     df_predictions_stats = pd.DataFrame(validation_predictions)
 
     print(df_traing_stats )
     print(df_predictions_stats)
 
+    # Save stats
+    saveCSV(df_traing_stats, f"statistics/{property_name}/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
+    saveCSV(df_predictions_stats, f"statistics/{property_name}/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
+
+
     # Save the trained model for inference
-    torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}-finetuned-{regressor_type}-using-{loss_type}-loss-with-{epochs}-epochs.pt")
+    torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.pt")
 
 
