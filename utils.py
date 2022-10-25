@@ -7,7 +7,7 @@ def is_json(json_file):
     """
     with open(json_file, "r", encoding="utf-8") as f:
         sent = f.read().split(":")
-        if len(sent)>=3:
+        if len(sent)>=3 and len(sent) < 6:
             dec = "True"
         else:
             dec = "False"
