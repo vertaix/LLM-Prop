@@ -35,7 +35,7 @@ def readJSON(input_file):
 def writeTEXT(data, where_to_save):
     with open(where_to_save, "w", encoding="utf-8") as outfile:
         for d in data:
-            outfile.write(d)
+            outfile.write(str(d))
             outfile.write("\n")
 
 def readTEXT_to_LIST(input_file):
