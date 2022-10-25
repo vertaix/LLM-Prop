@@ -6,7 +6,8 @@ def is_json(json_file):
     Checks whether a json file is valid
     """
     with open(json_file, "r", encoding="utf-8") as f:
-        if  "data" in f.read():
+        sent = f.read().split(":")
+        if len(sent)>=3:
             dec = "True"
         else:
             dec = "False"
