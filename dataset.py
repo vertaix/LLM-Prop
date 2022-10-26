@@ -71,8 +71,8 @@ def load_data(mat_prop_dir, mat_descr_dir):
                 "description": mat_description
             }
         )
-        writeTEXT(not_valid_json_ids, "statistics/formation_energy_not_valid_json_ids.txt")
-        writeTEXT(not_detected_mat_decr, "statistics/formation_energy_not_detected_mat_decr.txt")
+        # writeTEXT(not_valid_json_ids, "statistics/formation_energy_not_valid_json_ids.txt")
+        # writeTEXT(not_detected_mat_decr, "statistics/formation_energy_not_detected_mat_decr.txt")
         
         print(f"not_detected_mat_decr = {not_detected_mat_decr}", len(not_detected_mat_decr))
         print(f"not_valid_json_ids = {not_valid_json_ids}", len(not_valid_json_ids))
