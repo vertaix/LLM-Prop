@@ -136,7 +136,7 @@ if __name__ == "__main__":
     max_length = 1024
     
     train_data, valid_data, test_data = train_valid_test_split(
-        mat_descr_dir=mat_prop_dir,
+        mat_prop_dir=mat_prop_dir,
         mat_descr_dir=mat_descr_dir,
         split_ratio=[7,2,1]
     )
