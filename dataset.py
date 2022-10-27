@@ -132,13 +132,13 @@ def tokenize(tokenizer, dataframe, max_length):
 
     return input_ids, attention_masks
 
-def create_dataloaders(tokenizer, dataframe, max_length, batch_size):
+def create_dataloaders(tokenizer, dataframe, max_length, batch_size, property_value):
     """
     Dataloader which arrange the input sequences, attention masks, and labels in batches
     and transform the to tensors
     """
     input_ids, attention_masks = tokenize(tokenizer, dataframe, max_length)
-    labels = dataframe.value.to_numpy()
+    labels = dataframe.property_value.to_numpy()
 
     input_tensor = torch.tensor(input_ids)
     mask_tensor = torch.tensor(attention_masks)
