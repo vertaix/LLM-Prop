@@ -28,7 +28,7 @@ def load_data(mat_prop_dir, mat_descr_dir):
 
     mat_prop_dir_list = glob.glob(f"{mat_prop_dir}/*.json") 
     mat_descr_dir_list = glob.glob(f"{mat_descr_dir}/*.json")
-    print(mat_prop_dir_list)
+    # print(mat_prop_dir_list)
     if len(mat_prop_dir_list) == len(mat_descr_dir_list):
         not_detected_mat_decr = []
         not_valid_json_ids = []
@@ -37,9 +37,9 @@ def load_data(mat_prop_dir, mat_descr_dir):
             mat_prop_id = extract_mat_id(mat_prop_dir_list[i])
             mat_descr_id = extract_mat_id(mat_descr_dir_list[i])
             if mat_prop_id == mat_descr_id:
-                mat_prop_json = mat_prop_dir_list[i].replace("\\","/")
-                mat_descr_json = mat_descr_dir_list[i].replace("\\","/")
-                print(mat_descr_json)
+                mat_prop_json = mat_prop_dir_list[i] #.replace("\\","/")
+                mat_descr_json = mat_descr_dir_list[i] #.replace("\\","/")
+                # print(mat_descr_json)
                 if is_json(mat_descr_json)=="True":
                     mat_prop_dict = readJSON(mat_prop_json)
                     mat_descr_dict = readJSON(mat_descr_json)
