@@ -12,8 +12,8 @@ from utils import *
 np.random.seed(42)
 
 def extract_mat_id(dir):
-    # dir_split = dir.split("/")
-    dir_split = dir.split("\\")
+    dir_split = dir.split("/")
+    # dir_split = dir.split("\\")
     get_mat_id = dir_split[len(dir_split)-1].split(".")[0]
     return get_mat_id
 
