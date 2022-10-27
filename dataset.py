@@ -90,11 +90,14 @@ def train_valid_test_split(prop_data_dir, mat_prop_dir, mat_descr_dir, split_rat
         df_data = load_data(mat_prop_dir, mat_descr_dir)
         train_ratio, valid_ratio, test_ratio = tuple([int((i/10)*len(df_data)) for i in split_ratio])
         
+        print(df_data.shape[0])
         ixs = np.arange(df_data.shape[0])
+        print(len(ixs))
         np.random.shuffle(ixs) # randomly shuffle the index
 
         train_df_list = []
         for ix in ixs[0:train_ratio]:
+            print(df_data.loc[[ix]])
             train_df_list.append(df_data.loc[[ix]])
         train_data = pd.concat(train_df_list, ignore_index=True)
 
