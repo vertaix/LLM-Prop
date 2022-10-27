@@ -89,7 +89,7 @@ def train_valid_test_split(prop_data_dir, mat_prop_dir, mat_descr_dir, split_rat
     else:
         df_data = load_data(mat_prop_dir, mat_descr_dir)
         train_ratio, valid_ratio, test_ratio = tuple([int((i/10)*len(df_data)) for i in split_ratio])
-        
+        print(len(df_data))
         print(df_data.shape[0])
         ixs = np.arange(df_data.shape[0])
         print(len(ixs))
