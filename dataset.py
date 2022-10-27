@@ -28,7 +28,7 @@ def load_data(mat_prop_dir, mat_descr_dir):
 
     mat_prop_dir_list = glob.glob(f"{mat_prop_dir}/*.json") 
     mat_descr_dir_list = glob.glob(f"{mat_descr_dir}/*.json")
-    # print(mat_prop_dir_list)
+  
     if len(mat_prop_dir_list) == len(mat_descr_dir_list):
         not_detected_mat_decr = []
         not_valid_json_ids = []
@@ -39,7 +39,7 @@ def load_data(mat_prop_dir, mat_descr_dir):
             if mat_prop_id == mat_descr_id:
                 mat_prop_json = mat_prop_dir_list[i] #.replace("\\","/")
                 mat_descr_json = mat_descr_dir_list[i] #.replace("\\","/")
-                # print(mat_descr_json)
+
                 if is_json(mat_descr_json)=="True":
                     mat_prop_dict = readJSON(mat_prop_json)
                     mat_descr_dict = readJSON(mat_descr_json)
@@ -89,15 +89,12 @@ def train_valid_test_split(prop_data_dir, mat_prop_dir, mat_descr_dir, split_rat
     else:
         df_data = load_data(mat_prop_dir, mat_descr_dir)
         train_ratio, valid_ratio, test_ratio = tuple([int((i/10)*len(df_data)) for i in split_ratio])
-        print(len(df_data))
-        print(df_data.shape[0])
+
         ixs = np.arange(df_data.shape[0])
-        print(len(ixs))
         np.random.shuffle(ixs) # randomly shuffle the index
 
         train_df_list = []
         for ix in ixs[0:train_ratio]:
-            print(df_data.loc[[ix]])
             train_df_list.append(df_data.loc[[ix]])
         train_data = pd.concat(train_df_list, ignore_index=True)
 
