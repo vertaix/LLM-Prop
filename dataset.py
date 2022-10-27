@@ -87,25 +87,25 @@ def train_valid_test_split(prop_data_dir, mat_prop_dir, mat_descr_dir, split_rat
         valid_data = pd.read_csv(f"{prop_data_dir}/valid.csv")
         test_data = pd.read_csv(f"{prop_data_dir}/test.csv")
     else:
-        df_data = load_data(mat_prop_dir, mat_descr_dir)
-        train_ratio, valid_ratio, test_ratio = tuple([int((i/10)*len(df_data)) for i in split_ratio])
+        df_data_all = load_data(mat_prop_dir, mat_descr_dir)
+        train_ratio, valid_ratio, test_ratio = tuple([int((i/10)*len(df_data_all)) for i in split_ratio])
 
-        ixs = np.arange(df_data.shape[0])
+        ixs = np.arange(df_data_all.shape[0])
         np.random.shuffle(ixs) # randomly shuffle the index
 
         train_df_list = []
         for ix in ixs[0:train_ratio]:
-            train_df_list.append(df_data.loc[[ix]])
+            train_df_list.append(df_data_all.loc[[ix]])
         train_data = pd.concat(train_df_list, ignore_index=True)
 
         valid_df_list = []
         for ix in ixs[train_ratio:train_ratio+valid_ratio]:
-            valid_df_list.append(df_data.loc[[ix]])
+            valid_df_list.append(df_data_all.loc[[ix]])
         valid_data = pd.concat(valid_df_list, ignore_index=True)
 
         test_df_list = []
         for ix in ixs[train_ratio+valid_ratio:train_ratio+valid_ratio+test_ratio]:
-            test_df_list.append(df_data.loc[[ix]])
+            test_df_list.append(df_data_all.loc[[ix]])
         test_data = pd.concat(test_df_list, ignore_index=True)
 
         saveCSV(train_data, f"{prop_data_dir}/train.csv")
