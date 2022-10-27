@@ -81,27 +81,36 @@ def load_data(mat_prop_dir, mat_descr_dir):
     
     return df_data
 
-def train_valid_test_split(mat_prop_dir, mat_descr_dir, split_ratio=[7,2,1]):
-    df_data = load_data(mat_prop_dir, mat_descr_dir)
-    train_ratio, valid_ratio, test_ratio = tuple([int((i/10)*len(df_data)) for i in split_ratio])
-    
-    ixs = np.arange(df_data.shape[0])
-    np.random.shuffle(ixs) # randomly shuffle the index
+def train_valid_test_split(prop_data_dir, mat_prop_dir, mat_descr_dir, split_ratio=[7,2,1]):
+    if len(glob.glob(f"{prop_data_dir}/*.csv")) != 0:
+        train_data = pd.read_csv(f"{prop_data_dir}/train.csv")
+        valid_data = pd.read_csv(f"{prop_data_dir}/valid.csv")
+        test_data = pd.read_csv(f"{prop_data_dir}/test.csv")
+    else:
+        df_data = load_data(mat_prop_dir, mat_descr_dir)
+        train_ratio, valid_ratio, test_ratio = tuple([int((i/10)*len(df_data)) for i in split_ratio])
+        
+        ixs = np.arange(df_data.shape[0])
+        np.random.shuffle(ixs) # randomly shuffle the index
 
-    train_df_list = []
-    for ix in ixs[0:train_ratio]:
-        train_df_list.append(df_data.loc[[ix]])
-    train_data = pd.concat(train_df_list)
+        train_df_list = []
+        for ix in ixs[0:train_ratio]:
+            train_df_list.append(df_data.loc[[ix]])
+        train_data = pd.concat(train_df_list, ignore_index=True)
 
-    valid_df_list = []
-    for ix in ixs[train_ratio:valid_ratio]:
-        valid_df_list.append(df_data.loc[[ix]])
-    valid_data = pd.concat(valid_df_list)
+        valid_df_list = []
+        for ix in ixs[train_ratio:train_ratio+valid_ratio]:
+            valid_df_list.append(df_data.loc[[ix]])
+        valid_data = pd.concat(valid_df_list, ignore_index=True)
 
-    test_df_list = []
-    for ix in ixs[valid_ratio:test_ratio]:
-        test_df_list.append(df_data.loc[[ix]])
-    test_data = pd.concat(test_df_list)
+        test_df_list = []
+        for ix in ixs[train_ratio+valid_ratio:train_ratio+valid_ratio+test_ratio]:
+            test_df_list.append(df_data.loc[[ix]])
+        test_data = pd.concat(test_df_list, ignore_index=True)
+
+        saveCSV(train_data, f"{prop_data_dir}/train.csv")
+        saveCSV(valid_data, f"{prop_data_dir}/valid.csv")
+        saveCSV(test_data, f"{prop_data_dir}/test.csv")
 
     return train_data, valid_data, test_data
 

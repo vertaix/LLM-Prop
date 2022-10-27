@@ -128,6 +128,9 @@ if __name__ == "__main__":
     # Set parameters
     # Specify the task
     property_name = "formation_energy" # Default
+    property_value = "formation_energy_per_atom" # Default
+
+    prop_data_dir = f"data/property/{property_name}/{property_value}"
     mat_prop_dir = f"data/property/{property_name}/mat_ids_property"
     mat_descr_dir = f"data/property/{property_name}/mat_ids_description"
 
@@ -136,6 +139,7 @@ if __name__ == "__main__":
     max_length = 1024
     
     train_data, valid_data, test_data = train_valid_test_split(
+        prop_data_dir=prop_data_dir,
         mat_prop_dir=mat_prop_dir,
         mat_descr_dir=mat_descr_dir,
         split_ratio=[7,2,1]
