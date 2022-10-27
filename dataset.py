@@ -18,6 +18,8 @@ def extract_mat_id(dir):
     return get_mat_id
 
 def load_data(mat_prop_dir, mat_descr_dir):
+    df_data = 0
+
     mat_ids_list = []
     mat_formula_list = []
     mat_formation_energy = []
