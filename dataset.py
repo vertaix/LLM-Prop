@@ -31,7 +31,7 @@ def load_data(mat_prop_dir, mat_descr_dir):
     mat_prop_dir_list = glob.glob(f"{mat_prop_dir}/*.json") 
     mat_descr_dir_list = glob.glob(f"{mat_descr_dir}/*.json")
     # print(len(mat_prop_dir_list), len(mat_descr_dir_list))
-    if len(mat_prop_dir_list) == len(mat_descr_dir_list)-1
+    if len(mat_prop_dir_list) == len(mat_descr_dir_list)-1:
         not_detected_mat_decr = []
         not_valid_json_ids = []
 
