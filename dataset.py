@@ -132,7 +132,7 @@ def tokenize(tokenizer, dataframe, max_length):
 
     return input_ids, attention_masks
 
-def create_dataloaders(tokenizer, dataframe, max_length, batch_size, property_value):
+def create_dataloaders(tokenizer, dataframe, max_length, batch_size):
     """
     Dataloader which arrange the input sequences, attention masks, and labels in batches
     and transform the to tensors
