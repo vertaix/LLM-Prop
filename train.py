@@ -173,9 +173,9 @@ if __name__ == "__main__":
     #     base_model_output_size = 4672
     
     # Load data
-    train_dataloader = create_dataloaders(tokenizer, train_data, max_length, batch_size, property_value)
-    valid_dataloader = create_dataloaders(tokenizer, valid_data, max_length, batch_size, property_value)
-    # test_dataloader = create_dataloaders(tokenizer, test_data, max_length, batch_size, property_value)
+    train_dataloader = create_dataloaders(tokenizer, train_data, max_length, batch_size)
+    valid_dataloader = create_dataloaders(tokenizer, valid_data, max_length, batch_size)
+    # test_dataloader = create_dataloaders(tokenizer, test_data, max_length, batch_size)
 
     # Build a regression layer (linear/MLP) over ByT5 Encoder
     regressor_type = "linear" # Default
