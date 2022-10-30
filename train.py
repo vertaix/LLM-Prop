@@ -16,6 +16,8 @@ from transformers import AdamW
 from transformers import get_linear_schedule_with_warmup
 from transformers import AutoTokenizer, T5EncoderModel
 
+from parallelformers import parallelize
+
 # My pre-defined functions
 from model import ByT5Reggressor
 from utils import *
@@ -55,7 +57,7 @@ def train(model, optimizer, scheduler, loss_function,
             model.zero_grad() # Resetting the gradients of the previous step
             batch_inputs, batch_masks, batch_labels = tuple(b.to(device) for b in batch)
             predictions = model(batch_inputs, batch_masks)
-            loss = loss_function(predictions, batch_labels)
+            loss = loss_function(predictions.squeeze(), batch_labels.squeeze())
             total_training_loss += loss.item()
             loss.backward()
             # clip_grad_norm(model.parameters(), clip_value) # Preventing vanishing/exploding gradient issues
@@ -135,7 +137,7 @@ if __name__ == "__main__":
     mat_descr_dir = f"data/property/{property_name}/mat_ids_description"
 
     n_classes = 1
-    batch_size = 2
+    batch_size = 32
     max_length = 1024
     
     train_data, valid_data, test_data = train_valid_test_split(
@@ -191,7 +193,8 @@ if __name__ == "__main__":
 
     # Instantiate the model
     model = ByT5Reggressor(base_model, base_model_output_size, n_classes, regressor_type, drop_rate=0.1) # add arguments later and put it in mai
-    model.to(device)
+    parallelize(model, num_gpus=4, fp16=True, verbose='detail')
+    # model.to(device)
 
     # Define the optimizer
     optimizer = AdamW(
