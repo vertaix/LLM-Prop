@@ -118,8 +118,11 @@ def train(model, optimizer, scheduler, loss_function,
                 f"epoch_{epoch+1}": predictions_list
             }
         )
-
-        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epochs}_epochs.pt")
+        
+        # Save stats per epoch
+        saveCSV(pd.DataFrame(data=training_stats), f"statistics/{property_name}/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.csv")
+        saveCSV(pd.DataFrame(validation_predictions), f"statistics/{property_name}/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.csv")
+        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.pt")
 
     train_ending_time = time.time()
     total_training_time = train_ending_time-training_starting_time
@@ -142,7 +145,7 @@ if __name__ == "__main__":
 
     n_classes = 1
     batch_size = 16
-    max_length = 512
+    max_length = 1024
     
     train_data, valid_data, test_data = train_valid_test_split(
         prop_data_dir=prop_data_dir,
