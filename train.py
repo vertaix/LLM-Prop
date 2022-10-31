@@ -137,7 +137,7 @@ if __name__ == "__main__":
     mat_descr_dir = f"data/property/{property_name}/mat_ids_description"
 
     n_classes = 1
-    batch_size = 32
+    batch_size = 128
     max_length = 1024
     
     train_data, valid_data, test_data = train_valid_test_split(
@@ -193,8 +193,8 @@ if __name__ == "__main__":
 
     # Instantiate the model
     model = ByT5Reggressor(base_model, base_model_output_size, n_classes, regressor_type, drop_rate=0.1) # add arguments later and put it in mai
-    parallelize(model, num_gpus=4, fp16=True, verbose='detail')
-    # model.to(device)
+    # parallelize(model, num_gpus=4, fp16=True, verbose='detail')
+    model.to(device)
 
     # Define the optimizer
     optimizer = AdamW(
