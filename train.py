@@ -145,7 +145,7 @@ if __name__ == "__main__":
 
     n_classes = 1
     batch_size = 8
-    max_length = 1024
+    max_length = 768
     
     train_data, valid_data, test_data = train_valid_test_split(
         prop_data_dir=prop_data_dir,
