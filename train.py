@@ -57,6 +57,10 @@ def train(model, optimizer, scheduler, loss_function,
             model.zero_grad() # Resetting the gradients of the previous step
             batch_inputs, batch_masks, batch_labels = tuple(b.to(device) for b in batch)
             predictions = model(batch_inputs, batch_masks)
+            print("pred. unsqueezed", predictions.size())
+            print("pred. squeezed", predictions.squeeze().size())
+            print("lab. unsqueezed", batch_labels.size())
+            print("lab. squeezed", batch_labels.squeeze().size())
             loss = loss_function(predictions.squeeze(), batch_labels.squeeze())
             total_training_loss += loss.item()
             loss.backward()
@@ -87,7 +91,7 @@ def train(model, optimizer, scheduler, loss_function,
             batch_inputs, batch_masks, batch_labels = tuple(b.to(device) for b in batch)
             with torch.no_grad():
                 predictions = model(batch_inputs, batch_masks)
-                loss = loss_function(predictions, batch_labels) 
+                loss = loss_function(predictions.squeeze(), batch_labels.squeeze()) 
             total_eval_loss += loss.item()
             predictions = predictions.detach().cpu().numpy()
             for i in predictions:
