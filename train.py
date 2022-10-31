@@ -144,7 +144,7 @@ if __name__ == "__main__":
     mat_descr_dir = f"data/property/{property_name}/mat_ids_description"
 
     n_classes = 1
-    batch_size = 16
+    batch_size = 8
     max_length = 1024
     
     train_data, valid_data, test_data = train_valid_test_split(

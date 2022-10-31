@@ -2,7 +2,7 @@
 #SBATCH --job-name=rnspace_byt5
 #SBATCH --gres=gpu:a5000:1
 #SBATCH --nodes=1
-#SBATCH --ntasks=4
+#SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=40G
 #SBATCH --mail-type=begin
