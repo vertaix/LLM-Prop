@@ -14,7 +14,7 @@ from torch.nn.utils.clip_grad import clip_grad_norm
 import evaluate # A Huggingface module that contains most the evaluation metrics (pip install evaluate)
 from transformers import AdamW
 from transformers import get_linear_schedule_with_warmup
-from transformers import AutoTokenizer, T5EncoderModel
+from transformers import AutoTokenizer, T5EncoderModel, T5Tokenizer
 
 from parallelformers import parallelize
 
@@ -163,7 +163,7 @@ if __name__ == "__main__":
         base_model_output_size = 1472
     if model_name == "t5-small": # 300M params
         base_model = T5EncoderModel.from_pretrained("google/t5-v1_1-small")
-        tokenizer = AutoTokenizer.from_pretrained("google/t5-v1_1-small")
+        tokenizer = T5Tokenizer.from_pretrained("google/t5-v1_1-small")
         base_model_output_size = 512
     # elif model_name == "byt5-base": #580 params
     #     base_model = T5EncoderModel.from_pretrained("google/byt5-base")
