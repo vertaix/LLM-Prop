@@ -57,10 +57,6 @@ def train(model, optimizer, scheduler, loss_function,
             model.zero_grad() # Resetting the gradients of the previous step
             batch_inputs, batch_masks, batch_labels = tuple(b.to(device) for b in batch)
             predictions = model(batch_inputs, batch_masks)
-            print("pred. unsqueezed", predictions.size())
-            print("pred. squeezed", predictions.squeeze().size())
-            print("lab. unsqueezed", batch_labels.size())
-            print("lab. squeezed", batch_labels.squeeze().size())
             loss = loss_function(predictions.squeeze(), batch_labels.squeeze())
             total_training_loss += loss.item()
             loss.backward()
@@ -144,8 +140,8 @@ if __name__ == "__main__":
     mat_descr_dir = f"data/property/{property_name}/mat_ids_description"
 
     n_classes = 1
-    batch_size = 8
-    max_length = 768
+    batch_size = 128
+    max_length = 512
     
     train_data, valid_data, test_data = train_valid_test_split(
         prop_data_dir=prop_data_dir,
@@ -158,12 +154,17 @@ if __name__ == "__main__":
     print(f"valid data = {len(valid_data)} samples")
 
     # Specify the model (byt5-small/byt5-base/byt5-large/byt5-3b/byt5-11b)
-    model_name = "byt5-small" # Default model
+    # model_name = "byt5-small" # Default model
+    model_name = "t5-small" # Default model
 
     if model_name == "byt5-small": # 300M params
         base_model = T5EncoderModel.from_pretrained("google/byt5-small")
         tokenizer = AutoTokenizer.from_pretrained("google/byt5-small")
         base_model_output_size = 1472
+    if model_name == "t5-small": # 300M params
+        base_model = T5EncoderModel.from_pretrained("google/t5-v1_1-small")
+        tokenizer = AutoTokenizer.from_pretrained("google/t5-v1_1-small")
+        base_model_output_size = 512
     # elif model_name == "byt5-base": #580 params
     #     base_model = T5EncoderModel.from_pretrained("google/byt5-base")
     #     tokenizer = AutoTokenizer.from_pretrained("google/byt5-base")
