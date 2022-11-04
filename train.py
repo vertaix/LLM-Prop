@@ -116,9 +116,9 @@ def train(model, optimizer, scheduler, loss_function,
         )
         
         # Save stats per epoch
-        saveCSV(pd.DataFrame(data=training_stats), f"statistics/{property_name}/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.csv")
-        saveCSV(pd.DataFrame(validation_predictions), f"statistics/{property_name}/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.csv")
-        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.pt")
+        # saveCSV(pd.DataFrame(data=training_stats), f"statistics/{property_name}/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.csv")
+        # saveCSV(pd.DataFrame(validation_predictions), f"statistics/{property_name}/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.csv")
+        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.pt")
 
     train_ending_time = time.time()
     total_training_time = train_ending_time-training_starting_time
@@ -153,40 +153,6 @@ if __name__ == "__main__":
     print(f"train data = {len(train_data)} samples")
     print(f"valid data = {len(valid_data)} samples")
 
-    # Specify the model (byt5-small/byt5-base/byt5-large/byt5-3b/byt5-11b)
-    # model_name = "byt5-small" # Default model
-    model_name = "t5-small" # Default model
-
-    if model_name == "byt5-small": # 300M params
-        base_model = T5EncoderModel.from_pretrained("google/byt5-small")
-        tokenizer = AutoTokenizer.from_pretrained("google/byt5-small")
-        base_model_output_size = 1472
-    if model_name == "t5-small": # 300M params
-        base_model = T5EncoderModel.from_pretrained("google/t5-v1_1-small")
-        tokenizer = T5Tokenizer.from_pretrained("google/t5-v1_1-small")
-        base_model_output_size = 512
-    # elif model_name == "byt5-base": #580 params
-    #     base_model = T5EncoderModel.from_pretrained("google/byt5-base")
-    #     tokenizer = AutoTokenizer.from_pretrained("google/byt5-base")
-    #     base_model_output_size = 1536
-    # elif model_name == "byt5-large": # 1.2B params
-    #     base_model = T5EncoderModel.from_pretrained("google/byt5-large")
-    #     tokenizer = AutoTokenizer.from_pretrained("google/byt5-large")
-    #     base_model_output_size = 1536
-    # elif model_name == "byt5-xl": # 3.7B params
-    #     base_model = T5EncoderModel.from_pretrained("google/byt5-xl")
-    #     tokenizer = AutoTokenizer.from_pretrained("google/byt5-xl")
-    #     base_model_output_size = 2560
-    # elif model_name == "byt5-xxl": # 13B params
-    #     base_model = T5EncoderModel.from_pretrained("google/byt5-xxl")
-    #     tokenizer = AutoTokenizer.from_pretrained("google/byt5-xxl")
-    #     base_model_output_size = 4672
-    
-    # Load data
-    train_dataloader = create_dataloaders(tokenizer, train_data, max_length, batch_size)
-    valid_dataloader = create_dataloaders(tokenizer, valid_data, max_length, batch_size)
-    # test_dataloader = create_dataloaders(tokenizer, test_data, max_length, batch_size)
-
     # Build a regression layer (linear/MLP) over ByT5 Encoder
     regressor_type = "linear" # Default
 
@@ -198,30 +164,9 @@ if __name__ == "__main__":
     else:
         print("No GPU available, please connect to the GPU first or continue to use CPU instead")
         device = torch.device("cpu")
-
-    # Instantiate the model
-    model = ByT5Reggressor(base_model, base_model_output_size, n_classes, regressor_type, drop_rate=0.1) # add arguments later and put it in mai
-    # parallelize(model, num_gpus=4, fp16=True, verbose='detail')
-    model.to(device)
-
-    # Define the optimizer
-    optimizer = AdamW(
-        model.parameters(),
-        lr = 0.001, # will check if it is needed to add "eps=1e-8" after lr
-        eps = 1e-8
-    )
     
     # Set the number of epochs
-    epochs = 10
-
-    # Training steps = 262,144 from ByT5 paper
-    # Set up the scheduler
-    total_training_steps = len(train_dataloader) * epochs # Define train_dataloader later
-    scheduler = get_linear_schedule_with_warmup(
-        optimizer,
-        num_warmup_steps=0,
-        num_training_steps=total_training_steps 
-    )
+    epochs = 30
 
     # Define the loss functions: using "mean absolute error:mae" and "mean square error:mse" losses
     loss_type = "mae"
@@ -230,28 +175,93 @@ if __name__ == "__main__":
     elif loss_type == "mse":
         loss_function = nn.MSELoss()
 
-    training_stats, validation_predictions = train(model, optimizer, scheduler, loss_function, 
-          epochs, train_dataloader, valid_dataloader, device, clip_value=2)
+    # Specify the model (byt5-small/byt5-base/byt5-large/byt5-3b/byt5-11b)
+    # model_name = "byt5-small" # Default model
+    model_names = ["t5-small", "t5-base", "t5-large"] # Default model , "t5-xl", "t5-xxl"
 
-    # print the model parameters
-    model_trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    print(model_trainable_params)
+    for model_name in model_names:
+        if model_name == "t5-small": #  params
+            base_model = T5EncoderModel.from_pretrained("google/t5-v1_1-small")
+            tokenizer = T5Tokenizer.from_pretrained("google/t5-v1_1-small")
+            base_model_output_size = 512
+        elif model_name == "t5-base": #  params
+            base_model = T5EncoderModel.from_pretrained("google/t5-v1_1-base")
+            tokenizer = T5Tokenizer.from_pretrained("google/t5-v1_1-base")
+            base_model_output_size = 768
+        elif model_name == "t5-large": #  params
+            base_model = T5EncoderModel.from_pretrained("google/t5-v1_1-large")
+            tokenizer = T5Tokenizer.from_pretrained("google/t5-v1_1-large")
+            base_model_output_size = 1024
 
-    df_traing_stats = pd.DataFrame(data=training_stats)
+        # if model_name == "byt5-small": # 300M params
+        #     base_model = T5EncoderModel.from_pretrained("google/byt5-small")
+        #     tokenizer = AutoTokenizer.from_pretrained("google/byt5-small")
+        #     base_model_output_size = 1472
+        # elif model_name == "byt5-base": #580 params
+        #     base_model = T5EncoderModel.from_pretrained("google/byt5-base")
+        #     tokenizer = AutoTokenizer.from_pretrained("google/byt5-base")
+        #     base_model_output_size = 1536
+        # elif model_name == "byt5-large": # 1.2B params
+        #     base_model = T5EncoderModel.from_pretrained("google/byt5-large")
+        #     tokenizer = AutoTokenizer.from_pretrained("google/byt5-large")
+        #     base_model_output_size = 1536
+        # elif model_name == "byt5-xl": # 3.7B params
+        #     base_model = T5EncoderModel.from_pretrained("google/byt5-xl")
+        #     tokenizer = AutoTokenizer.from_pretrained("google/byt5-xl")
+        #     base_model_output_size = 2560
+        # elif model_name == "byt5-xxl": # 13B params
+        #     base_model = T5EncoderModel.from_pretrained("google/byt5-xxl")
+        #     tokenizer = AutoTokenizer.from_pretrained("google/byt5-xxl")
+        #     base_model_output_size = 4672
 
-    # df_traing_stats = df_traing_stats.set_index('epoch')
+        # Instantiate the model
+        model = ByT5Reggressor(base_model, base_model_output_size, n_classes, regressor_type, drop_rate=0.1) # add arguments later and put it in mai
+        # parallelize(model, num_gpus=4, fp16=True, verbose='detail')
+        model.to(device)
 
-    df_predictions_stats = pd.DataFrame(validation_predictions)
+        # Load data
+        train_dataloader = create_dataloaders(tokenizer, train_data, max_length, batch_size)
+        valid_dataloader = create_dataloaders(tokenizer, valid_data, max_length, batch_size)
+        # test_dataloader = create_dataloaders(tokenizer, test_data, max_length, batch_size)
 
-    print(df_traing_stats )
-    print(df_predictions_stats)
+        # Define the optimizer
+        optimizer = AdamW(
+            model.parameters(),
+            lr = 0.001, # will check if it is needed to add "eps=1e-8" after lr
+            eps = 1e-8
+        )
 
-    # Save stats
-    saveCSV(df_traing_stats, f"statistics/{property_name}/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
-    saveCSV(df_predictions_stats, f"statistics/{property_name}/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
+        # Training steps = 262,144 from ByT5 paper
+        # Set up the scheduler
+        total_training_steps = len(train_dataloader) * epochs # Define train_dataloader later
+        scheduler = get_linear_schedule_with_warmup(
+            optimizer,
+            num_warmup_steps=0,
+            num_training_steps=total_training_steps 
+        )
+
+        training_stats, validation_predictions = train(model, optimizer, scheduler, loss_function, 
+            epochs, train_dataloader, valid_dataloader, device, clip_value=2)
+
+        # print the model parameters
+        model_trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+        print(model_trainable_params)
+
+        df_traing_stats = pd.DataFrame(data=training_stats)
+
+        # df_traing_stats = df_traing_stats.set_index('epoch')
+
+        df_predictions_stats = pd.DataFrame(validation_predictions)
+
+        # print(df_traing_stats )
+        # print(df_predictions_stats)
+
+        # Save stats
+        saveCSV(df_traing_stats, f"statistics/{property_name}/{model_name}/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
+        saveCSV(df_predictions_stats, f"statistics/{property_name}/{model_name}/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
 
 
-    # Save the trained model for inference
-    torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.pt")
+        # Save the trained model for inference
+        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.pt")
 
 

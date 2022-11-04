@@ -4,12 +4,14 @@ A function to prepare the dataloaders
 # Import packages
 import glob
 import torch
+import spacy
 import pandas as pd
 import numpy as np
 from torch.utils.data import DataLoader, TensorDataset
 from utils import *
 
 np.random.seed(42)
+nlp = spacy.load("en_core_web_lg") # Get it with <python -m spacy download en_core_web_lg> if it is not installed
 
 def extract_mat_id(dir):
     dir_split = dir.split("/")
@@ -81,6 +83,38 @@ def load_data(mat_prop_dir, mat_descr_dir):
     
     return df_data
 
+def is_number(n):
+    is_number = True
+    try:
+        num = float(str(n))
+        is_number = num == num   # check for "nan" floats
+    except ValueError:
+        is_number = False
+    return is_number
+
+def change_num_to_digits(df):
+    sents = list(df["description"])
+    new_sents = []
+
+    for sent in sents:
+        doc = nlp(sent)
+        cands = []
+        for tok in doc:
+            if is_number(tok):
+                cands.append(tok)
+            else:
+                continue
+        if len(cands) == 0:
+            new_sents.append(sent)
+        else: 
+            for cand in cands:
+                sent = sent.replace(str(cand), " ".join([i for i in str(cand)]))
+        new_sents.append(sent)
+
+    df['new_description'] = new_sents
+    
+    return df
+
 def train_valid_test_split(prop_data_dir, mat_prop_dir, mat_descr_dir, split_ratio=[7,2,1]):
     if len(glob.glob(f"{prop_data_dir}/*.csv")) != 0:
         train_data = pd.read_csv(f"{prop_data_dir}/train.csv")
@@ -88,6 +122,7 @@ def train_valid_test_split(prop_data_dir, mat_prop_dir, mat_descr_dir, split_rat
         test_data = pd.read_csv(f"{prop_data_dir}/test.csv")
     else:
         df_data = load_data(mat_prop_dir, mat_descr_dir)
+        df_data = change_num_to_digits(df_data)
         train_ratio, valid_ratio, test_ratio = tuple([int((i/10)*len(df_data)) for i in split_ratio])
 
         ixs = np.arange(df_data.shape[0])
@@ -121,7 +156,7 @@ def tokenize(tokenizer, dataframe, max_length):
     2. max_length = the max length of each input sequence 
     (1024 for char-based tokenizer (default for ByT5) and 512 for token-based tokenizer)
     """
-    encoded_corpus = tokenizer(text=dataframe.description.tolist(),
+    encoded_corpus = tokenizer(text=dataframe.new_description.tolist(),
                                 # add_special_tokens=True,
                                 padding='max_length',
                                 truncation='longest_first',
@@ -145,6 +180,6 @@ def create_dataloaders(tokenizer, dataframe, max_length, batch_size):
     labels_tensor = torch.tensor(labels)
 
     dataset = TensorDataset(input_tensor, mask_tensor, labels_tensor)
-    dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=False) # Set the shuffle to False for now since the labes are continues values check later if this may affect the result
+    dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=False) # Set the shuffle to False for now since the labels are continues values check later if this may affect the result
 
     return dataloader
