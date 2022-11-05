@@ -166,7 +166,7 @@ if __name__ == "__main__":
         device = torch.device("cpu")
     
     # Set the number of epochs
-    epochs = 30
+    epochs = 40
 
     # Define the loss functions: using "mean absolute error:mae" and "mean square error:mse" losses
     loss_type = "mae"
