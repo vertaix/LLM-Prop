@@ -140,7 +140,7 @@ if __name__ == "__main__":
     mat_descr_dir = f"data/property/{property_name}/mat_ids_description"
 
     n_classes = 1
-    batch_size = 32
+    batch_size = 16
     max_length = 512
     
     train_data, valid_data, test_data = train_valid_test_split(
@@ -166,7 +166,7 @@ if __name__ == "__main__":
         device = torch.device("cpu")
     
     # Set the number of epochs
-    epochs = 40
+    epochs = 50
 
     # Define the loss functions: using "mean absolute error:mae" and "mean square error:mse" losses
     loss_type = "mae"
