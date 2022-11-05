@@ -109,7 +109,7 @@ def change_num_to_digits(df):
         else: 
             for cand in cands:
                 sent = sent.replace(str(cand), " ".join([i for i in str(cand)]))
-        new_sents.append(sent)
+            new_sents.append(sent)
 
     df['new_description'] = new_sents
     
