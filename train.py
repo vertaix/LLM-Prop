@@ -140,7 +140,7 @@ if __name__ == "__main__":
     mat_descr_dir = f"data/property/{property_name}/mat_ids_description"
 
     n_classes = 1
-    batch_size = 64
+    batch_size = 32
     max_length = 512
     
     train_data, valid_data, test_data = train_valid_test_split(
@@ -177,7 +177,7 @@ if __name__ == "__main__":
 
     # Specify the model (byt5-small/byt5-base/byt5-large/byt5-3b/byt5-11b)
     # model_name = "byt5-small" # Default model
-    model_names = ["t5-small", "t5-base", "t5-large"] # Default model , "t5-xl", "t5-xxl"
+    model_names = ["t5-base", "t5-large"] # Default model , "t5-small", "t5-xl", "t5-xxl"
 
     for model_name in model_names:
         if model_name == "t5-small": #  params
