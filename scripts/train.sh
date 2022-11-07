@@ -10,6 +10,7 @@
 #SBATCH --mail-user=rn3004@princeton.edu
 
 python train.py
+#python free_gpu_cache_usage.py
 
 # srun -N 1 -n 1 --gres=gpu:1 --exclusive python train.py 0 &
 # srun -N 1 -n 1 --gres=gpu:1 --exclusive python train.py 1 &
