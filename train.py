@@ -116,8 +116,12 @@ def train(model, optimizer, scheduler, loss_function,
         )
         
         # Save stats per epoch
-        # saveCSV(pd.DataFrame(data=training_stats), f"statistics/{property_name}/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.csv")
-        # saveCSV(pd.DataFrame(validation_predictions), f"statistics/{property_name}/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.csv")
+        if (epoch+1) % 10 == 0:
+            saveCSV(pd.DataFrame(data=training_stats), f"statistics/{property_name}/{model_name}/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
+            saveCSV(pd.DataFrame(validation_predictions), f"statistics/{property_name}/{model_name}/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
+        else:
+            continue
+        
         torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.pt")
 
     train_ending_time = time.time()
