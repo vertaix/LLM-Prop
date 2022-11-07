@@ -75,7 +75,7 @@ if __name__=="__main__":
             tokenizer = T5Tokenizer.from_pretrained("google/t5-v1_1-base")
         
         model_path = f"model_checkpoints/{property_name}/{model_name}/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.pt"
-        model = torch.load(model_path)
+        model = torch.load(model_path, map_location=torch.device(device))
         test_dataloader = create_dataloaders(tokenizer, dataframe, max_length, batch_size)
 
         test_predictions, average_test_loss, testing_time = evaluate(model, test_dataloader, loss_function, property_value)
