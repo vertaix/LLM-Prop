@@ -95,9 +95,9 @@ def train(model, optimizer, scheduler, loss_function,
             # batch_labels = batch_labels.to("cpu").numpy()
         average_valid_loss = total_eval_loss / len(valid_dataloader)
         valid_ending_time = time.time()
-        validation_time = valid_ending_time-valid_start_time
+        validation_time = time_format(valid_ending_time-valid_start_time)
         print(f"Average validation loss = {average_valid_loss}")
-        print(f"validation took {time_format(validation_time)}")
+        print(f"validation took {validation_time}")
 
         training_stats.append(
             {
@@ -121,7 +121,7 @@ def train(model, optimizer, scheduler, loss_function,
             saveCSV(pd.DataFrame(validation_predictions), f"statistics/{property_name}/{model_name}/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
         else:
             continue
-        
+
         torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.pt")
 
     train_ending_time = time.time()

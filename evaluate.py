@@ -51,7 +51,7 @@ if __name__=="__main__":
 
     property_name = "formation_energy"
     property_value = "formation_energy_per_atom"
-    data_path = f"data/property/{property_name}/test.csv"
+    data_path = f"data/property/{property_name}/{property_value}/test.csv"
     max_length = 512
     regressor_type = "linear"  # can also be mlp
     dataframe = pd.read_csv(data_path)
