@@ -5,6 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=40G
+#SBATCH --time=167:00:00          # total run time limit (HH:MM:SS)- 1 week for t5-base and t5-large
 #SBATCH --mail-type=begin
 #SBATCH --mail-type=end
 #SBATCH --mail-user=rn3004@princeton.edu
