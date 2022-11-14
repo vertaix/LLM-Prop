@@ -117,12 +117,12 @@ def train(model, optimizer, scheduler, loss_function,
         
         # Save stats per epoch
         if (epoch+1) % 10 == 0:
-            saveCSV(pd.DataFrame(data=training_stats), f"statistics/{property_name}/{model_name}/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
-            saveCSV(pd.DataFrame(validation_predictions), f"statistics/{property_name}/{model_name}/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
+            saveCSV(pd.DataFrame(data=training_stats), f"statistics/{property_name}/{model_name}/baseline/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
+            saveCSV(pd.DataFrame(validation_predictions), f"statistics/{property_name}/{model_name}/baseline/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
         else:
             continue
 
-        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.pt")
+        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/baseline/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.pt")
 
     train_ending_time = time.time()
     total_training_time = train_ending_time-training_starting_time
@@ -144,7 +144,7 @@ if __name__ == "__main__":
     mat_descr_dir = f"data/property/{property_name}/mat_ids_description"
 
     n_classes = 1
-    batch_size = 32
+    batch_size = 64
     max_length = 512
     
     train_data, valid_data, test_data = train_valid_test_split(
@@ -170,7 +170,7 @@ if __name__ == "__main__":
         device = torch.device("cpu")
     
     # Set the number of epochs
-    epochs = 40
+    epochs = 60
 
     # Define the loss functions: using "mean absolute error:mae" and "mean square error:mse" losses
     loss_type = "mae"
@@ -181,7 +181,7 @@ if __name__ == "__main__":
 
     # Specify the model (byt5-small/byt5-base/byt5-large/byt5-3b/byt5-11b)
     # model_name = "byt5-small" # Default model
-    model_names = ["t5-base", "t5-large"] # Default model , "t5-small", "t5-xl", "t5-xxl"
+    model_names = ["t5-small"] # Default model , "t5-base", "t5-large", "t5-xl", "t5-xxl"
 
     for model_name in model_names:
         if model_name == "t5-small": #  params
@@ -261,11 +261,11 @@ if __name__ == "__main__":
         # print(df_predictions_stats)
 
         # Save stats
-        saveCSV(df_traing_stats, f"statistics/{property_name}/{model_name}/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
-        saveCSV(df_predictions_stats, f"statistics/{property_name}/{model_name}/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
+        saveCSV(df_traing_stats, f"statistics/{property_name}/{model_name}/baseline/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
+        saveCSV(df_predictions_stats, f"statistics/{property_name}/{model_name}/baseline/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
 
 
         # Save the trained model for inference
-        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.pt")
+        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/baseline/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.pt")
 
 
