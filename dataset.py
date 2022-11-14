@@ -156,7 +156,7 @@ def tokenize(tokenizer, dataframe, max_length):
     2. max_length = the max length of each input sequence 
     (1024 for char-based tokenizer (default for ByT5) and 512 for token-based tokenizer)
     """
-    encoded_corpus = tokenizer(text=dataframe.new_description.tolist(),
+    encoded_corpus = tokenizer(text=dataframe.description.tolist(),
                                 # add_special_tokens=True,
                                 padding='max_length',
                                 truncation='longest_first',
