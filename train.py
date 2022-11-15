@@ -115,6 +115,8 @@ def train(model, optimizer, scheduler, loss_function,
             }
         )
         
+        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/baseline/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.pt")
+
         # Save stats per epoch
         if (epoch+1) % 10 == 0:
             saveCSV(pd.DataFrame(data=training_stats), f"statistics/{property_name}/{model_name}/baseline/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
@@ -122,7 +124,7 @@ def train(model, optimizer, scheduler, loss_function,
         else:
             continue
 
-        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/baseline/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.pt")
+        
 
     train_ending_time = time.time()
     total_training_time = train_ending_time-training_starting_time
@@ -170,7 +172,7 @@ if __name__ == "__main__":
         device = torch.device("cpu")
     
     # Set the number of epochs
-    epochs = 60
+    epochs = 100
 
     # Define the loss functions: using "mean absolute error:mae" and "mean square error:mse" losses
     loss_type = "mae"
