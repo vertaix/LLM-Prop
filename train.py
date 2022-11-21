@@ -184,6 +184,7 @@ if __name__ == "__main__":
     # Specify the model (byt5-small/byt5-base/byt5-large/byt5-3b/byt5-11b)
     # model_name = "byt5-small" # Default model
     model_names = ["t5-small"] # Default model , "t5-base", "t5-large", "t5-xl", "t5-xxl"
+    freeze = True # a boolean variable to determine if we freeze the pre-trained T5 parameters and only train the regressor parameters
 
     for model_name in model_names:
         if model_name == "t5-small": #  params
@@ -219,6 +220,11 @@ if __name__ == "__main__":
         #     base_model = T5EncoderModel.from_pretrained("google/byt5-xxl")
         #     tokenizer = AutoTokenizer.from_pretrained("google/byt5-xxl")
         #     base_model_output_size = 4672
+
+        # freeze the pre-trained LM's parameters
+        if freeze:
+            for param in base_model.parameters():
+                param.requires_grad = False
 
         # Instantiate the model
         model = ByT5Reggressor(base_model, base_model_output_size, n_classes, regressor_type, drop_rate=0.1) # add arguments later and put it in mai
