@@ -115,12 +115,12 @@ def train(model, optimizer, scheduler, loss_function,
             }
         )
         
-        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/baseline/freezed/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.pt")
+        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/baseline/unfreezed/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.pt")
 
         # Save stats per epoch
         if (epoch+1) % 10 == 0:
-            saveCSV(pd.DataFrame(data=training_stats), f"statistics/{property_name}/{model_name}/baseline/freezed/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
-            saveCSV(pd.DataFrame(validation_predictions), f"statistics/{property_name}/{model_name}/baseline/freezed/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
+            saveCSV(pd.DataFrame(data=training_stats), f"statistics/{property_name}/{model_name}/baseline/unfreezed/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
+            saveCSV(pd.DataFrame(validation_predictions), f"statistics/{property_name}/{model_name}/baseline/unfreezed/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
         else:
             continue
 
@@ -184,7 +184,7 @@ if __name__ == "__main__":
     # Specify the model (byt5-small/byt5-base/byt5-large/byt5-3b/byt5-11b)
     # model_name = "byt5-small" # Default model
     model_names = ["t5-small"] # Default model , "t5-base", "t5-large", "t5-xl", "t5-xxl"
-    freeze = True # a boolean variable to determine if we freeze the pre-trained T5 parameters and only train the regressor parameters
+    freeze = False # a boolean variable to determine if we freeze the pre-trained T5 parameters and only train the regressor parameters
 
     for model_name in model_names:
         if model_name == "t5-small": #  params
@@ -269,11 +269,11 @@ if __name__ == "__main__":
         # print(df_predictions_stats)
 
         # Save stats
-        saveCSV(df_traing_stats, f"statistics/{property_name}/{model_name}/baseline/freezed/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
-        saveCSV(df_predictions_stats, f"statistics/{property_name}/{model_name}/baseline/freezed/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
+        saveCSV(df_traing_stats, f"statistics/{property_name}/{model_name}/baseline/unfreezed/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
+        saveCSV(df_predictions_stats, f"statistics/{property_name}/{model_name}/baseline/unfreezed/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
 
 
         # Save the trained model for inference
-        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/baseline/freezed/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.pt")
+        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/baseline/unfreezed/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.pt")
 
 
