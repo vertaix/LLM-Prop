@@ -115,12 +115,12 @@ def train(model, optimizer, scheduler, loss_function,
             }
         )
         
-        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/baseline/unfreezed/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.pt")
+        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/gru/unfreezed/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.pt")
 
         # Save stats per epoch
         if (epoch+1) % 10 == 0:
-            saveCSV(pd.DataFrame(data=training_stats), f"statistics/{property_name}/{model_name}/baseline/unfreezed/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
-            saveCSV(pd.DataFrame(validation_predictions), f"statistics/{property_name}/{model_name}/baseline/unfreezed/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
+            saveCSV(pd.DataFrame(data=training_stats), f"statistics/{property_name}/{model_name}/gru/unfreezed/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
+            saveCSV(pd.DataFrame(validation_predictions), f"statistics/{property_name}/{model_name}/gru/unfreezed/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
         else:
             continue
 
@@ -272,10 +272,10 @@ if __name__ == "__main__":
         # print(df_predictions_stats)
 
         # Save stats
-        saveCSV(df_traing_stats, f"statistics/{property_name}/{model_name}/baseline/unfreezed/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
-        saveCSV(df_predictions_stats, f"statistics/{property_name}/{model_name}/baseline/unfreezed/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
+        saveCSV(df_traing_stats, f"statistics/{property_name}/{model_name}/gru/unfreezed/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
+        saveCSV(df_predictions_stats, f"statistics/{property_name}/{model_name}/gru/unfreezed/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.csv")
 
 
         # Save the trained model for inference
-        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/baseline/unfreezed/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.pt")
+        torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/gru/unfreezed/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.pt")
 
