@@ -19,7 +19,7 @@ from transformers import AutoTokenizer, T5EncoderModel, T5Tokenizer
 from parallelformers import parallelize
 
 # My pre-defined functions
-from model import ByT5Reggressor
+from model import T5Reggressor
 from utils import *
 from dataset import train_valid_test_split, create_dataloaders
 
@@ -148,6 +148,8 @@ if __name__ == "__main__":
     n_classes = 1
     batch_size = 64
     max_length = 512
+    hidden_dim = 256
+    n_layers = 1
     
     train_data, valid_data, test_data = train_valid_test_split(
         prop_data_dir=prop_data_dir,
@@ -160,7 +162,8 @@ if __name__ == "__main__":
     print(f"valid data = {len(valid_data)} samples")
 
     # Build a regression layer (linear/MLP) over ByT5 Encoder
-    regressor_type = "linear" # Default
+    # regressor_type = "linear" # Default
+    regressor_type = "rnn"
 
     # Check if the GPU is available
     if torch.cuda.is_available():
@@ -227,7 +230,7 @@ if __name__ == "__main__":
                 param.requires_grad = False
 
         # Instantiate the model
-        model = ByT5Reggressor(base_model, base_model_output_size, n_classes, regressor_type, drop_rate=0.1) # add arguments later and put it in mai
+        model = T5Reggressor(base_model, base_model_output_size, n_classes, regressor_type, hidden_dim, n_layers, drop_rate=0.1) # add arguments later and put it in mai
         # parallelize(model, num_gpus=4, fp16=True, verbose='detail')
         model.to(device)
 
@@ -275,5 +278,4 @@ if __name__ == "__main__":
 
         # Save the trained model for inference
         torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/baseline/unfreezed/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.pt")
-
 
