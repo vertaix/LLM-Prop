@@ -149,7 +149,7 @@ if __name__ == "__main__":
     batch_size = 64
     max_length = 512
     hidden_dim = 256
-    n_layers = 1
+    n_layers = 2
     
     train_data, valid_data, test_data = train_valid_test_split(
         prop_data_dir=prop_data_dir,
