@@ -157,7 +157,7 @@ def tokenize(tokenizer, dataframe, max_length):
     (1024 for char-based tokenizer (default for ByT5) and 512 for token-based tokenizer)
     """
     encoded_corpus = tokenizer(text=dataframe.description.tolist(),
-                                add_special_tokens=True,
+                                add_special_tokens=False,
                                 padding='max_length',
                                 truncation='longest_first',
                                 max_length=max_length, # According to ByT5 paper
