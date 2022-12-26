@@ -1,16 +1,18 @@
 """
-Codes to evaluate the trained models onn held out test set
+Codes to evaluate the trained models on held out test set
 """
 # Import necessary packages
 import time
 import torch
 import torch.nn as nn
 import pandas as pd
+import numpy as np
 
 from transformers import AutoTokenizer, T5EncoderModel, T5Tokenizer
 
 from utils import *
 from dataset import create_dataloaders
+from model import T5Reggressor
 
 def evaluate(model, test_dataloader, loss_function, property_value):
     test_start_time = time.time()
@@ -32,11 +34,11 @@ def evaluate(model, test_dataloader, loss_function, property_value):
 
     average_test_loss = total_test_loss / len(test_dataloader)
     test_ending_time = time.time()
-    testing_time = time_format(test_ending_time-test_start_time)
+    # testing_time = time_format(test_ending_time-test_start_time)
 
-    test_predictions = {f"{property_value}":predictions_list}
+    # test_predictions = {f"{property_value}":predictions_list}
 
-    return test_predictions, average_test_loss, testing_time
+    return predictions_list, average_test_loss, test_ending_time-test_start_time
 
 if __name__=="__main__":
 
@@ -51,10 +53,22 @@ if __name__=="__main__":
 
     property_name = "formation_energy"
     property_value = "formation_energy_per_atom"
-    data_path = f"data/property/{property_name}/{property_value}/test.csv"
+    data_path = f"data/property/{property_name}/{property_value}"
     max_length = 512
     regressor_type = "linear"  # can also be mlp
-    dataframe = pd.read_csv(data_path)
+    dataframe_test = pd.read_csv(f"{data_path}/test.csv")
+    dataframe_matbench = pd.read_csv(f"{data_path}/test_matbench.csv")
+
+    # arguments for the pretrained model
+    batch_size = 64
+    max_length = 512
+    hidden_dim = 128
+    n_layers = 2
+    n_filters = 100
+    filter_sizes = [3,4,5]
+    drop_rate = 0.1
+    base_model = T5EncoderModel.from_pretrained("google/t5-v1_1-small")
+    base_model_output_size = 512
 
     # Define the loss functions: using "mean absolute error:mae" and "mean square error:mse" losses
     loss_type = "mae"
@@ -63,23 +77,64 @@ if __name__=="__main__":
     elif loss_type == "mse":
         loss_function = nn.MSELoss()
 
-    model_names = ["t5-small"]
-    for model_name in model_names:
-        if model_name == "t5-small":
-            batch_size = 64
-            epochs = 30
-            tokenizer = T5Tokenizer.from_pretrained("google/t5-v1_1-small")
-        elif model_name == "t5-base":
-            batch_size = 16
-            epochs = 50
-            tokenizer = T5Tokenizer.from_pretrained("google/t5-v1_1-base")
+    model_paths = [ 
+       f"model_checkpoints/{property_name}/t5-small/ablation/t5-small_finetuned_linear_using_mae_loss_with_60_epochs_on_20447_examples.pt",
+       f"model_checkpoints/{property_name}/t5-small/ablation/t5-small_finetuned_linear_using_mae_loss_with_60_epochs_on_40894_examples.pt",
+       f"model_checkpoints/{property_name}/t5-small/ablation/t5-small_finetuned_linear_using_mae_loss_with_60_epochs_on_61341_examples.pt",
+       f"model_checkpoints/{property_name}/t5-small/ablation/t5-small_finetuned_linear_using_mae_loss_with_60_epochs_on_81788_examples.pt",
+       f"model_checkpoints/{property_name}/t5-small/ablation/normalized_t5-small_finetuned_linear_using_mae_loss_with_60_epochs.pt"
+    ]
+    batch_size = 64
+    testing_duration = []
+    test_loss = []
+
+    for dataframe in [dataframe_test, dataframe_matbench]:
+        if "matbench" in dataframe:
+            test_name = "matbench"
+        else:
+            test_name = "test"
+
+        for i, model_path in enumerate(model_paths):
+            # if "baseline" in model_path:
+            #     tokenizer = T5Tokenizer.from_pretrained("google/t5-v1_1-small")
+            #     model_type = "baseline"
+            #     best_epoch = 46
+            # else :
+            #     tokenizer = AutoTokenizer.from_pretrained("tokenizers/new_pretrained_t5_tokenizer_on_modified_c4_and_mat_descriptions_52k_vocab")
+            #     base_model.resize_token_embeddings(len(tokenizer))
+            #     model_type = "proposed"
+            #     best_epoch = 52
+            
+            tokenizer = AutoTokenizer.from_pretrained("tokenizers/new_pretrained_t5_tokenizer_on_modified_c4_and_mat_descriptions_52k_vocab")
+            base_model.resize_token_embeddings(len(tokenizer))
+
+            model =  T5Reggressor(base_model, base_model_output_size, regressor_type, hidden_dim, filter_sizes, n_layers, n_filters, drop_rate=drop_rate)
+            model.load_state_dict(torch.load(model_path, map_location=torch.device(device)), strict=False)
+            test_dataloader = create_dataloaders(tokenizer, dataframe, max_length, batch_size)
+
+            predictions = []
+            test_losses = []
+            test_durations = []
+            for i in range(5):
+                predictions_list, average_test_loss, testing_time = evaluate(model, test_dataloader, loss_function, property_value)
+                predictions.append(predictions_list)
+                test_losses.append(average_test_loss)
+                test_durations.append(testing_time)
+            
+            averaged_predictions = np.mean(np.array(predictions), axis=0)
+            averaged_loss = np.mean(test_losses)
+            averaged_test_time = np.sum(test_durations)
+
+            testing_duration.append(time_format(averaged_test_time))
+            test_loss.append(averaged_loss)
+            test_predictions = {f"{property_value}":averaged_predictions}
+
+            print(f"Testing time for {test_name} took {testing_duration}")
+            print(f"Test loss for {test_name} for the ablation model_{i+1} is {averaged_loss}")
+            print("="*100)
+
+            saveCSV(pd.DataFrame(test_predictions), f"statistics/test/{property_name}/t5-small/ablation_model_{i+1}_{test_name}_statistics_for_t5_small_finetuned_{regressor_type}_using_{loss_type}_loss.csv")
         
-        model_path = f"model_checkpoints/{property_name}/{model_name}/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs.pt"
-        model = torch.load(model_path, map_location=torch.device(device))
-        test_dataloader = create_dataloaders(tokenizer, dataframe, max_length, batch_size)
-
-        test_predictions, average_test_loss, testing_time = evaluate(model, test_dataloader, loss_function, property_value)
-
-        print(f"Testing time took {testing_time}")
-        print(f"Test loss for {model_name} is {average_test_loss}")
-        saveCSV(pd.DataFrame(test_predictions), f"statistics/{property_name}/{model_name}/test_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epochs}_epochs.csv")
+        writeTEXT(testing_duration, f"statistics/test/{property_name}/t5-small/ablation_model_{i+1}_{test_name}_duration_for_t5_small_finetuned_{regressor_type}_using_{loss_type}.txt")
+        writeTEXT(test_loss, f"statistics/test/{property_name}/t5-small/ablation_model_{i+1}_{test_name}_loss_for_t5_small_finetuned_{regressor_type}_using_{loss_type}.txt")
+            
