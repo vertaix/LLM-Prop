@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=rnspace_byt5
+#SBATCH --job-name=rnspace_t5
 #SBATCH --gres=gpu:a5000:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -10,7 +10,7 @@
 #SBATCH --mail-type=end
 #SBATCH --mail-user=rn3004@princeton.edu
 
-python train.py
+CUDA_LAUNCH_BLOCKING=1 python train.py
 #python free_gpu_cache_usage.py
 
 # srun -N 1 -n 1 --gres=gpu:1 --exclusive python train.py 0 &

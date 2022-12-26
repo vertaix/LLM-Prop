@@ -1,45 +1,78 @@
 """
-ByT5 finetuning on materials property prediction using materials textual description 
+T5 finetuning on materials property prediction using materials textual description 
 """
 # Import packages
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 class T5Reggressor(nn.Module):
-    def __init__(self, base_model, base_model_output_size, n_classes, regressor_type, hidden_dim, n_layers, drop_rate=0.1, freeze_base_model=False, bidirectional=True):
+    def __init__(self, base_model, base_model_output_size, regressor_type, hidden_dim, filter_sizes, n_layers, n_filters, n_classes=1, drop_rate=0.1, freeze_base_model=False, bidirectional=True):
         super(T5Reggressor, self).__init__()
-        D_in, D_out = base_model_output_size, n_classes ## This might change
+        D_in, D_out = base_model_output_size, n_classes # n_classes should always equal to one for regression
         self.model = base_model
         self.regressor = regressor_type
+        self.dropout = nn.Dropout(drop_rate)
 
-        if regressor_type == "linear":
-            print("using a linear regressor")
-            self.linear_regressor = nn.Sequential(
-                nn.Dropout(drop_rate),
-                nn.Linear(D_in, D_out)
-            )
-        elif regressor_type == "rnn":
-            print("using a recurrent neural network based regressor")
-            self.dropout = nn.Dropout(drop_rate)
-            # nn.utils.rnn.pack_padded_sequence(batch_first=True, enforce_sorted=False),
-            self.rnn = nn.GRU(D_in, hidden_dim, n_layers, bidirectional=bidirectional, dropout=drop_rate, batch_first=True)
-            # nn.utils.rnn.pack_padded_sequence(),
-            self.fc = nn.Linear(hidden_dim * 2 if bidirectional else hidden_dim, D_out)
+        # instantiate a linear regressor
+        self.linear_regressor = nn.Sequential(
+            nn.Dropout(drop_rate),
+            nn.Linear(D_in, D_out)
+        )
+
+        # instantiate a multilayer perceptron (mlp) regressor
+        self.fc_1 = nn.Linear(D_in, 256)
+        self.fc_2 = nn.Linear(256, 128)
+        self.fc_3 = nn.Linear(128, 64)
+        self.fc_last = nn.Linear(64, D_out)
+        self.relu = nn.ReLU()
+
+        # instantiate a recurrent neural network (rnn) regressor
+        self.rnn = nn.GRU(D_in, hidden_dim, n_layers, bidirectional=bidirectional, dropout=drop_rate, batch_first=True)
+        self.rnn_fc = nn.Linear(hidden_dim * 2 if bidirectional else hidden_dim, D_out)
+        
+        # instantiate a convolution neural network (cnn) regressor
+        self.convs = nn.ModuleList([
+            nn.Conv2d(
+                in_channels = 1,
+                out_channels = n_filters,
+                kernel_size = (fs, D_in))
+            for fs in filter_sizes
+        ])
+        self.cnn_fc = nn.Linear(len(filter_sizes) * n_filters, D_out)
 
     def forward(self, input_ids, attention_masks):
+        # print(input_ids.size(), attention_masks.size())
         hidden_states = self.model(input_ids, attention_masks)
+        # print(hidden_states.size())
 
         last_hidden_state = hidden_states.last_hidden_state # [batch_size, input_length, D_in]
 
         if self.regressor == "linear":
+            """using a linear regressor"""
             input_embedding = torch.sum(last_hidden_state, 1)/last_hidden_state.size()[1] # [batch_size, D_in] --> getting the embedding of the output by averaging the embeddings of the output characters 
             outputs = self.linear_regressor(input_embedding) # [batch_size, D_out] -->Feed the regression model only the last  hidden state of T5 model
-        elif self.regressor == "rnn":
+
+        elif self.regressor == "mlp":
+            input_embedding = self.dropout(last_hidden_state)
+            output_1 =self.relu(self.fc_1(self.dropout(input_embedding)))
+            output_2 = self.relu(self.fc_2(output_1))
+            output_3 = self.relu(self.fc_3(output_2)) 
+            outputs = self.fc_last(self.dropout(output_3))
+            
+        elif self.regressor == "gru":
+            """using an rnn-based regressor"""
             input_embedding = self.dropout(last_hidden_state) # [batch_size, input_length, D_in]
-            output, hidden_state = self.rnn(input_embedding) # output = [batch size, input_len, hid dim * num directions], hidden_state = [num layers * num directions, batch size, hid dim]
-            hidden = self.dropout(torch.cat((hidden_state[-2, :, :], hidden_state[-1, :, :]), dim=1)) # [batch size, hid dim * num directions]
-            outputs = self.fc(hidden) # [batch_size, D_out]
+            output, hidden_state = self.rnn(input_embedding) # output = [batch_size, input_len, hid dim * num directions], hidden_state = [num layers * num directions, batch size, hid dim]
+            hidden = self.dropout(torch.cat((hidden_state[-2, :, :], hidden_state[-1, :, :]), dim=1)) # [batch_size, hid dim * num directions]
+            outputs = self.rnn_fc(hidden) # [batch_size, D_out]
+
+        elif self.regressor == "cnn":
+            """using a cnn-based regressor"""
+            input_embedding = last_hidden_state.unsqueeze(1) # [batch_size, 1, input_length, D_in]
+            conved = [F.relu(conv(input_embedding)).squeeze(3) for conv in self.convs] # conv_i = [batch_size, n_filters, input_len - filter_sizes[i]]
+            pooled = [F.max_pool1d(conv, conv.shape[2]).squeeze(2) for conv in conved] # pooled_i = [batch_size, n_filters]
+            concat = self.dropout(torch.cat(pooled, dim=1)) # [batch_size, n_filters * len(filter_sizes)]
+            outputs = self.cnn_fc(concat) # [batch_size, D_out]
 
         return outputs
-
-        
