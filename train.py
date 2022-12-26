@@ -220,6 +220,7 @@ if __name__ == "__main__":
             learning_rate = 0.001
             drop_rate = 0.1
         elif regressor_type=="gru":
+<<<<<<< HEAD
             learning_rate = 0.001
             drop_rate = 0.5
         elif regressor_type=="cnn":
@@ -227,6 +228,15 @@ if __name__ == "__main__":
             drop_rate = 0.2
         elif regressor_type=="mlp":
             learning_rate = 0.001
+=======
+            learning_rate = 1e-4
+            drop_rate = 0.5
+        elif regressor_type=="cnn":
+            learning_rate = 1e-3
+            drop_rate = 0.2
+        elif regressor_type=="mlp":
+            learning_rate = 1e-3
+>>>>>>> refs/remotes/origin/main
             drop_rate = 0.5
 
         for model_name in model_names:

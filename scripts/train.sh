@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=rnspace_byt5
+#SBATCH --job-name=rnspace_t5
 #SBATCH --gres=gpu:a5000:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1

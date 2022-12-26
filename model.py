@@ -55,10 +55,17 @@ class T5Reggressor(nn.Module):
 
         elif self.regressor == "mlp":
             input_embedding = self.dropout(last_hidden_state)
+<<<<<<< HEAD
             output_1 =self.relu(self.fc_1(input_embedding))
             output_2 = self.relu(self.fc_2(self.dropout(output_1)))
             output_3 = self.relu(self.fc_3(self.dropout(output_2))) 
             outputs = self.fc_last(output_3)
+=======
+            output_1 =self.relu(self.fc_1(self.dropout(input_embedding)))
+            output_2 = self.relu(self.fc_2(output_1))
+            output_3 = self.relu(self.fc_3(output_2)) 
+            outputs = self.fc_last(self.dropout(output_3))
+>>>>>>> refs/remotes/origin/main
             
         elif self.regressor == "gru":
             """using an rnn-based regressor"""
