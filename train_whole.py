@@ -13,7 +13,7 @@ from torch.nn.utils.clip_grad import clip_grad_norm
 
 import matplotlib.pyplot as plt
 
-import evaluate # A Huggingface module that contains most the evaluation metrics (pip install evaluate)
+# import evaluate # A Huggingface module that contains most the evaluation metrics (pip install evaluate)
 from transformers import AdamW
 from transformers import get_linear_schedule_with_warmup
 from transformers import AutoTokenizer, T5EncoderModel, T5Tokenizer
@@ -119,16 +119,14 @@ def train(model, optimizer, scheduler, loss_function,
         )
 
         # Save the trained model for inference 
-        torch.save(model.state_dict(), f"model_checkpoints/main_paper/{property_name}/{model_name}/{regressor_type}/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.pt")
+        torch.save(model.state_dict(), f"model_checkpoints/main_paper/{property_name}/{model_name}/{regressor_type}_whole/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch}_epochs.pt")
 
         # Save stats per epoch
         if (epoch+1) % 10 == 0:
-            saveCSV(pd.DataFrame(data=training_stats), f"statistics/main_paper/{property_name}/{model_name}/{regressor_type}/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
-            saveCSV(pd.DataFrame(validation_predictions), f"statistics/main_paper/{property_name}/{model_name}/{regressor_type}/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
+            saveCSV(pd.DataFrame(data=training_stats), f"statistics/main_paper/{property_name}/{model_name}/{regressor_type}_whole/training_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
+            saveCSV(pd.DataFrame(validation_predictions), f"statistics/main_paper/{property_name}/{model_name}/{regressor_type}_whole/validation_statistics_for_{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_after_{epoch+1}_epochs.csv")
         else:
             continue
-
-        
 
     train_ending_time = time.time()
     total_training_time = train_ending_time-training_starting_time
@@ -245,7 +243,7 @@ if __name__ == "__main__":
             # Load data
             train_dataloader = custom_dataloader(modified_tokenizer, train_data, chunksize, batch_size, order=order)
             valid_dataloader = custom_dataloader(modified_tokenizer, valid_data, chunksize, batch_size, order=order)
-            # test_dataloader = create_dataloaders(tokenizer, test_data, max_length, batch_size)
+            # test_dataloader = custom_dataloader(modified_tokenizer, test_data, chunksize, batch_size, order=order)
 
             # Define the optimizer
             optimizer = AdamW(
@@ -279,7 +277,7 @@ if __name__ == "__main__":
             plt.xlabel("Epochs")
             plt.ylabel("MAE Loss")
             plt.legend()
-            plt.savefig(f"figures/main_paper/{property_name}/{model_name}/{regressor_type}/training_stats.png", dpi=300)
+            plt.savefig(f"figures/main_paper/{property_name}/{model_name}/{regressor_type}_whole/training_stats.png", dpi=300)
             plt.show()
 
             print("-"*100)
