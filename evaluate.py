@@ -10,6 +10,8 @@ import numpy as np
 
 from transformers import AutoTokenizer, T5EncoderModel, T5Tokenizer
 
+from statistics import stdev
+
 from utils import *
 from dataset import create_dataloaders
 from model import T5Reggressor
@@ -125,16 +127,18 @@ if __name__=="__main__":
             averaged_loss = np.mean(test_losses)
             averaged_test_time = np.sum(test_durations)
 
+            confidence_score = stdev(test_losses)
+
             testing_duration.append(time_format(averaged_test_time))
             test_loss.append(averaged_loss)
             test_predictions = {f"{property_value}":averaged_predictions}
 
             print(f"Testing time for {test_name} took {testing_duration}")
             print(f"Test loss for {test_name} for the ablation model_{i+1} is {averaged_loss}")
+            print(f"Confidence score for {test_name} for the ablation model_{i+1} is {confidence_score}")
             print("="*100)
 
             saveCSV(pd.DataFrame(test_predictions), f"statistics/test/{property_name}/t5-small/ablation_model_{i+1}_{test_name}_statistics_for_t5_small_finetuned_{regressor_type}_using_{loss_type}_loss.csv")
         
         writeTEXT(testing_duration, f"statistics/test/{property_name}/t5-small/ablation_model_{i+1}_{test_name}_duration_for_t5_small_finetuned_{regressor_type}_using_{loss_type}.txt")
         writeTEXT(test_loss, f"statistics/test/{property_name}/t5-small/ablation_model_{i+1}_{test_name}_loss_for_t5_small_finetuned_{regressor_type}_using_{loss_type}.txt")
-            
