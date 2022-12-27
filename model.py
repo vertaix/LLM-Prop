@@ -42,15 +42,13 @@ class T5Reggressor(nn.Module):
         self.cnn_fc = nn.Linear(len(filter_sizes) * n_filters, D_out)
 
     def forward(self, input_ids, attention_masks):
-        # print(input_ids.size(), attention_masks.size())
         hidden_states = self.model(input_ids, attention_masks)
-        # print(hidden_states.size())
 
         last_hidden_state = hidden_states.last_hidden_state # [batch_size, input_length, D_in]
 
         if self.regressor == "linear":
             """using a linear regressor"""
-            input_embedding = torch.sum(last_hidden_state, 1)/last_hidden_state.size()[1] # [batch_size, D_in] --> getting the embedding of the output by averaging the embeddings of the output characters 
+            input_embedding = last_hidden_state.mean(dim=1) # [batch_size, D_in] --> getting the embedding of the output by averaging the embeddings of the output characters 
             outputs = self.linear_regressor(input_embedding) # [batch_size, D_out] -->Feed the regression model only the last  hidden state of T5 model
 
         elif self.regressor == "mlp":
