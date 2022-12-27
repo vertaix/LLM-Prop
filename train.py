@@ -177,7 +177,7 @@ if __name__ == "__main__":
     print(f"valid data = {len(valid_data)} samples")
 
     # regressor types
-    regressor_types = ["gru", "cnn", "mlp"] # Default "linear", 
+    regressor_types = ["cnn", "mlp", "gru"] # Default "linear", 
     # regressor_type = "rnn"
 
     # Check if the GPU is available
