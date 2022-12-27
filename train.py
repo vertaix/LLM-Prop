@@ -305,4 +305,4 @@ if __name__ == "__main__":
 
             # # Save the trained model for inference
             # torch.save(model.state_dict(), f"model_checkpoints/{property_name}/{model_name}/ablation/{model_name}_finetuned_{regressor_type}_using_{loss_type}_loss_with_{epochs}_epochs_on_{len(train_data)}_examples.csv.pt")
-
+            torch.cuda.empty_cache()
