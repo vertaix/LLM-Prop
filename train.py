@@ -177,7 +177,7 @@ if __name__ == "__main__":
     print(f"valid data = {len(valid_data)} samples")
 
     # regressor types
-    regressor_types = ["linear", "gru", "cnn", "mlp"] # Default
+    regressor_types = ["gru", "cnn", "mlp"] # Default "linear", 
     # regressor_type = "rnn"
 
     # Check if the GPU is available
@@ -218,7 +218,7 @@ if __name__ == "__main__":
     for regressor_type in regressor_types:
         if regressor_type=="linear":
             learning_rate = 0.001
-            drop_rate = 0.1
+            drop_rate = 0.3
         elif regressor_type=="gru":
             learning_rate = 0.001
             drop_rate = 0.5
