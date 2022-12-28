@@ -31,9 +31,9 @@ def custom_dataloader(tokenizer, dataframe, chunksize, batch_size, order="descen
 
     # reorder the input
     if order=='descending':
-        dataframe.sort_values(by='length', ascending=False)
+        dataframe = dataframe.sort_values(by='length', ascending=False, ignore_index=True)
     elif order=="ascending":
-        dataframe.sort_values(by='length', ascending=True) 
+        dataframe = dataframe.sort_values(by='length', ascending=True, ignore_index=True) 
     elif order=='none':
         dataframe = dataframe
 
