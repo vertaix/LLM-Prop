@@ -1,17 +1,7 @@
 import json
 import datetime
-
-def is_json(json_file):
-    """
-    Checks whether a json file is valid
-    """
-    with open(json_file, "r", encoding="utf-8") as f:
-        sent = f.read().split(":")
-        if len(sent)>=3 and len(sent) < 6:
-            dec = "True"
-        else:
-            dec = "False"
-    return dec
+import torch
+from sklearn.metrics import roc_auc_score
 
 def writeToJSON(data, where_to_save):
     """
@@ -55,4 +45,56 @@ def time_format(total_time):
     total_time_rounded = int(round((total_time)))
     total_time_final = str(datetime.timedelta(seconds=total_time_rounded))
     return total_time_final
+
+def z_normalizer(labels):
+    """ Implement a z-score normalization technique"""
+    labels_mean = torch.mean(labels)
+    labels_std = torch.std(labels)
+
+    scaled_labels = (labels - labels_mean) / labels_std
+
+    return scaled_labels
+
+def z_denormalize(scaled_labels, labels_mean, labels_std):
+    labels = (scaled_labels * labels_std) + labels_mean
+    return labels
+
+def min_max_scaling(labels):
+    """ Implement a min-max normalization technique"""
+    min_val = torch.min(labels)
+    max_val = torch.max(labels)
+    diff = max_val - min_val
+    scaled_labels = (labels - min_val) / diff
+    return scaled_labels
+
+def mm_denormalize(scaled_labels, min_val, max_val):
+    diff = max_val - min_val
+    denorm_labels = (scaled_labels * diff) + min_val
+    return denorm_labels
+
+def log_scaling(labels):
+    """ Implement log-scaling normalization technique"""
+    scaled_labels = torch.log1p(labels)
+    return scaled_labels
+
+def ls_denormalize(scaled_labels):
+    denorm_labels = torch.expm1(scaled_labels)
+    return denorm_labels
+
+def get_roc_score(y_pred, y_true):
+    y_pred = torch.tensor(y_pred)
+    y_true = torch.tensor(y_true)
+    y_pred = torch.round(torch.sigmoid(y_pred))
+    if torch.sum(y_pred)==0.0:
+        roc_score = -1
+    else:
+        roc_score = roc_auc_score(
+            y_pred.detach().cpu().numpy(), 
+            y_true.detach().cpu().numpy()
+        )
+    return roc_score
+
+
+
+
 
