@@ -15,7 +15,8 @@ class T5Predictor(nn.Module):
         n_classes=1, 
         drop_rate=0.1, 
         freeze_base_model=False, 
-        bidirectional=True, pooling='cls'
+        bidirectional=True, 
+        pooling='cls'
     ):
         super(T5Predictor, self).__init__()
         D_in, D_out = base_model_output_size, n_classes
