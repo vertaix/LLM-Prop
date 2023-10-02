@@ -7,7 +7,16 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class T5Predictor(nn.Module):
-    def __init__(self, base_model, base_model_output_size, regressor_type, n_classes=1, drop_rate=0.1, freeze_base_model=False, bidirectional=True, pooling='cls'):
+    def __init__(
+        self, 
+        base_model, 
+        base_model_output_size, 
+        regressor_type, 
+        n_classes=1, 
+        drop_rate=0.1, 
+        freeze_base_model=False, 
+        bidirectional=True, pooling='cls'
+    ):
         super(T5Predictor, self).__init__()
         D_in, D_out = base_model_output_size, n_classes
         self.model = base_model
