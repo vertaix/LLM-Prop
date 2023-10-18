@@ -21,7 +21,6 @@ import matplotlib.pyplot as plt
 # add the progress bar
 from tqdm import tqdm
 
-# import evaluate # A Huggingface module that contains most the evaluation metrics (pip install evaluate)
 from transformers import AdamW
 from transformers import get_linear_schedule_with_warmup, get_cosine_schedule_with_warmup
 from transformers import AutoTokenizer, T5EncoderModel, T5Tokenizer

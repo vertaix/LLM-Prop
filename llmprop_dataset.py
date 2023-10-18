@@ -4,7 +4,6 @@ A function to prepare the dataloaders
 # Import packages
 import glob
 import torch
-# import spacy
 import pandas as pd
 import numpy as np
 from torch.utils.data import DataLoader, TensorDataset

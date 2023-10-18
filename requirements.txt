@@ -1,6 +1,8 @@
-torch==1.12.1
-pandas==1.2.0
-evaluate==0.3.0
+torch==2.0.1+cu117
+pandas==2.0.1
 transformers==4.23.1
 sentencepiece==0.1.97
-spacy==3.4.2
+matplotlib==3.7.1
+tokenizera==0.13.1
+torchmetrics==0.11.4
+sklearn==1.2.2
