@@ -179,9 +179,9 @@ def train(
 
                 # save the best model checkpoint
                 if isinstance(model, nn.DataParallel):
-                    torch.save(model.module.state_dict(), f"checkpoints/{task_name}/best_checkpoint_for_{property}.pt")
+                    torch.save(model.module.state_dict(), f"checkpoints/samples/{task_name}/best_checkpoint_for_{property}.pt")
                 else:
-                    torch.save(model.state_dict(), f"checkpoints/{task_name}/best_checkpoint_for_{property}.pt")
+                    torch.save(model.state_dict(), f"checkpoints/samples/{task_name}/best_checkpoint_for_{property}.pt")
                 
                 # save statistics of the best model
                 training_stats.append(
@@ -200,8 +200,8 @@ def train(
                     }
                 )
 
-                saveCSV(pd.DataFrame(data=training_stats), f"statistics/{task_name}/training_stats_for_{property}.csv")
-                saveCSV(pd.DataFrame(validation_predictions), f"statistics/{task_name}/validation_stats_for_{property}.csv")
+                saveCSV(pd.DataFrame(data=training_stats), f"statistics/samples/{task_name}/training_stats_for_{property}.csv")
+                saveCSV(pd.DataFrame(validation_predictions), f"statistics/samples/{task_name}/validation_stats_for_{property}.csv")
 
             else:
                 best_roc = best_roc
@@ -219,9 +219,9 @@ def train(
 
                 # save the best model checkpoint
                 if isinstance(model, nn.DataParallel):
-                    torch.save(model.module.state_dict(), f"checkpoints/{task_name}/best_checkpoint_for_{property}.pt")
+                    torch.save(model.module.state_dict(), f"checkpoints/samples/{task_name}/best_checkpoint_for_{property}.pt")
                 else:
-                    torch.save(model.state_dict(), f"checkpoints/{task_name}/best_checkpoint_for_{property}.pt")
+                    torch.save(model.state_dict(), f"checkpoints/samples/{task_name}/best_checkpoint_for_{property}.pt")
                 
                 # save statistics of the best model
                 training_stats.append(
@@ -240,8 +240,8 @@ def train(
                     }
                 )
 
-                saveCSV(pd.DataFrame(data=training_stats), f"statistics/{task_name}/training_stats_for_{property}.csv")
-                saveCSV(pd.DataFrame(validation_predictions), f"statistics/{task_name}/validation_stats_for_{property}.csv")
+                saveCSV(pd.DataFrame(data=training_stats), f"statistics/samples/{task_name}/training_stats_for_{property}.csv")
+                saveCSV(pd.DataFrame(validation_predictions), f"statistics/samples/{task_name}/validation_stats_for_{property}.csv")
 
             else:
                 best_loss = best_loss
@@ -311,7 +311,7 @@ def evaluate(
         
     test_predictions = {f"{property}": predictions_list}
 
-    saveCSV(pd.DataFrame(test_predictions), f"statistics/{task_name}/test_stats_for_{property}.csv")
+    saveCSV(pd.DataFrame(test_predictions), f"statistics/samples/{task_name}/test_stats_for_{property}.csv")
         
     if task_name == "classification":
         test_performance = get_roc_score(predictions_list, targets_list)
