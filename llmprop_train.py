@@ -30,10 +30,13 @@ from tokenizers.pre_tokenizers import Whitespace
 pre_tokenizer = Whitespace()
 
 # pre-defined functions
-from model import T5Predictor
-from utils import *
-from dataset import *
-from args_parser import *
+from llmprop_model import T5Predictor
+from llmprop_utils import *
+from llmprop_dataset import *
+from llmprop_args_parser import *
+
+# for metrics
+from torchmetrics.classification import BinaryAUROC
 
 # set the random seed for reproducibility
 torch.manual_seed(42)
@@ -49,7 +52,7 @@ def train(
     train_dataloader, 
     valid_dataloader, 
     device,  
-    normalizer='z_norm'
+    normalizer="z_norm"
 ):
     
     training_starting_time = time.time()
@@ -163,28 +166,30 @@ def train(
             for i in range(len(predictions)):
                 predictions_list.append(predictions[i][0])
                 targets_list.append(targets[i])
+        
+        valid_ending_time = time.time()
+        validation_time = time_format(valid_ending_time-valid_start_time)
 
         # save model checkpoint and the statistics of the epoch where the model performs the best
         if task_name == "classification":
-            # print(len(predictions_list), len(targets_list))
-            valid_roc_score = get_roc_score(predictions_list, targets_list)
+            valid_performance = get_roc_score(predictions_list, targets_list)
             
-            if valid_roc_score >= best_roc:
-                best_roc = valid_roc_score
+            if valid_performance >= best_roc:
+                best_roc = valid_performance
                 best_epoch = epoch+1
 
                 # save the best model checkpoint
                 if isinstance(model, nn.DataParallel):
-                    torch.save(model.module.state_dict(), f"checkpoints/{task_name}/best_checkpoint.pt")
+                    torch.save(model.module.state_dict(), f"checkpoints/{task_name}/best_checkpoint_for_{property}.pt")
                 else:
-                    torch.save(model.state_dict(), f"checkpoints/{task_name}/best_checkpoint.pt")
+                    torch.save(model.state_dict(), f"checkpoints/{task_name}/best_checkpoint_for_{property}.pt")
                 
                 # save statistics of the best model
                 training_stats.append(
                     {
                         "best_epoch": epoch + 1,
                         "training_loss": average_training_loss,
-                        "validation_roc_score": valid_roc_score,
+                        "validation_roc_score": valid_performance,
                         "training time": training_time,
                         "validation time": validation_time
                     }
@@ -196,33 +201,35 @@ def train(
                     }
                 )
 
-                saveCSV(pd.DataFrame(data=training_stats), f"statistics/{task_name}/training_stats.csv")
-                saveCSV(pd.DataFrame(validation_predictions), f"statistics/{task_name}/validation_stats.csv")
+                saveCSV(pd.DataFrame(data=training_stats), f"statistics/{task_name}/training_stats_for_{property}.csv")
+                saveCSV(pd.DataFrame(validation_predictions), f"statistics/{task_name}/validation_stats_for_{property}.csv")
 
             else:
                 best_roc = best_roc
 
+            print(f"Validation roc score = {valid_performance}")
+
         elif task_name == "regression":
             predictions_tensor = torch.tensor(predictions_list)
             targets_tensor = torch.tensor(targets_list)
-            valid_mae_error = mae_loss_function(predictions_tensor.sqeeze(), targets_tensor.sqeeze())
+            valid_performance = mae_loss_function(predictions_tensor.squeeze(), targets_tensor.squeeze())
         
-            if valid_mae_error <= best_loss:
-                best_loss = valid_mae_error
+            if valid_performance <= best_loss:
+                best_loss = valid_performance
                 best_epoch = epoch+1
 
                 # save the best model checkpoint
                 if isinstance(model, nn.DataParallel):
-                    torch.save(model.module.state_dict(), f"checkpoints/{task_name}/best_checkpoint.pt")
+                    torch.save(model.module.state_dict(), f"checkpoints/{task_name}/best_checkpoint_for_{property}.pt")
                 else:
-                    torch.save(model.state_dict(), f"checkpoints/{task_name}/best_checkpoint.pt")
+                    torch.save(model.state_dict(), f"checkpoints/{task_name}/best_checkpoint_for_{property}.pt")
                 
                 # save statistics of the best model
                 training_stats.append(
                     {
                         "best_epoch": epoch + 1,
                         "training mae loss": average_training_loss,
-                        "validation mae loss": valid_mae_error,
+                        "validation mae loss": valid_performance,
                         "training time": training_time,
                         "validation time": validation_time
                     }
@@ -234,26 +241,95 @@ def train(
                     }
                 )
 
-                saveCSV(pd.DataFrame(data=training_stats), f"statistics/{task_name}/training_stats.csv")
-                saveCSV(pd.DataFrame(validation_predictions), f"statistics/{task_name}/validation_stats.csv")
+                saveCSV(pd.DataFrame(data=training_stats), f"statistics/{task_name}/training_stats_for_{property}.csv")
+                saveCSV(pd.DataFrame(validation_predictions), f"statistics/{task_name}/validation_stats_for_{property}.csv")
 
             else:
                 best_loss = best_loss
-
-        valid_ending_time = time.time()
-        validation_time = time_format(valid_ending_time-valid_start_time)
-        print(f"Average validation loss = {average_valid_loss}")
+            
+            print(f"Validation mae error = {valid_performance}")
         print(f"validation took {validation_time}")
-
     train_ending_time = time.time()
     total_training_time = train_ending_time-training_starting_time
 
     print("")
     print("Training complete")
-    print(f"Finetuning {model_name} took {time_format(total_training_time)}")
-    print(f"The lowest valid loss achieved is {best_loss} at {best_epoch} epoch")
+    print(f"Training LLM_Prop on {task_name} prediction took {time_format(total_training_time)}")
+
+    if task_name == "classification":
+        print(f"The lowest roc score achieved on validation set on {property} is {best_roc} at {best_epoch}th epoch")
+
+    elif task_name == "regression":
+        print(f"The lowest mae error achieved on validation set on predicting {property} is {best_loss} at {best_epoch}th epoch")
     
     return training_stats, validation_predictions
+
+def evaluate(
+    model, 
+    mae_loss_function, 
+    test_dataloader, 
+    train_labels_mean, 
+    train_labels_std, 
+    property,
+    normalizer="z_norm"
+):
+    test_start_time = time.time()
+
+    model.eval()
+
+    total_test_loss = 0
+    predictions_list = []
+    targets_list = []
+
+    for step, batch in enumerate(test_dataloader):
+        batch_inputs, batch_masks, batch_labels = tuple(b.to(device) for b in batch)
+
+        with torch.no_grad():
+            _, predictions = model(batch_inputs, batch_masks)
+
+            if task_name == "classification":
+                predictions_denorm = predictions
+
+            elif task_name == "regression":
+                if normalizer == 'z_norm':
+                    predictions_denorm = z_denormalize(predictions, train_labels_mean, train_labels_std)
+
+                elif normalizer == 'mm_norm':
+                    predictions_denorm = mm_denormalize(predictions, train_labels_min, train_labels_max)
+
+                elif normalizer == 'ls_norm':
+                    predictions_denorm = ls_denormalize(predictions)
+
+                elif normalizer == 'no_norm':
+                    predictions_denorm = predictions
+
+        predictions = predictions_denorm.detach().cpu().numpy()
+        targets = batch_labels.detach().cpu().numpy()
+
+        for i in range(len(predictions)):
+            predictions_list.append(predictions[i][0])
+            targets_list.append(targets[i])
+        
+    test_predictions = {f"{property}": predictions_list}
+
+    saveCSV(pd.DataFrame(test_predictions), f"statistics/{task_name}/test_stats_for_{property}.csv")
+        
+    if task_name == "classification":
+        test_performance = get_roc_score(predictions_list, targets_list)
+        print(f"The roc score achieved on test set for predicting {property} is {test_performance}")
+
+    elif task_name == "regression":
+        predictions_tensor = torch.tensor(predictions_list)
+        targets_tensor = torch.tensor(targets_list)
+        test_performance = mae_loss_function(predictions_tensor.squeeze(), targets_tensor.squeeze())
+        print(f"The mae error achieved on test set for predicting {property} is {test_performance}")
+
+    average_test_loss = total_test_loss / len(test_dataloader)
+    test_ending_time = time.time()
+    testing_time = time_format(test_ending_time-test_start_time)
+    print(f"testing took {testing_time}")
+
+    return predictions_list, test_performance
 
 def replace_bond_lengths_with_num(sentence):
     sentence = re.sub(r"\d+(\.\d+)?(?:–\d+(\.\d+)?)?\s*Å", "[NUM]", sentence) # Regex pattern to match bond lengths and units
@@ -323,21 +399,48 @@ if __name__ == "__main__":
     drop_rate = config.get('dr')
     epochs = config.get('epochs')
     warmup_steps = config.get('warmup_steps')
-    dataset_name = config.get('dataset')
+    preprocessing_strategy = config.get('preprocessing_strategy')
     tokenizer_name = config.get('tokenizer')
-    regressor_type = config.get('regressor')
-    loss_type = config.get('loss')
     pooling = config.get('pooling')
     scheduler_type = config.get('scheduler')
     normalizer_type = config.get('normalizer')
     property = config.get('property_name')
     optimizer_type = config.get('optimizer')
-    training_size = config.get('data_size')
     task_name = config.get('task_name')
 
+    if task_name == "classification":
+        if property not in ["is_gap_direct"]:
+            raise Exception("When task_name is 'classification' please set the property name to 'is_gap_direct'")
+    elif task_name == "regression":
+        if property not in ["band_gap", "volume"]:
+            raise Exception("When task_name is 'regression' please set the property name to either 'band_gap' or 'volume'")
+    else:
+        raise Exception("Please set the task_name to either 'regression' or 'classification'")
+
+    if property in ["is_gap_direct"]:
+        if task_name not in ["classification"]:
+            raise Exception("Please set the task_name to a 'classification'")
+    elif property in ["band_gap", "volume"]:
+        if task_name not in ["regression"]:
+            raise Exception("Please set the task_name to a 'regression'")
+    else:
+        raise Exception("Please set the task_name to either 'band_gap', 'volume', or 'is_gap_direct'")
+
     # prepare the data
-    train_data = pd.read_csv("data/textedge_mp22_train.csv")
-    valid_data = pd.read_csv("data/textedge_mp22_valid.csv")
+    train_data = pd.read_csv("data/samples/textedge_prop_mp22_train.csv")
+    valid_data = pd.read_csv("data/samples/textedge_prop_mp22_valid.csv")
+    test_data = pd.read_csv("data/samples/textedge_prop_mp22_test.csv")
+
+    if property == "is_gap_direct":
+        train_data.loc[train_data["is_gap_direct"] == True, "is_gap_direct"] = 1
+        train_data.loc[train_data["is_gap_direct"] == False, "is_gap_direct"] = 0
+        train_data.is_gap_direct = train_data.is_gap_direct.astype(float)
+        valid_data.loc[valid_data["is_gap_direct"] == True, "is_gap_direct"] = 1
+        valid_data.loc[valid_data["is_gap_direct"] == False, "is_gap_direct"] = 0
+        valid_data.is_gap_direct = valid_data.is_gap_direct.astype(float)
+        test_data.loc[test_data["is_gap_direct"] == True, "is_gap_direct"] = 1
+        test_data.loc[test_data["is_gap_direct"] == False, "is_gap_direct"] = 0
+        test_data.is_gap_direct = test_data.is_gap_direct.astype(float)
     
     train_labels_array = np.array(train_data[property])
     train_labels_mean = torch.mean(torch.tensor(train_labels_array))
@@ -345,33 +448,36 @@ if __name__ == "__main__":
     train_labels_min = torch.min(torch.tensor(train_labels_array))
     train_labels_max = torch.max(torch.tensor(train_labels_array))
 
-    if dataset_name == "original":
+    if preprocessing_strategy == "none":
         train_data = train_data
         valid_data = valid_data
 
-    elif dataset_name == "bond_lengths_replaced_with_num":
+    elif preprocessing_strategy == "bond_lengths_replaced_with_num":
         train_data['description'] = train_data['description'].apply(replace_bond_lengths_with_num)
         valid_data['description'] = valid_data['description'].apply(replace_bond_lengths_with_num)
+        test_data['description'] = test_data['description'].apply(replace_bond_lengths_with_num)
         print(train_data['description'][0])
         print('-'*50)
-        print(train_data['description'][100])
+        print(train_data['description'][3])
 
-    elif dataset_name == "bond_angles_replaced_with_ang":
+    elif preprocessing_strategy == "bond_angles_replaced_with_ang":
         train_data['description'] = train_data['description'].apply(replace_bond_angles_with_ang)
         valid_data['description'] = valid_data['description'].apply(replace_bond_angles_with_ang)
+        test_data['description'] = test_data['description'].apply(replace_bond_angles_with_ang) 
         print(train_data['description'][0])
         print('-'*50)
-        print(train_data['description'][100])
+        print(train_data['description'][3])
 
-    elif dataset_name == "no_stopwords":
+    elif preprocessing_strategy == "no_stopwords":
         stopwords = get_cleaned_stopwords()
         train_data['description'] = train_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
         valid_data['description'] = valid_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
+        test_data['description'] = test_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
         print(train_data['description'][0])
         print('-'*50)
-        print(valid_data['description'][1000])
+        print(valid_data['description'][3])
 
-    elif dataset_name == "no_stopwords_and_lengths_and_angles_replaced":
+    elif preprocessing_strategy == "no_stopwords_and_lengths_and_angles_replaced":
         stopwords = get_cleaned_stopwords()
         train_data['description'] = train_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
         train_data['description'] = train_data['description'].apply(replace_bond_lengths_with_num)
@@ -379,9 +485,12 @@ if __name__ == "__main__":
         valid_data['description'] = valid_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
         valid_data['description'] = valid_data['description'].apply(replace_bond_lengths_with_num)
         valid_data['description'] = valid_data['description'].apply(replace_bond_angles_with_ang)
+        test_data['description'] = test_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
+        test_data['description'] = test_data['description'].apply(replace_bond_lengths_with_num)
+        test_data['description'] = test_data['description'].apply(replace_bond_angles_with_ang)
         print(train_data['description'][0])
         print('-'*50)
-        print(valid_data['description'][1000]) 
+        print(valid_data['description'][3]) 
 
     # define loss functions
     mae_loss_function = nn.L1Loss()
@@ -394,22 +503,23 @@ if __name__ == "__main__":
         tokenizer = AutoTokenizer.from_pretrained("t5-small")
 
     elif tokenizer_name == 'modified':
-        tokenizer = AutoTokenizer.from_pretrained("tokenizers/new_pretrained_t5_tokenizer_on_modified_oneC4files_and_mp22_web_descriptions_32k_vocab")
+        tokenizer = AutoTokenizer.from_pretrained("tokenizers/t5_tokenizer_trained_on_modified_part_of_C4_and_textedge")
 
     # add defined special tokens to the tokenizer
     if pooling == 'cls':
         tokenizer.add_tokens(["[CLS]"])
 
-    if dataset_name == "bond_lengths_replaced_with_num":
+    if preprocessing_strategy == "bond_lengths_replaced_with_num":
         tokenizer.add_tokens(["[NUM]"]) # special token to replace bond lengths
     
-    elif dataset_name == "bond_angles_replaced_with_ang":
+    elif preprocessing_strategy == "bond_angles_replaced_with_ang":
         tokenizer.add_tokens(["[ANG]"]) # special token to replace bond angles
 
-    elif dataset_name == "no_stopwords_and_lengths_and_angles_replaced":
+    elif preprocessing_strategy == "no_stopwords_and_lengths_and_angles_replaced":
         tokenizer.add_tokens(["[NUM]"])
         tokenizer.add_tokens(["[ANG]"]) 
-
+    
+    print('-'*50)
     print(f"train data = {len(train_data)} samples")
     print(f"valid data = {len(valid_data)} samples")
     print('-'*50)
@@ -438,7 +548,7 @@ if __name__ == "__main__":
     base_model.resize_token_embeddings(len(tokenizer))
 
     # instantiate the model
-    model = T5Predictor(base_model, base_model_output_size, regressor_type, drop_rate=drop_rate, pooling=pooling)
+    model = T5Predictor(base_model, base_model_output_size, drop_rate=drop_rate, pooling=pooling)
 
     device_ids = [d for d in range(torch.cuda.device_count())]
 
@@ -454,7 +564,7 @@ if __name__ == "__main__":
 
     # create dataloaders
     train_dataloader = create_dataloaders(
-        modified_tokenizer, 
+        tokenizer, 
         train_data, 
         max_length, 
         batch_size, 
@@ -465,8 +575,17 @@ if __name__ == "__main__":
     )
 
     valid_dataloader = create_dataloaders(
-        modified_tokenizer, 
+        tokenizer, 
         valid_data, 
+        max_length, 
+        batch_size, 
+        property_value=property, 
+        pooling=pooling
+    )
+
+    test_dataloader = create_dataloaders(
+        tokenizer, 
+        test_data, 
         max_length, 
         batch_size, 
         property_value=property, 
@@ -522,3 +641,25 @@ if __name__ == "__main__":
 
     training_stats, validation_predictions = train(model, optimizer, scheduler, mae_loss_function, mae_loss_function, 
         epochs, train_dataloader, valid_dataloader, device, normalizer=normalizer_type)
+
+    print("======= Evaluating on test set ========")
+    best_model_path = f"checkpoints/{task_name}/best_checkpoint_for_{property}.pt" 
+    best_model = T5Predictor(base_model, base_model_output_size, drop_rate=drop_rate)
+
+    if torch.cuda.device_count() > 1:
+        print("Testing on", torch.cuda.device_count(), "GPUs!")
+        model = nn.DataParallel(model, device_ids=device_ids).cuda()
+    else:
+        print("No CUDA available! Testing on CPU!")
+        model.to(device)
+
+    if isinstance(best_model, nn.DataParallel):
+        model.module.load_state_dict(torch.load(best_model_path, map_location=torch.device(device)), strict=False)
+    else:
+        best_model.load_state_dict(torch.load(best_model_path, map_location=torch.device(device)), strict=False) 
+        best_model.to(device)
+    
+    _, test_performance = evaluate(best_model, mae_loss_function, test_dataloader, train_labels_mean, train_labels_std, property , normalizer=normalizer_type)
+    
+
+    
