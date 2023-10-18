@@ -1,0 +1,1772 @@
+material_id,formula,structure,description,band_gap,volume,is_gap_direct
+mp-759684,Na3Bi(P2O7)2,"Full Formula (Na6 Bi2 P8 O28)
+Reduced Formula: Na3Bi(P2O7)2
+abc   :   7.407196   9.653420   9.713548
+angles:  80.676875  77.325138  69.812728
+pbc   :       True       True       True
+Sites (44)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Na    0.354808  0.148597  0.273654     0
+  1  Na    0.052445  0.500775  0.16174      0
+  2  Na    0.442534  0.458599  0.331844     0
+  3  Na    0.557466  0.541401  0.668156     0
+  4  Na    0.947555  0.499225  0.83826      0
+  5  Na    0.645192  0.851403  0.726346     0
+  6  Bi    0.880498  0.122289  0.781493     0.026
+  7  Bi    0.119502  0.877711  0.218507     0.026
+  8  P     0.184944  0.135419  0.974543    -0.003
+  9  P     0.728622  0.107706  0.451079    -0.001
+ 10  P     0.413753  0.333757  0.944701    -0
+ 11  P     0.902099  0.341532  0.452732    -0
+ 12  P     0.097901  0.658468  0.547268    -0
+ 13  P     0.586247  0.666243  0.055299    -0
+ 14  P     0.271378  0.892294  0.548921    -0.001
+ 15  P     0.815056  0.864581  0.025457    -0.003
+ 16  O     0.178965  0.034945  0.62393      0.022
+ 17  O     0.122348  0.163012  0.130732     0.054
+ 18  O     0.768567  0.028471  0.043862     0.06
+ 19  O     0.691501  0.077869  0.614313     0.031
+ 20  O     0.036505  0.236592  0.878811     0.047
+ 21  O     0.544461  0.208659  0.397125    -0.018
+ 22  O     0.38316   0.181154  0.91522      0.002
+ 23  O     0.094773  0.356538  0.373379     0.008
+ 24  O     0.410226  0.334228  0.102638    -0.009
+ 25  O     0.896202  0.186569  0.411326     0.017
+ 26  O     0.608183  0.329889  0.847338     0.024
+ 27  O     0.882528  0.324747  0.616476     0.012
+ 28  O     0.241879  0.467371  0.904437     0.004
+ 29  O     0.277972  0.532606  0.585606    -0.003
+ 30  O     0.722028  0.467394  0.414394    -0.003
+ 31  O     0.758121  0.532629  0.095563     0.004
+ 32  O     0.117472  0.675253  0.383524     0.012
+ 33  O     0.391817  0.670111  0.152662     0.024
+ 34  O     0.103798  0.813431  0.588674     0.017
+ 35  O     0.589774  0.665772  0.897362    -0.009
+ 36  O     0.905227  0.643462  0.626621     0.008
+ 37  O     0.61684   0.818846  0.08478      0.002
+ 38  O     0.455539  0.791341  0.602875    -0.018
+ 39  O     0.963495  0.763408  0.121189     0.047
+ 40  O     0.308499  0.922131  0.385687     0.031
+ 41  O     0.231433  0.971529  0.956138     0.06
+ 42  O     0.877652  0.836988  0.869268     0.054
+ 43  O     0.821035  0.965055  0.37607      0.022","Na₃Bi(P₂O₇)₂ crystallizes in the triclinic P̅1 space group. There are three inequivalent Na¹⁺ sites. In the first Na¹⁺ site, Na¹⁺ is bonded to five O²⁻ atoms to form NaO₅ square pyramids that share corners with five PO₄ tetrahedra. There are a spread of Na–O bond distances ranging from 2.30–2.41 Å. In the second Na¹⁺ site, Na¹⁺ is bonded in a 5-coordinate geometry to five O²⁻ atoms. There are a spread of Na–O bond distances ranging from 2.31–2.59 Å. In the third Na¹⁺ site, Na¹⁺ is bonded in a 8-coordinate geometry to eight O²⁻ atoms. There are a spread of Na–O bond distances ranging from 2.29–3.08 Å. Bi⁵⁺ is bonded in a 7-coordinate geometry to seven O²⁻ atoms. There are a spread of Bi–O bond distances ranging from 2.27–2.75 Å. There are four inequivalent P⁵⁺ sites. In the first P⁵⁺ site, P⁵⁺ is bonded to four O²⁻ atoms to form PO₄ tetrahedra that share  a cornercorner with one NaO₅ square pyramid and  a cornercorner with one PO₄ tetrahedra. There are a spread of P–O bond distances ranging from 1.52–1.64 Å. In the second P⁵⁺ site, P⁵⁺ is bonded to four O²⁻ atoms to form PO₄ tetrahedra that share corners with two equivalent NaO₅ square pyramids and  a cornercorner with one PO₄ tetrahedra. There are a spread of P–O bond distances ranging from 1.52–1.62 Å. In the third P⁵⁺ site, P⁵⁺ is bonded to four O²⁻ atoms to form PO₄ tetrahedra that share  a cornercorner with one NaO₅ square pyramid and  a cornercorner with one PO₄ tetrahedra. There are a spread of P–O bond distances ranging from 1.53–1.64 Å. In the fourth P⁵⁺ site, P⁵⁺ is bonded to four O²⁻ atoms to form PO₄ tetrahedra that share  a cornercorner with one NaO₅ square pyramid and  a cornercorner with one PO₄ tetrahedra. There are a spread of P–O bond distances ranging from 1.51–1.63 Å. There are fourteen inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a distorted single-bond geometry to one Bi⁵⁺ and one P⁵⁺ atom. In the second O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to one Na¹⁺, one Bi⁵⁺, and one P⁵⁺ atom. In the third O²⁻ site, O²⁻ is bonded in a distorted single-bond geometry to one Bi⁵⁺ and one P⁵⁺ atom. In the fourth O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to one Na¹⁺, one Bi⁵⁺, and one P⁵⁺ atom. In the fifth O²⁻ site, O²⁻ is bonded in a distorted trigonal planar geometry to one Na¹⁺, one Bi⁵⁺, and one P⁵⁺ atom. In the sixth O²⁻ site, O²⁻ is bonded in a distorted trigonal planar geometry to two Na¹⁺ and one P⁵⁺ atom. In the seventh O²⁻ site, O²⁻ is bonded in a bent 120 degrees geometry to two P⁵⁺ atoms. In the eighth O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to three Na¹⁺ and one P⁵⁺ atom. In the ninth O²⁻ site, O²⁻ is bonded in a 4-coordinate geometry to three Na¹⁺ and one P⁵⁺ atom. In the tenth O²⁻ site, O²⁻ is bonded in a bent 120 degrees geometry to two P⁵⁺ atoms. In the eleventh O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to one Na¹⁺, one Bi⁵⁺, and one P⁵⁺ atom. In the twelfth O²⁻ site, O²⁻ is bonded in a distorted single-bond geometry to one Na¹⁺, one Bi⁵⁺, and one P⁵⁺ atom. In the thirteenth O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to three Na¹⁺ and one P⁵⁺ atom. In the fourteenth O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to two equivalent Na¹⁺ and one P⁵⁺ atom.",0.0,633.1818301532061,False
+mp-1247592,SrCa7Ti2Mn6O23,"Full Formula (Sr1 Ca7 Ti2 Mn6 O23)
+Reduced Formula: SrCa7Ti2Mn6O23
+abc   :   7.682422   7.675267   7.716035
+angles:  89.908571  90.003558  90.002486
+pbc   :       True       True       True
+Sites (39)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Sr    0.255341  0.25662   0.249848     0.005
+  1  Ca    0.263752  0.27201   0.740791     0.007
+  2  Ca    0.257777  0.740374  0.250588     0.006
+  3  Ca    0.262948  0.731633  0.73938      0.007
+  4  Ca    0.744934  0.26305   0.250667     0.007
+  5  Ca    0.739845  0.271462  0.73904      0.007
+  6  Ca    0.745886  0.738952  0.251283     0.007
+  7  Ca    0.738152  0.728744  0.738827     0.007
+  8  Ti    0.999375  0.998317  0.984081     0.045
+  9  Ti    0.503837  0.998271  0.005826    -0.005
+ 10  Mn    0.998927  0.998985  0.502251     3.705
+ 11  Mn    0.999156  0.501133  0.004359     3.266
+ 12  Mn    0.999535  0.501083  0.49615      3.306
+ 13  Mn    0.501667  0.999241  0.497815     3.143
+ 14  Mn    0.500874  0.500532  0.99897      3.224
+ 15  Mn    0.500682  0.50072   0.497653     3.332
+ 16  O     0.994356  0.994873  0.75656      0.033
+ 17  O     0.995282  0.497488  0.250505    -0.04
+ 18  O     0.997367  0.504041  0.749655    -0.046
+ 19  O     0.495562  0.998732  0.25538     -0.02
+ 20  O     0.50504   0.998353  0.751021    -0.021
+ 21  O     0.503034  0.503482  0.249666    -0.032
+ 22  O     0.50174   0.501652  0.749386    -0.054
+ 23  O     0.242804  0.995861  0.034011     0.004
+ 24  O     0.248082  0.995483  0.483557    -0.022
+ 25  O     0.250148  0.504712  0.990229    -0.035
+ 26  O     0.250295  0.502918  0.510973    -0.043
+ 27  O     0.756564  2e-05     0.044368     0.004
+ 28  O     0.751904  0.998721  0.46981     -0.031
+ 29  O     0.74943   0.500543  0.993638    -0.034
+ 30  O     0.749483  0.501787  0.508013    -0.046
+ 31  O     0.997029  0.247997  0.019618    -0.03
+ 32  O     0.994962  0.24769   0.48135     -0.027
+ 33  O     0.997949  0.751551  0.0276      -0.031
+ 34  O     0.999013  0.752649  0.46866     -0.037
+ 35  O     0.500835  0.252098  0.993931    -0.021
+ 36  O     0.502998  0.250107  0.510797    -0.039
+ 37  O     0.501639  0.748171  0.996206    -0.023
+ 38  O     0.501796  0.749943  0.507536    -0.04","SrCa₇Ti₂Mn₆O₂₃ crystallizes in the triclinic P1 space group. Sr²⁺ is bonded in a distorted q6 geometry to eleven O²⁻ atoms. There are a spread of Sr–O bond distances ranging from 2.61–2.77 Å. There are seven inequivalent Ca²⁺ sites. In the first Ca²⁺ site, Ca²⁺ is bonded in a 12-coordinate geometry to twelve O²⁻ atoms. There are a spread of Ca–O bond distances ranging from 2.51–3.10 Å. In the second Ca²⁺ site, Ca²⁺ is bonded in a distorted q6 geometry to eleven O²⁻ atoms. There are a spread of Ca–O bond distances ranging from 2.58–2.75 Å. In the third Ca²⁺ site, Ca²⁺ is bonded in a 12-coordinate geometry to twelve O²⁻ atoms. There are a spread of Ca–O bond distances ranging from 2.49–3.05 Å. In the fourth Ca²⁺ site, Ca²⁺ is bonded in a distorted q6 geometry to eleven O²⁻ atoms. There are a spread of Ca–O bond distances ranging from 2.57–2.79 Å. In the fifth Ca²⁺ site, Ca²⁺ is bonded in a 11-coordinate geometry to eleven O²⁻ atoms. There are a spread of Ca–O bond distances ranging from 2.51–2.95 Å. In the sixth Ca²⁺ site, Ca²⁺ is bonded in a distorted q6 geometry to eleven O²⁻ atoms. There are a spread of Ca–O bond distances ranging from 2.56–2.77 Å. In the seventh Ca²⁺ site, Ca²⁺ is bonded in a 11-coordinate geometry to eleven O²⁻ atoms. There are a spread of Ca–O bond distances ranging from 2.49–3.00 Å. There are two inequivalent Ti⁴⁺ sites. In the first Ti⁴⁺ site, Ti⁴⁺ is bonded to five O²⁻ atoms to form TiO₅ trigonal bipyramids that share corners with two equivalent TiO₆ octahedra, corners with two equivalent MnO₆ octahedra, and  a cornercorner with one MnO₅ square pyramid. The corner-sharing octahedral tilt angles range from 12–23°. There are a spread of Ti–O bond distances ranging from 1.76–1.94 Å. In the second Ti⁴⁺ site, Ti⁴⁺ is bonded to six O²⁻ atoms to form TiO₆ octahedra that share corners with four MnO₆ octahedra and corners with two equivalent TiO₅ trigonal bipyramids. The corner-sharing octahedral tilt angles range from 1–4°. There are a spread of Ti–O bond distances ranging from 1.92–2.02 Å. There are two inequivalent Mn³⁺ sites. In the first Mn³⁺ site, Mn³⁺ is bonded to five O²⁻ atoms to form MnO₅ square pyramids that share corners with two equivalent MnO₆ octahedra, corners with two equivalent MnO₆ octahedra, and  a cornercorner with one TiO₅ trigonal bipyramid. The corner-sharing octahedral tilt angles range from 8–14°. There are a spread of Mn–O bond distances ranging from 1.91–1.96 Å. In the second Mn³⁺ site, Mn³⁺ is bonded to six O²⁻ atoms to form MnO₆ octahedra that share corners with four MnO₆ octahedra and corners with two equivalent MnO₅ square pyramids. The corner-sharing octahedral tilt angles range from 2–7°. There are a spread of Mn–O bond distances ranging from 1.90–1.96 Å. There are four inequivalent Mn⁴⁺ sites. In the first Mn⁴⁺ site, Mn⁴⁺ is bonded to six O²⁻ atoms to form MnO₆ octahedra that share corners with two equivalent MnO₆ octahedra, corners with two equivalent MnO₆ octahedra, and corners with two equivalent TiO₅ trigonal bipyramids. The corner-sharing octahedral tilt angles range from 2–6°. There are a spread of Mn–O bond distances ranging from 1.90–1.97 Å. In the second Mn⁴⁺ site, Mn⁴⁺ is bonded to six O²⁻ atoms to form MnO₆ octahedra that share corners with two equivalent TiO₆ octahedra, corners with two equivalent MnO₆ octahedra, and corners with two equivalent MnO₅ square pyramids. The corner-sharing octahedral tilt angles range from 1–6°. There are a spread of Mn–O bond distances ranging from 1.87–1.95 Å. In the third Mn⁴⁺ site, Mn⁴⁺ is bonded to six O²⁻ atoms to form MnO₆ octahedra that share corners with two equivalent TiO₆ octahedra and corners with four MnO₆ octahedra. The corner-sharing octahedral tilt angles range from 1–6°. There are a spread of Mn–O bond distances ranging from 1.90–1.93 Å. In the fourth Mn⁴⁺ site, Mn⁴⁺ is bonded to six O²⁻ atoms to form MnO₆ octahedra that share corners with two equivalent MnO₆ octahedra and corners with four MnO₆ octahedra. The corner-sharing octahedral tilt angles range from 1–7°. There are a spread of Mn–O bond distances ranging from 1.91–1.94 Å. There are twenty-three inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a distorted linear geometry to four Ca²⁺, one Ti⁴⁺, and one Mn³⁺ atom. In the second O²⁻ site, O²⁻ is bonded in a distorted linear geometry to one Sr²⁺, three Ca²⁺, one Mn³⁺, and one Mn⁴⁺ atom. In the third O²⁻ site, O²⁻ is bonded in a distorted linear geometry to four Ca²⁺, one Mn³⁺, and one Mn⁴⁺ atom. In the fourth O²⁻ site, O²⁻ is bonded in a distorted linear geometry to one Sr²⁺, three Ca²⁺, one Ti⁴⁺, and one Mn⁴⁺ atom. In the fifth O²⁻ site, O²⁻ is bonded in a distorted linear geometry to four Ca²⁺, one Ti⁴⁺, and one Mn⁴⁺ atom. In the sixth O²⁻ site, O²⁻ is bonded to one Sr²⁺, three Ca²⁺, and two Mn⁴⁺ atoms to form distorted corner-sharing OSrCa₃Mn₂ octahedra. The corner-sharing octahedral tilt angles are 1°. In the seventh O²⁻ site, O²⁻ is bonded to four Ca²⁺ and two Mn⁴⁺ atoms to form distorted corner-sharing OCa₄Mn₂ octahedra. The corner-sharing octahedral tilt angles are 1°. In the eighth O²⁻ site, O²⁻ is bonded in a 4-coordinate geometry to one Sr²⁺, three Ca²⁺, and two Ti⁴⁺ atoms. In the ninth O²⁻ site, O²⁻ is bonded in a distorted linear geometry to one Sr²⁺, three Ca²⁺, one Mn³⁺, and one Mn⁴⁺ atom. In the tenth O²⁻ site, O²⁻ is bonded in a distorted linear geometry to one Sr²⁺, three Ca²⁺, and two Mn⁴⁺ atoms. In the eleventh O²⁻ site, O²⁻ is bonded in a 6-coordinate geometry to one Sr²⁺, three Ca²⁺, one Mn³⁺, and one Mn⁴⁺ atom. In the twelfth O²⁻ site, O²⁻ is bonded in a 4-coordinate geometry to two Ca²⁺ and two Ti⁴⁺ atoms. In the thirteenth O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to four Ca²⁺, one Mn³⁺, and one Mn⁴⁺ atom. In the fourteenth O²⁻ site, O²⁻ is bonded in a distorted linear geometry to four Ca²⁺ and two Mn⁴⁺ atoms. In the fifteenth O²⁻ site, O²⁻ is bonded in a 6-coordinate geometry to four Ca²⁺, one Mn³⁺, and one Mn⁴⁺ atom. In the sixteenth O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to one Sr²⁺, three Ca²⁺, one Ti⁴⁺, and one Mn⁴⁺ atom. In the seventeenth O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to one Sr²⁺, three Ca²⁺, and two Mn³⁺ atoms. In the eighteenth O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to four Ca²⁺, one Ti⁴⁺, and one Mn⁴⁺ atom. In the nineteenth O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to four Ca²⁺ and two Mn³⁺ atoms. In the twentieth O²⁻ site, O²⁻ is bonded in a distorted linear geometry to one Sr²⁺, three Ca²⁺, one Ti⁴⁺, and one Mn⁴⁺ atom. In the twenty-first O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to one Sr²⁺, three Ca²⁺, and two Mn⁴⁺ atoms. In the twenty-second O²⁻ site, O²⁻ is bonded in a distorted linear geometry to four Ca²⁺, one Ti⁴⁺, and one Mn⁴⁺ atom. In the twenty-third O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to four Ca²⁺ and two Mn⁴⁺ atoms.",0.0,454.9726996861154,False
+mp-756904,LiLa4FeO8,"Full Formula (Li2 La8 Fe2 O16)
+Reduced Formula: LiLa4FeO8
+abc   :   6.902429   7.740046   7.740431
+angles:  89.991912  73.715232 106.258754
+pbc   :       True       True       True
+Sites (28)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Li    0.996007  0.999364  0.002183     0
+  1  Li    0.995999  0.499361  0.502184    -0
+  2  La    0.725647  0.182379  0.3212      -0.009
+  3  La    0.725642  0.682378  0.821204     0.009
+  4  La    0.269608  0.315464  0.183368     0.009
+  5  La    0.2696    0.815471  0.683373    -0.009
+  6  La    0.723226  0.1815    0.819816     0
+  7  La    0.723227  0.681505  0.319821    -0
+  8  La    0.272067  0.818989  0.182789     0
+  9  La    0.27207   0.318994  0.682778    -0
+ 10  Fe    0.997389  0.999754  0.501913    -4.261
+ 11  Fe    0.997387  0.499761  0.00191      4.261
+ 12  O     0.630661  0.40477   0.592554    -0
+ 13  O     0.630662  0.904771  0.092557     0
+ 14  O     0.365204  0.093303  0.914246     0
+ 15  O     0.365202  0.593304  0.414249    -0
+ 16  O     0.647868  0.415547  0.089172     0.07
+ 17  O     0.647872  0.915548  0.58917     -0.07
+ 18  O     0.34768   0.088996  0.410164    -0.069
+ 19  O     0.347677  0.588999  0.910159     0.069
+ 20  O     0.997011  0.250103  0.004177     0.104
+ 21  O     0.997007  0.750103  0.50418     -0.104
+ 22  O     0.999691  0.497724  0.250714     0.104
+ 23  O     0.999688  0.997724  0.750717    -0.104
+ 24  O     0.99553   0.501337  0.752897     0.104
+ 25  O     0.995534  0.001336  0.252896    -0.103
+ 26  O     0.998599  0.749581  0.999523     0.104
+ 27  O     0.9986    0.249585  0.49952     -0.104","LiLa₄FeO₈ is (La,Ba)CuO4-derived structured and crystallizes in the triclinic P1 space group. Li¹⁺ is bonded to six O²⁻ atoms to form LiO₆ octahedra that share corners with four equivalent FeO₆ octahedra. The corner-sharing octahedral tilt angles range from 1–2°. There are a spread of Li–O bond distances ranging from 1.94–2.34 Å. There are four inequivalent La³⁺ sites. In the first La³⁺ site, La³⁺ is bonded in a 9-coordinate geometry to nine O²⁻ atoms. There are a spread of La–O bond distances ranging from 2.40–2.84 Å. In the second La³⁺ site, La³⁺ is bonded in a 9-coordinate geometry to nine O²⁻ atoms. There are a spread of La–O bond distances ranging from 2.40–2.85 Å. In the third La³⁺ site, La³⁺ is bonded in a 9-coordinate geometry to nine O²⁻ atoms. There are a spread of La–O bond distances ranging from 2.27–2.82 Å. In the fourth La³⁺ site, La³⁺ is bonded in a 9-coordinate geometry to nine O²⁻ atoms. There are a spread of La–O bond distances ranging from 2.27–2.82 Å. Fe³⁺ is bonded to six O²⁻ atoms to form FeO₆ octahedra that share corners with four equivalent LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 1–2°. There are four shorter (1.93 Å) and two longer (2.22 Å) Fe–O bond lengths. There are eight inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a 6-coordinate geometry to one Li¹⁺ and five La³⁺ atoms. In the second O²⁻ site, O²⁻ is bonded in a 6-coordinate geometry to one Li¹⁺ and five La³⁺ atoms. In the third O²⁻ site, O²⁻ is bonded to five La³⁺ and one Fe³⁺ atom to form distorted OLa₅Fe octahedra that share corners with seventeen OLa₅Fe octahedra, edges with two equivalent OLa₅Fe octahedra, and faces with four OLiLa₄Fe octahedra. The corner-sharing octahedral tilt angles range from 1–51°. In the fourth O²⁻ site, O²⁻ is bonded to five La³⁺ and one Fe³⁺ atom to form distorted OLa₅Fe octahedra that share corners with seventeen OLa₅Fe octahedra, edges with two equivalent OLa₅Fe octahedra, and faces with four OLiLa₄Fe octahedra. The corner-sharing octahedral tilt angles range from 1–51°. In the fifth O²⁻ site, O²⁻ is bonded to one Li¹⁺, four La³⁺, and one Fe³⁺ atom to form distorted OLiLa₄Fe octahedra that share corners with eight OLa₅Fe octahedra, edges with two equivalent OLiLa₄Fe octahedra, and faces with six OLa₅Fe octahedra. The corner-sharing octahedral tilt angles range from 0–50°. In the sixth O²⁻ site, O²⁻ is bonded to one Li¹⁺, four La³⁺, and one Fe³⁺ atom to form distorted OLiLa₄Fe octahedra that share corners with eight OLa₅Fe octahedra, edges with two equivalent OLiLa₄Fe octahedra, and faces with six OLa₅Fe octahedra. The corner-sharing octahedral tilt angles range from 0–51°. In the seventh O²⁻ site, O²⁻ is bonded to one Li¹⁺, four La³⁺, and one Fe³⁺ atom to form distorted OLiLa₄Fe octahedra that share corners with eight OLa₅Fe octahedra, edges with two equivalent OLiLa₄Fe octahedra, and faces with six OLa₅Fe octahedra. The corner-sharing octahedral tilt angles range from 0–51°. In the eighth O²⁻ site, O²⁻ is bonded to one Li¹⁺, four La³⁺, and one Fe³⁺ atom to form distorted OLiLa₄Fe octahedra that share corners with eight OLa₅Fe octahedra, edges with two equivalent OLiLa₄Fe octahedra, and faces with six OLa₅Fe octahedra. The corner-sharing octahedral tilt angles range from 0–51°.",0.4621999999999993,379.676993211356,False
+mp-40866,CaLaTiMnO6,"Full Formula (Ca4 La4 Ti4 Mn4 O24)
+Reduced Formula: CaLaTiMnO6
+abc   :   7.947359   9.409047   7.947359
+angles: 114.090304  91.113777 114.090304
+pbc   :       True       True       True
+Sites (40)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Ca    0.106253  0.250932  0.654742     0.001
+  1  Ca    0.606253  0.250932  0.154742    -0.001
+  2  Ca    0.904742  0.750932  0.856253     0.001
+  3  Ca    0.404742  0.750932  0.356253    -0.001
+  4  La    0.600987  0.250028  0.640605     0.002
+  5  La    0.100987  0.250028  0.140605    -0.002
+  6  La    0.390605  0.750028  0.850987    -0.002
+  7  La    0.890605  0.750028  0.350987     0.002
+  8  Ti    0.24931   0.001188  0.75074     -0.008
+  9  Ti    0.74931   0.001188  0.25074      0.008
+ 10  Ti    0.00074   0.501188  0.99931     -0.008
+ 11  Ti    0.50074   0.501188  0.49931      0.008
+ 12  Mn    0.499282  0.499297  0.999888    -3.815
+ 13  Mn    0.249888  0.999297  0.249282    -3.814
+ 14  Mn    0.999282  0.499297  0.499888     3.814
+ 15  Mn    0.749888  0.999297  0.749282     3.814
+ 16  O     0.572399  0.745367  0.095846     0.021
+ 17  O     0.072399  0.745367  0.595846    -0.021
+ 18  O     0.845846  0.245367  0.822399    -0.021
+ 19  O     0.345846  0.245367  0.322399     0.021
+ 20  O     0.026301  0.040478  0.80986      0.004
+ 21  O     0.526301  0.040478  0.30986     -0.004
+ 22  O     0.05986   0.540478  0.776301     0.004
+ 23  O     0.55986   0.540478  0.276301    -0.004
+ 24  O     0.219261  0.458091  0.016909    -0.017
+ 25  O     0.719261  0.458091  0.516909     0.017
+ 26  O     0.266909  0.958091  0.969261    -0.017
+ 27  O     0.766909  0.958091  0.469261     0.017
+ 28  O     0.229207  0.044042  0.532953    -0.022
+ 29  O     0.729207  0.044042  0.032953     0.022
+ 30  O     0.282953  0.544042  0.479207     0.022
+ 31  O     0.782953  0.544042  0.979207    -0.022
+ 32  O     0.43699   0.456389  0.720303    -0.01
+ 33  O     0.93699   0.456389  0.220303     0.01
+ 34  O     0.470303  0.956389  0.68699      0.01
+ 35  O     0.970303  0.956389  0.18699     -0.01
+ 36  O     0.659109  0.754187  0.679055    -0.022
+ 37  O     0.159109  0.754187  0.179055     0.022
+ 38  O     0.929055  0.254187  0.409109    -0.022
+ 39  O     0.429055  0.254187  0.909109     0.022","CaLaTiMnO₆ is Orthorhombic Perovskite-derived structured and crystallizes in the monoclinic Pc space group. Ca²⁺ is bonded in a 8-coordinate geometry to eight O²⁻ atoms. There are a spread of Ca–O bond distances ranging from 2.39–2.74 Å. La³⁺ is bonded in a 8-coordinate geometry to eight O²⁻ atoms. There are a spread of La–O bond distances ranging from 2.41–2.74 Å. Ti⁴⁺ is bonded to six O²⁻ atoms to form TiO₆ octahedra that share corners with six equivalent MnO₆ octahedra. The corner-sharing octahedral tilt angles range from 25–29°. There are a spread of Ti–O bond distances ranging from 1.95–2.01 Å. Mn³⁺ is bonded to six O²⁻ atoms to form MnO₆ octahedra that share corners with six equivalent TiO₆ octahedra. The corner-sharing octahedral tilt angles range from 25–29°. There are a spread of Mn–O bond distances ranging from 1.93–2.14 Å. There are six inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a 4-coordinate geometry to one Ca²⁺, one La³⁺, one Ti⁴⁺, and one Mn³⁺ atom. In the second O²⁻ site, O²⁻ is bonded in a 5-coordinate geometry to two equivalent Ca²⁺, one La³⁺, one Ti⁴⁺, and one Mn³⁺ atom. In the third O²⁻ site, O²⁻ is bonded in a 5-coordinate geometry to two equivalent Ca²⁺, one La³⁺, one Ti⁴⁺, and one Mn³⁺ atom. In the fourth O²⁻ site, O²⁻ is bonded in a 5-coordinate geometry to one Ca²⁺, two equivalent La³⁺, one Ti⁴⁺, and one Mn³⁺ atom. In the fifth O²⁻ site, O²⁻ is bonded in a 5-coordinate geometry to one Ca²⁺, two equivalent La³⁺, one Ti⁴⁺, and one Mn³⁺ atom. In the sixth O²⁻ site, O²⁻ is bonded in a 4-coordinate geometry to one Ca²⁺, one La³⁺, one Ti⁴⁺, and one Mn³⁺ atom.",0.2435999999999998,482.7698458919486,False
+mp-862916,PmInCu2,"Full Formula (Pm1 In1 Cu2)
+Reduced Formula: PmInCu2
+abc   :   4.735664   4.738558   4.736139
+angles:  60.045305  59.978097  59.957822
+pbc   :       True       True       True
+Sites (4)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Pm    0.750042  0.750003  0.749975        -0
+  1  In    0.249981  0.249974  0.250036         0
+  2  Cu    0.501321  0.499883  0.499651        -0
+  3  Cu    0.998654  0.000139  0.000337        -0",PmCu₂In is Heusler structured and crystallizes in the cubic Fm̅3m space group. Pm is bonded in a distorted body-centered cubic geometry to eight equivalent Cu and six equivalent In atoms. All Pm–Cu bond lengths are 2.92 Å. All Pm–In bond lengths are 3.37 Å. Cu is bonded in a body-centered cubic geometry to four equivalent Pm and four equivalent In atoms. All Cu–In bond lengths are 2.92 Å. In is bonded in a 14-coordinate geometry to six equivalent Pm and eight equivalent Cu atoms.,0.0,75.14053716266976,False
+mp-1227348,Be4NbMo,"Full Formula (Be8 Nb2 Mo2)
+Reduced Formula: Be4NbMo
+abc   :   4.542847   4.542847   7.411919
+angles:  90.000000  90.000000 120.000019
+pbc   :       True       True       True
+Sites (12)
+  #  SP            a          b         c    magmom
+---  ----  ---------  ---------  --------  --------
+  0  Be    -0         -0         0.5             -0
+  1  Be    -0         -0         0               -0
+  2  Be     0.828994   0.171006  0.254389        -0
+  3  Be     0.828994   0.657989  0.254389        -0
+  4  Be     0.342011   0.171006  0.254389        -0
+  5  Be     0.171006   0.828994  0.745611        -0
+  6  Be     0.171006   0.342011  0.745611        -0
+  7  Be     0.657989   0.828994  0.745611        -0
+  8  Nb     0.666667   0.333333  0.929725         0
+  9  Nb     0.333333   0.666667  0.070275         0
+ 10  Mo     0.333333   0.666667  0.440666         0
+ 11  Mo     0.666667   0.333333  0.559334         0","Be₄NbMo crystallizes in the trigonal P̅3m1 space group. There are three inequivalent Be sites. In the first Be site, Be is bonded to six equivalent Be and six equivalent Mo atoms to form BeBe₆Mo₆ cuboctahedra that share corners with twelve equivalent BeBe₆Nb₃Mo₃ cuboctahedra, edges with six equivalent BeBe₆Mo₆ cuboctahedra, and faces with twenty BeBe₆Nb₆ cuboctahedra. All Be–Be bond lengths are 2.25 Å. All Be–Mo bond lengths are 2.66 Å. In the second Be site, Be is bonded to six equivalent Be and six equivalent Nb atoms to form BeBe₆Nb₆ cuboctahedra that share corners with twelve equivalent BeBe₆Nb₃Mo₃ cuboctahedra, edges with six equivalent BeBe₆Nb₆ cuboctahedra, and faces with twenty BeBe₆Mo₆ cuboctahedra. All Be–Be bond lengths are 2.32 Å. All Be–Nb bond lengths are 2.67 Å. In the third Be site, Be is bonded to six Be, three equivalent Nb, and three equivalent Mo atoms to form distorted BeBe₆Nb₃Mo₃ cuboctahedra that share corners with eighteen BeBe₆Mo₆ cuboctahedra, edges with six equivalent BeBe₆Nb₃Mo₃ cuboctahedra, and faces with eighteen BeBe₆Mo₆ cuboctahedra. There are two shorter (2.22 Å) and two longer (2.33 Å) Be–Be bond lengths. There are two shorter (2.66 Å) and one longer (2.74 Å) Be–Nb bond length. There is one shorter (2.60 Å) and two longer (2.65 Å) Be–Mo bond lengths. Nb is bonded in a 16-coordinate geometry to twelve Be, three equivalent Nb, and one Mo atom. All Nb–Nb bond lengths are 2.82 Å. The Nb–Mo bond length is 2.73 Å. Mo is bonded in a 13-coordinate geometry to twelve Be and one Nb atom.",0.0,132.46996396015678,False
+mp-1517987,KNd(FeO3)4,"Full Formula (K1 Nd1 Fe4 O12)
+Reduced Formula: KNd(FeO3)4
+abc   :   5.418422   5.418422   7.666431
+angles:  90.000000  90.000000  89.554616
+pbc   :       True       True       True
+Sites (18)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  K     0.004687  0.004687  0           -0.001
+  1  Nd    0.491835  0.491835  0.5          0.003
+  2  Fe    0.500971  0.998163  0.754087     3.796
+  3  Fe    0.500971  0.998163  0.245913     3.797
+  4  Fe    0.998163  0.500971  0.245913     3.816
+  5  Fe    0.998163  0.500971  0.754087     3.816
+  6  O     0.749145  0.251231  0.733532     0.293
+  7  O     0.251231  0.749145  0.733532     0.29
+  8  O     0.251231  0.749145  0.266468     0.294
+  9  O     0.749145  0.251231  0.266468     0.287
+ 10  O     0.7314    0.7314    0.722676     0.236
+ 11  O     0.270685  0.270685  0.752371     0.309
+ 12  O     0.270685  0.270685  0.247629     0.285
+ 13  O     0.7314    0.7314    0.277324     0.256
+ 14  O     0.509897  0.984381  0            0.342
+ 15  O     0.485206  0.022708  0.5          0.268
+ 16  O     0.984381  0.509897  0            0.359
+ 17  O     0.022708  0.485206  0.5          0.26","KNd(FeO₃)₄ crystallizes in the orthorhombic Amm2 space group. K is bonded to twelve O atoms to form KO₁₂ cuboctahedra that share corners with four equivalent KO₁₂ cuboctahedra, corners with eight equivalent NdO₁₂ cuboctahedra, and faces with eight equivalent FeO₆ octahedra. There are a spread of K–O bond distances ranging from 2.68–2.99 Å. Nd is bonded to twelve O atoms to form distorted NdO₁₂ cuboctahedra that share corners with four equivalent NdO₁₂ cuboctahedra, corners with eight equivalent KO₁₂ cuboctahedra, and faces with eight equivalent FeO₆ octahedra. There are a spread of Nd–O bond distances ranging from 2.51–2.88 Å. Fe is bonded to six O atoms to form FeO₆ octahedra that share corners with six equivalent FeO₆ octahedra, faces with two equivalent KO₁₂ cuboctahedra, and faces with two equivalent NdO₁₂ cuboctahedra. The corner-sharing octahedral tilt angles range from 5–17°. There are a spread of Fe–O bond distances ranging from 1.89–1.95 Å. There are five inequivalent O sites. In the first O site, O is bonded in a distorted rectangular see-saw-like geometry to one K, one Nd, and two equivalent Fe atoms. In the second O site, O is bonded in a 2-coordinate geometry to one K, one Nd, and two equivalent Fe atoms. In the third O site, O is bonded in a distorted square co-planar geometry to one K, one Nd, and two equivalent Fe atoms. In the fourth O site, O is bonded in a distorted square co-planar geometry to two equivalent K and two equivalent Fe atoms. In the fifth O site, O is bonded in a 2-coordinate geometry to two equivalent Nd and two equivalent Fe atoms.",0.0,225.07425081987145,False
+mp-1103473,CsCrP2S7,"Full Formula (Cs1 Cr1 P2 S7)
+Reduced Formula: CsCrP2S7
+abc   :   6.541494   6.541494   7.062876
+angles:  85.208761  85.208761  96.743896
+pbc   :       True       True       True
+Sites (11)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Cs    0.103493  0.896507  0            0.002
+  1  Cr    0.512797  0.487203  0.5          2.787
+  2  P     0.658732  0.940124  0.573229     0.014
+  3  P     0.059876  0.341268  0.426771     0.014
+  4  S     0.641964  0.67815   0.755525    -0.013
+  5  S     0.32185   0.358036  0.244475    -0.013
+  6  S     0.524671  0.83501   0.34376     -0.021
+  7  S     0.16499   0.475329  0.65624     -0.021
+  8  S     0.547391  0.173879  0.705132    -0.016
+  9  S     0.826121  0.452609  0.294868    -0.016
+ 10  S     0.988466  0.011534  0.5          0.012","CsCrP₂S₇ crystallizes in the monoclinic C2 space group. Cs¹⁺ is bonded in a 8-coordinate geometry to eight S²⁻ atoms. There are a spread of Cs–S bond distances ranging from 3.63–3.86 Å. Cr³⁺ is bonded to six S²⁻ atoms to form CrS₆ octahedra that share corners with two equivalent PS₄ tetrahedra and edges with two equivalent PS₄ tetrahedra. There are four shorter (2.43 Å) and two longer (2.45 Å) Cr–S bond lengths. P⁵⁺ is bonded to four S²⁻ atoms to form PS₄ tetrahedra that share  a cornercorner with one CrS₆ octahedra,  a cornercorner with one PS₄ tetrahedra, and  an edgeedge with one CrS₆ octahedra. The corner-sharing octahedral tilt angles are 64°. There are a spread of P–S bond distances ranging from 2.03–2.16 Å. There are four inequivalent S²⁻ sites. In the first S²⁻ site, S²⁻ is bonded in a distorted L-shaped geometry to one Cs¹⁺, one Cr³⁺, and one P⁵⁺ atom. In the second S²⁻ site, S²⁻ is bonded in a distorted L-shaped geometry to one Cs¹⁺, one Cr³⁺, and one P⁵⁺ atom. In the third S²⁻ site, S²⁻ is bonded in a distorted bent 120 degrees geometry to one Cs¹⁺, one Cr³⁺, and one P⁵⁺ atom. In the fourth S²⁻ site, S²⁻ is bonded in a distorted water-like geometry to two equivalent Cs¹⁺ and two equivalent P⁵⁺ atoms.",1.0727000000000002,297.7554663709054,False
+mp-1522264,EuZrFeBiO6,"Full Formula (Eu1 Zr1 Fe1 Bi1 O6)
+Reduced Formula: EuZrFeBiO6
+abc   :   5.747174   5.747174   5.747174
+angles:  60.000000  60.000000  60.000000
+pbc   :       True       True       True
+Sites (10)
+  #  SP            a         b         c    magmom
+---  ----  ---------  --------  --------  --------
+  0  Eu     0.75      0.75      0.75         6.712
+  1  Zr     0.5       0.5       0.5          0.077
+  2  Fe    -0         0         0            4.366
+  3  Bi     0.25      0.25      0.25         0.041
+  4  O      0.755489  0.244511  0.244511     0.075
+  5  O      0.244511  0.755489  0.755489     0.068
+  6  O      0.755489  0.244511  0.755489     0.076
+  7  O      0.244511  0.755489  0.244511     0.07
+  8  O      0.755489  0.755489  0.244511     0.083
+  9  O      0.244511  0.244511  0.755489     0.07","EuZrFeBiO₆ is (Cubic) Perovskite-derived structured and crystallizes in the cubic F̅43m space group. Eu²⁺ is bonded to twelve equivalent O²⁻ atoms to form EuO₁₂ cuboctahedra that share corners with twelve equivalent EuO₁₂ cuboctahedra, faces with six equivalent BiO₁₂ cuboctahedra, faces with four equivalent ZrO₆ octahedra, and faces with four equivalent FeO₆ octahedra. All Eu–O bond lengths are 2.87 Å. Zr⁴⁺ is bonded to six equivalent O²⁻ atoms to form ZrO₆ octahedra that share corners with six equivalent FeO₆ octahedra, faces with four equivalent EuO₁₂ cuboctahedra, and faces with four equivalent BiO₁₂ cuboctahedra. The corner-sharing octahedra are not tilted. All Zr–O bond lengths are 2.08 Å. Fe³⁺ is bonded to six equivalent O²⁻ atoms to form FeO₆ octahedra that share corners with six equivalent ZrO₆ octahedra, faces with four equivalent EuO₁₂ cuboctahedra, and faces with four equivalent BiO₁₂ cuboctahedra. The corner-sharing octahedra are not tilted. All Fe–O bond lengths are 1.99 Å. Bi³⁺ is bonded to twelve equivalent O²⁻ atoms to form BiO₁₂ cuboctahedra that share corners with twelve equivalent BiO₁₂ cuboctahedra, faces with six equivalent EuO₁₂ cuboctahedra, faces with four equivalent ZrO₆ octahedra, and faces with four equivalent FeO₆ octahedra. All Bi–O bond lengths are 2.87 Å. O²⁻ is bonded in a distorted linear geometry to two equivalent Eu²⁺, one Zr⁴⁺, one Fe³⁺, and two equivalent Bi³⁺ atoms.",0.0,134.2295527573515,False
+mp-1392021,AlTe(WO4)2,"Full Formula (Al1 Te1 W2 O8)
+Reduced Formula: AlTe(WO4)2
+abc   :   4.893024   5.127664   8.244685
+angles: 106.111623  94.068077 104.696759
+pbc   :       True       True       True
+Sites (12)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Al    0.5       0         0.5          0.009
+  1  Te    0         0.5       0            0.57
+  2  W     0.260608  0.362268  0.636407     0.891
+  3  W     0.739392  0.637732  0.363593     0.891
+  4  O     0.398942  0.038057  0.694442     0.023
+  5  O     0.192022  0.362737  0.837446     0.09
+  6  O     0.385328  0.357334  0.387216    -0.071
+  7  O     0.132083  0.74775   0.471237    -0.037
+  8  O     0.807978  0.637263  0.162554     0.09
+  9  O     0.601058  0.961943  0.305558     0.023
+ 10  O     0.614672  0.642666  0.612784    -0.071
+ 11  O     0.867917  0.25225   0.528763    -0.037","AlTe(WO₄)₂ crystallizes in the triclinic P̅1 space group. W+4.50+ is bonded in a 5-coordinate geometry to five O²⁻ atoms. There are a spread of W–O bond distances ranging from 1.71–2.18 Å. Al³⁺ is bonded in a 4-coordinate geometry to six O²⁻ atoms. There are a spread of Al–O bond distances ranging from 1.69–2.44 Å. Te⁴⁺ is bonded in a linear geometry to two equivalent O²⁻ atoms. Both Te–O bond lengths are 1.78 Å. There are four inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a distorted single-bond geometry to one W+4.50+ and one Al³⁺ atom. In the second O²⁻ site, O²⁻ is bonded in a bent 150 degrees geometry to one W+4.50+ and one Te⁴⁺ atom. In the third O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to two equivalent W+4.50+ and one Al³⁺ atom. In the fourth O²⁻ site, O²⁻ is bonded in a bent 150 degrees geometry to one W+4.50+ and one Al³⁺ atom.",0.0,189.99386424401527,False
+mp-1178771,YCu(WO4)2,"Full Formula (Y1 Cu1 W2 O8)
+Reduced Formula: YCu(WO4)2
+abc   :   5.143037   6.080130   6.118494
+angles: 108.912523  91.746274 113.744470
+pbc   :       True       True       True
+Sites (12)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Y     0.377863  0.90144   0.278474         0
+  1  Cu    0.864256  0.894321  0.770142         0
+  2  W     0.124995  0.412215  0.610029         0
+  3  W     0.625834  0.389315  0.945028        -0
+  4  O     0.908482  0.601537  0.751252         0
+  5  O     0.401499  0.591056  0.94981          0
+  6  O     0.356131  0.650707  0.496947        -0
+  7  O     0.890251  0.6382    0.203976        -0
+  8  O     0.840067  0.198081  0.800075         0
+  9  O     0.398055  0.153583  0.061835        -0
+ 10  O     0.350793  0.21149   0.605741         0
+ 11  O     0.865776  0.161956  0.34819         -0","YCu(WO₄)₂ crystallizes in the triclinic P1 space group. Y³⁺ is bonded to six O²⁻ atoms to form YO₆ octahedra that share corners with eight WO₆ octahedra. The corner-sharing octahedral tilt angles range from 33–54°. There are a spread of Y–O bond distances ranging from 2.30–2.32 Å. There are two inequivalent W⁶⁺ sites. In the first W⁶⁺ site, W⁶⁺ is bonded to six O²⁻ atoms to form distorted WO₆ octahedra that share corners with four equivalent YO₆ octahedra and edges with two equivalent WO₆ octahedra. The corner-sharing octahedral tilt angles range from 34–54°. There are a spread of W–O bond distances ranging from 1.82–2.18 Å. In the second W⁶⁺ site, W⁶⁺ is bonded to six O²⁻ atoms to form distorted WO₆ octahedra that share corners with four equivalent YO₆ octahedra and edges with two equivalent WO₆ octahedra. The corner-sharing octahedral tilt angles range from 33–54°. There are a spread of W–O bond distances ranging from 1.82–2.18 Å. Cu¹⁺ is bonded in a distorted linear geometry to three O²⁻ atoms. There are two shorter (1.85 Å) and one longer (2.61 Å) Cu–O bond length. There are eight inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to two W⁶⁺ and one Cu¹⁺ atom. In the second O²⁻ site, O²⁻ is bonded in a distorted trigonal planar geometry to one Y³⁺ and two W⁶⁺ atoms. In the third O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to one Y³⁺, one W⁶⁺, and one Cu¹⁺ atom. In the fourth O²⁻ site, O²⁻ is bonded in a distorted bent 150 degrees geometry to one Y³⁺ and one W⁶⁺ atom. In the fifth O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to two W⁶⁺ and one Cu¹⁺ atom. In the sixth O²⁻ site, O²⁻ is bonded in a distorted bent 150 degrees geometry to one Y³⁺ and one W⁶⁺ atom. In the seventh O²⁻ site, O²⁻ is bonded in a distorted trigonal planar geometry to one Y³⁺ and two W⁶⁺ atoms. In the eighth O²⁻ site, O²⁻ is bonded in a distorted bent 120 degrees geometry to one Y³⁺ and one W⁶⁺ atom.",1.3889999999999998,162.788750604948,False
+mp-1391871,Li2TiCr3O8,"Full Formula (Li2 Ti1 Cr3 O8)
+Reduced Formula: Li2TiCr3O8
+abc   :   5.908150   5.913051   5.997562
+angles: 119.425546  89.963029 119.893671
+pbc   :       True       True       True
+Sites (14)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Li    0.5       0         0.5          0.005
+  1  Li    0.5       0.5       0.5          0.001
+  2  Ti    0         0         0            0.073
+  3  Cr    0         0.5       0            0.482
+  4  Cr    0.5       0         0           -0.314
+  5  Cr    0.5       0.5       0           -0.171
+  6  O     0.723498  0.271294  0.198885     0.004
+  7  O     0.761119  0.232116  0.78692     -0.018
+  8  O     0.756515  0.74167   0.78404     -0.025
+  9  O     0.266495  0.243531  0.794042     0.012
+ 10  O     0.733505  0.756469  0.205958     0.012
+ 11  O     0.243485  0.25833   0.21596     -0.025
+ 12  O     0.238881  0.767884  0.21308     -0.018
+ 13  O     0.276502  0.728706  0.801115     0.004","LiTiO₂LiCrO₂(CrO₂)₂ crystallizes in the triclinic P̅1 space group. The structure is one-dimensional and consists of two CrO₂ clusters; one LiCrO₂ ribbon oriented in the (1, 0, -1) direction; and one LiTiO₂ ribbon oriented in the (-1, 0, 1) direction. In each CrO₂ cluster, Cr+3.33+ is bonded in a linear geometry to two equivalent O²⁻ atoms. Both Cr–O bond lengths are 1.32 Å. O²⁻ is bonded in a single-bond geometry to one Cr+3.33+ atom. In the LiCrO₂ ribbon, Li¹⁺ is bonded in a distorted linear geometry to two equivalent O²⁻ atoms. Both Li–O bond lengths are 1.67 Å. Cr+3.33+ is bonded in a distorted linear geometry to two equivalent O²⁻ atoms. Both Cr–O bond lengths are 1.39 Å. O²⁻ is bonded in a distorted bent 150 degrees geometry to one Li¹⁺ and one Cr+3.33+ atom. In the LiTiO₂ ribbon, Li¹⁺ is bonded in a distorted linear geometry to two equivalent O²⁻ atoms. Both Li–O bond lengths are 1.64 Å. Ti⁴⁺ is bonded in a linear geometry to two equivalent O²⁻ atoms. Both Ti–O bond lengths are 1.40 Å. O²⁻ is bonded in a distorted linear geometry to one Li¹⁺ and one Ti⁴⁺ atom.",0.0,149.71256802869675,False
+mp-744689,CoH18C6SO10,"Full Formula (Co4 H72 C24 S4 O40)
+Reduced Formula: CoH18C6SO10
+abc   :   7.939950   9.413191  20.885467
+angles:  80.188886  90.000000  90.000000
+pbc   :       True       True       True
+Sites (144)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Co    0.619438  0.789452  0.874227     2.628
+  1  Co    0.119438  0.210548  0.625773     2.628
+  2  Co    0.380562  0.210548  0.125773     2.628
+  3  Co    0.880562  0.789452  0.374227     2.628
+  4  H     0.782334  0.789084  0.740512     0
+  5  H     0.282334  0.210916  0.759488     0
+  6  H     0.217666  0.210916  0.259488     0
+  7  H     0.717666  0.789084  0.240512     0
+  8  H     0.87173   0.951462  0.539886     0.372
+  9  H     0.37173   0.048538  0.960114     0.372
+ 10  H     0.12827   0.048538  0.460114     0.372
+ 11  H     0.62827   0.951462  0.039886     0.372
+ 12  H     0.866531  0.791984  0.001333     0
+ 13  H     0.366531  0.208016  0.498667     0
+ 14  H     0.133469  0.208016  0.998667     0
+ 15  H     0.633469  0.791984  0.501333     0
+ 16  H     0.990506  0.899997  0.658623     0.001
+ 17  H     0.490506  0.100003  0.841377     0.001
+ 18  H     0.009494  0.100003  0.341377     0.001
+ 19  H     0.509494  0.899997  0.158623     0.001
+ 20  H     0.2518    0.285277  0.820485     0
+ 21  H     0.7518    0.714723  0.679515     0
+ 22  H     0.7482    0.714723  0.179515     0
+ 23  H     0.2482    0.285277  0.320485     0
+ 24  H     0.478706  0.731526  0.023842     0
+ 25  H     0.978706  0.268474  0.476158     0
+ 26  H     0.521294  0.268474  0.976158     0
+ 27  H     0.021294  0.731526  0.523842     0
+ 28  H     0.261602  0.555985  0.703529     0
+ 29  H     0.761602  0.444015  0.796471     0
+ 30  H     0.738398  0.444015  0.296471     0
+ 31  H     0.238398  0.555985  0.203529     0
+ 32  H     0.941589  0.570743  0.790232     0
+ 33  H     0.441589  0.429257  0.709768     0
+ 34  H     0.058411  0.429257  0.209768     0
+ 35  H     0.558411  0.570743  0.290232     0
+ 36  H     0.273995  0.584243  0.579555     0
+ 37  H     0.773995  0.415757  0.920445     0
+ 38  H     0.726005  0.415757  0.420445     0
+ 39  H     0.226005  0.584243  0.079555     0
+ 40  H     0.961316  0.538696  0.912804     0
+ 41  H     0.461316  0.461304  0.587196     0
+ 42  H     0.038684  0.461304  0.087196     0
+ 43  H     0.538684  0.538696  0.412804     0
+ 44  H     0.22175   0.934639  0.564511     0.001
+ 45  H     0.72175   0.065361  0.935489     0.001
+ 46  H     0.77825   0.065361  0.435489     0.001
+ 47  H     0.27825   0.934639  0.064511     0.001
+ 48  H     0.43745   0.923521  0.594079     0.001
+ 49  H     0.93745   0.076479  0.905921     0.001
+ 50  H     0.56255   0.076479  0.405921     0.001
+ 51  H     0.06255   0.923521  0.094079     0.001
+ 52  H     0.441842  0.006216  0.709159     0
+ 53  H     0.941842  0.993784  0.790841     0
+ 54  H     0.558158  0.993784  0.290841     0
+ 55  H     0.058158  0.006216  0.209159     0
+ 56  H     0.259588  0.808303  0.686898     0.001
+ 57  H     0.759588  0.191697  0.813102     0.001
+ 58  H     0.740412  0.191697  0.313102     0.001
+ 59  H     0.240412  0.808303  0.186898     0.001
+ 60  H     0.133694  0.734311  0.833842    -0.006
+ 61  H     0.633694  0.265689  0.666158    -0.006
+ 62  H     0.866306  0.265689  0.166158    -0.006
+ 63  H     0.366306  0.734311  0.333842    -0.006
+ 64  H     0.267335  0.900243  0.819957    -0.005
+ 65  H     0.767335  0.099757  0.680043    -0.005
+ 66  H     0.732665  0.099757  0.180043    -0.005
+ 67  H     0.232665  0.900243  0.319957    -0.005
+ 68  H     0.21646   0.850569  0.94683      0.036
+ 69  H     0.71646   0.149431  0.55317      0.036
+ 70  H     0.78354   0.149431  0.05317      0.036
+ 71  H     0.28354   0.850569  0.44683      0.036
+ 72  H     0.232001  0.663448  0.944273     0.009
+ 73  H     0.732001  0.336552  0.555727     0.009
+ 74  H     0.767999  0.336552  0.055727     0.009
+ 75  H     0.267999  0.663448  0.444273     0.009
+ 76  C     0.838495  0.517179  0.819713     0.008
+ 77  C     0.338495  0.482821  0.680287     0.008
+ 78  C     0.161505  0.482821  0.180287     0.008
+ 79  C     0.661505  0.517179  0.319713     0.008
+ 80  C     0.849441  0.499482  0.890765     0.002
+ 81  C     0.349441  0.500518  0.609235     0.002
+ 82  C     0.150559  0.500518  0.109235     0.002
+ 83  C     0.650559  0.499482  0.390765     0.002
+ 84  C     0.811083  0.033042  0.900108     0.009
+ 85  C     0.311083  0.966958  0.599892     0.009
+ 86  C     0.188917  0.966958  0.099892     0.009
+ 87  C     0.688917  0.033042  0.400108     0.009
+ 88  C     0.743248  0.074909  0.830402     0.001
+ 89  C     0.243248  0.925091  0.669598     0.001
+ 90  C     0.256752  0.925091  0.169598     0.001
+ 91  C     0.756752  0.074909  0.330402     0.001
+ 92  C     0.229484  0.800972  0.851704     0.439
+ 93  C     0.729484  0.199028  0.648296     0.439
+ 94  C     0.770516  0.199028  0.148296     0.439
+ 95  C     0.270516  0.800972  0.351704     0.439
+ 96  C     0.277983  0.77058   0.921408    -0.012
+ 97  C     0.777983  0.22942   0.578592    -0.012
+ 98  C     0.722017  0.22942   0.078592    -0.012
+ 99  C     0.222017  0.77058   0.421408    -0.012
+100  S     0.81508   0.612721  0.577878     0.003
+101  S     0.31508   0.387279  0.922122     0.003
+102  S     0.18492   0.387279  0.422122     0.003
+103  S     0.68492   0.612721  0.077878     0.003
+104  O     0.742766  0.612244  0.85428      0.017
+105  O     0.242766  0.387756  0.64572      0.017
+106  O     0.257234  0.387756  0.14572      0.017
+107  O     0.757234  0.612244  0.35428      0.017
+108  O     0.939273  0.819316  0.959103     0.013
+109  O     0.439273  0.180684  0.540897     0.013
+110  O     0.060727  0.180684  0.040897     0.013
+111  O     0.560727  0.819316  0.459103     0.013
+112  O     0.820623  0.878351  0.909019     0.039
+113  O     0.320623  0.121649  0.590981     0.039
+114  O     0.179377  0.121649  0.090981     0.039
+115  O     0.679377  0.878351  0.409019     0.039
+116  O     0.818502  0.992918  0.787216     0.005
+117  O     0.318502  0.007082  0.712784     0.005
+118  O     0.181498  0.007082  0.212784     0.005
+119  O     0.681498  0.992918  0.287216     0.005
+120  O     0.571799  0.031375  0.827022     0.024
+121  O     0.071799  0.968625  0.672978     0.024
+122  O     0.428201  0.968625  0.172978     0.024
+123  O     0.928201  0.031375  0.327022     0.024
+124  O     0.454158  0.777613  0.934896     0.184
+125  O     0.954158  0.222387  0.565104     0.184
+126  O     0.545842  0.222387  0.065104     0.184
+127  O     0.045842  0.777613  0.434896     0.184
+128  O     0.747768  0.808585  0.694928     0.003
+129  O     0.247768  0.191415  0.805072     0.003
+130  O     0.252232  0.191415  0.305072     0.003
+131  O     0.752232  0.808585  0.194928     0.003
+132  O     0.009062  0.690934  0.571317     0.023
+133  O     0.509062  0.309066  0.928683     0.023
+134  O     0.990938  0.309066  0.428683     0.023
+135  O     0.490938  0.690934  0.071317     0.023
+136  O     0.809126  0.553606  0.648915     0.006
+137  O     0.309126  0.446394  0.851085     0.006
+138  O     0.190874  0.446394  0.351085     0.006
+139  O     0.690874  0.553606  0.148915     0.006
+140  O     0.699406  0.743653  0.565794     0.029
+141  O     0.199406  0.256347  0.934206     0.029
+142  O     0.300594  0.256347  0.434206     0.029
+143  O     0.800594  0.743653  0.065794     0.029","(CoC₅H₁₃SO₉)₂(CH₂)₂H₂(H₂O)₂ is Indium-derived structured and crystallizes in the monoclinic P2₁/c space group. The structure is zero-dimensional and consists of four CH₂ clusters, four CoC₅H₁₃SO₉ clusters, four H₂ clusters, and four H₂O clusters. In each CH₂ cluster, C+0.33+ is bonded in a bent 120 degrees geometry to two equivalent H¹⁺ atoms. Both C–H bond lengths are 1.09 Å. H¹⁺ is bonded in a single-bond geometry to one C+0.33+ atom. In each CoC₅H₁₃SO₉ cluster, Co²⁺ is bonded in a 4-coordinate geometry to four O²⁻ atoms. There are a spread of Co–O bond distances ranging from 1.81–2.35 Å. There are five inequivalent C+0.33+ sites. In the first C+0.33+ site, C+0.33+ is bonded in a trigonal non-coplanar geometry to two H¹⁺ and one O²⁻ atom. Both C–H bond lengths are 1.09 Å. The C–O bond length is 1.46 Å. In the second C+0.33+ site, C+0.33+ is bonded in a trigonal non-coplanar geometry to two H¹⁺ and one O²⁻ atom. Both C–H bond lengths are 1.09 Å. The C–O bond length is 1.47 Å. In the third C+0.33+ site, C+0.33+ is bonded in a trigonal non-coplanar geometry to two H¹⁺ and one O²⁻ atom. Both C–H bond lengths are 1.10 Å. The C–O bond length is 1.44 Å. In the fourth C+0.33+ site, C+0.33+ is bonded in a trigonal non-coplanar geometry to one H¹⁺ and two O²⁻ atoms. The C–H bond length is 1.10 Å. There is one shorter (1.42 Å) and one longer (1.43 Å) C–O bond length. In the fifth C+0.33+ site, C+0.33+ is bonded in a trigonal non-coplanar geometry to two H¹⁺ and one O²⁻ atom. There is one shorter (1.10 Å) and one longer (1.11 Å) C–H bond length. The C–O bond length is 1.43 Å. There are thirteen inequivalent H¹⁺ sites. In the first H¹⁺ site, H¹⁺ is bonded in a linear geometry to two O²⁻ atoms. There is one shorter (1.05 Å) and one longer (1.44 Å) H–O bond length. In the second H¹⁺ site, H¹⁺ is bonded in a single-bond geometry to one O²⁻ atom. The H–O bond length is 0.99 Å. In the third H¹⁺ site, H¹⁺ is bonded in a single-bond geometry to one O²⁻ atom. The H–O bond length is 1.00 Å. In the fourth H¹⁺ site, H¹⁺ is bonded in a single-bond geometry to one C+0.33+ atom. In the fifth H¹⁺ site, H¹⁺ is bonded in a single-bond geometry to one C+0.33+ atom. In the sixth H¹⁺ site, H¹⁺ is bonded in a single-bond geometry to one C+0.33+ atom. In the seventh H¹⁺ site, H¹⁺ is bonded in a single-bond geometry to one C+0.33+ atom. In the eighth H¹⁺ site, H¹⁺ is bonded in a single-bond geometry to one C+0.33+ atom. In the ninth H¹⁺ site, H¹⁺ is bonded in a single-bond geometry to one C+0.33+ atom. In the tenth H¹⁺ site, H¹⁺ is bonded in a single-bond geometry to one O²⁻ atom. The H–O bond length is 0.98 Å. In the eleventh H¹⁺ site, H¹⁺ is bonded in a single-bond geometry to one C+0.33+ atom. In the twelfth H¹⁺ site, H¹⁺ is bonded in a single-bond geometry to one C+0.33+ atom. In the thirteenth H¹⁺ site, H¹⁺ is bonded in a single-bond geometry to one C+0.33+ atom. S²⁻ is bonded in a trigonal non-coplanar geometry to three O²⁻ atoms. There are a spread of S–O bond distances ranging from 1.49–1.70 Å. There are nine inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a distorted single-bond geometry to one H¹⁺ and one S²⁻ atom. In the second O²⁻ site, O²⁻ is bonded in a single-bond geometry to one S²⁻ atom. In the third O²⁻ site, O²⁻ is bonded in a bent 120 degrees geometry to one H¹⁺ and one S²⁻ atom. In the fourth O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to one Co²⁺ and two C+0.33+ atoms. In the fifth O²⁻ site, O²⁻ is bonded in a single-bond geometry to one H¹⁺ and one O²⁻ atom. The O–O bond length is 1.45 Å. In the sixth O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to one Co²⁺, one C+0.33+, and one O²⁻ atom. In the seventh O²⁻ site, O²⁻ is bonded in a water-like geometry to one C+0.33+ and one H¹⁺ atom. In the eighth O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to one Co²⁺, one C+0.33+, and one H¹⁺ atom. In the ninth O²⁻ site, O²⁻ is bonded in a bent 120 degrees geometry to one Co²⁺ and one C+0.33+ atom. In each H₂ cluster, H¹⁺ is bonded in a 1-coordinate geometry to  atoms. In each H₂O cluster, there are two inequivalent H¹⁺ sites. In the first H¹⁺ site, H¹⁺ is bonded in a single-bond geometry to one O²⁻ atom. The H–O bond length is 0.98 Å. In the second H¹⁺ site, H¹⁺ is bonded in a single-bond geometry to one O²⁻ atom. The H–O bond length is 0.99 Å. O²⁻ is bonded in a water-like geometry to two H¹⁺ atoms.",1.4335,1538.1557181833832,False
+mp-776672,Li2NbV3O8,"Full Formula (Li2 Nb1 V3 O8)
+Reduced Formula: Li2NbV3O8
+abc   :   6.476370   6.476370   6.728391
+angles:  73.499224  73.499224  37.017120
+pbc   :       True       True       True
+Sites (14)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Li    0.944963  0.944963  0.362895    -0.002
+  1  Li    0.05815   0.05815   0.657005    -0.003
+  2  Nb    0.291807  0.291807  0.280063     0.13
+  3  V     0.609571  0.609571  0.297268     1.997
+  4  V     0.390788  0.390788  0.68789      1.882
+  5  V     0.704966  0.704966  0.727521     1.841
+  6  O     0.879655  0.879655  0.672402    -0.008
+  7  O     0.778139  0.778139  0.332012     0.008
+  8  O     0.648738  0.648738  0.006922    -0.178
+  9  O     0.560429  0.560429  0.63287     -0.035
+ 10  O     0.435673  0.435673  0.354869     0.002
+ 11  O     0.350278  0.350278  0.002058    -0.027
+ 12  O     0.228655  0.228655  0.655243     0.001
+ 13  O     0.118191  0.118191  0.330984     0.01","Li₂NbV₃O₈ crystallizes in the monoclinic Cm space group. There are two inequivalent Li¹⁺ sites. In the first Li¹⁺ site, Li¹⁺ is bonded to five O²⁻ atoms to form LiO₅ square pyramids that share  a cornercorner with one VO₆ octahedra, corners with two equivalent LiO₅ square pyramids, edges with four VO₆ octahedra, and  an edgeedge with one LiO₅ square pyramid. The corner-sharing octahedral tilt angles are 1°. There are a spread of Li–O bond distances ranging from 1.99–2.12 Å. In the second Li¹⁺ site, Li¹⁺ is bonded to five O²⁻ atoms to form LiO₅ square pyramids that share  a cornercorner with one VO₆ octahedra, corners with two equivalent LiO₅ square pyramids, edges with four VO₆ octahedra, and  an edgeedge with one LiO₅ square pyramid. The corner-sharing octahedral tilt angles are 6°. There are a spread of Li–O bond distances ranging from 2.06–2.16 Å. Nb⁵⁺ is bonded in a 6-coordinate geometry to six O²⁻ atoms. There are a spread of Nb–O bond distances ranging from 1.79–2.41 Å. There are three inequivalent V³⁺ sites. In the first V³⁺ site, V³⁺ is bonded to six O²⁻ atoms to form VO₆ octahedra that share corners with two equivalent VO₆ octahedra,  a cornercorner with one LiO₅ square pyramid,  an edgeedge with one VO₆ octahedra, and edges with four LiO₅ square pyramids. The corner-sharing octahedral tilt angles are 15°. There are a spread of V–O bond distances ranging from 1.87–2.16 Å. In the second V³⁺ site, V³⁺ is bonded to six O²⁻ atoms to form VO₆ octahedra that share corners with two equivalent VO₆ octahedra,  a cornercorner with one LiO₅ square pyramid,  an edgeedge with one VO₆ octahedra, and edges with four LiO₅ square pyramids. The corner-sharing octahedral tilt angles are 11°. There are a spread of V–O bond distances ranging from 2.00–2.14 Å. In the third V³⁺ site, V³⁺ is bonded in a 6-coordinate geometry to six O²⁻ atoms. There are a spread of V–O bond distances ranging from 1.80–2.54 Å. There are eight inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded to two Li¹⁺ and three V³⁺ atoms to form OLi₂V₃ square pyramids that share corners with two equivalent OLi₂V₃ square pyramids, corners with two OLi₂V₃ trigonal bipyramids,  an edgeedge with one OLi₂NbV₂ square pyramid, and edges with seven OLiNb₂V₂ trigonal bipyramids. In the second O²⁻ site, O²⁻ is bonded to one Li¹⁺, two equivalent Nb⁵⁺, and two V³⁺ atoms to form distorted OLiNb₂V₂ trigonal bipyramids that share  a cornercorner with one OLi₂NbV₂ square pyramid, corners with three OLiNb₂V₂ trigonal bipyramids, edges with three OLi₂V₃ square pyramids, and edges with five OLi₂V₃ trigonal bipyramids. In the third O²⁻ site, O²⁻ is bonded in a linear geometry to two V³⁺ atoms. In the fourth O²⁻ site, O²⁻ is bonded to two equivalent Li¹⁺ and three V³⁺ atoms to form OLi₂V₃ trigonal bipyramids that share  a cornercorner with one OLi₂V₃ square pyramid, corners with three OLi₂V₃ trigonal bipyramids, edges with four OLi₂V₃ square pyramids, and edges with four OLiNb₂V₂ trigonal bipyramids. In the fifth O²⁻ site, O²⁻ is bonded to two equivalent Li¹⁺, one Nb⁵⁺, and two V³⁺ atoms to form OLi₂NbV₂ trigonal bipyramids that share  a cornercorner with one OLi₂NbV₂ square pyramid, corners with three OLiNb₂V₂ trigonal bipyramids, edges with four OLi₂V₃ square pyramids, and edges with four OLiNb₂V₂ trigonal bipyramids. In the sixth O²⁻ site, O²⁻ is bonded in a linear geometry to one Nb⁵⁺ and one V³⁺ atom. In the seventh O²⁻ site, O²⁻ is bonded to one Li¹⁺, one Nb⁵⁺, and three V³⁺ atoms to form distorted OLiNbV₃ trigonal bipyramids that share  a cornercorner with one OLi₂V₃ square pyramid, corners with three OLi₂V₃ trigonal bipyramids, edges with three OLi₂V₃ square pyramids, and edges with five OLiNb₂V₂ trigonal bipyramids. In the eighth O²⁻ site, O²⁻ is bonded to two Li¹⁺, one Nb⁵⁺, and two equivalent V³⁺ atoms to form OLi₂NbV₂ square pyramids that share corners with two equivalent OLi₂NbV₂ square pyramids, corners with two OLiNb₂V₂ trigonal bipyramids,  an edgeedge with one OLi₂V₃ square pyramid, and edges with seven OLiNb₂V₂ trigonal bipyramids.",0.1359999999999996,162.10595807198783,False
+mp-680309,Mo2NCl8,"Full Formula (Mo8 N4 Cl32)
+Reduced Formula: Mo2NCl8
+abc   :   6.863675  10.354940  18.638769
+angles:  78.976499  90.000000  90.000000
+pbc   :       True       True       True
+Sites (44)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Mo    0.543326  0.433581  0.164282     0.115
+  1  Mo    0.676437  0.886564  0.871729     0.746
+  2  Mo    0.456674  0.566419  0.835718     0.115
+  3  Mo    0.323563  0.113436  0.128271     0.746
+  4  Mo    0.323563  0.886564  0.371729     0.746
+  5  Mo    0.676437  0.113436  0.628271     0.746
+  6  Mo    0.456674  0.433581  0.664282     0.115
+  7  Mo    0.543326  0.566419  0.335718     0.115
+  8  N     0.559629  0.293216  0.646279    -0.034
+  9  N     0.559629  0.706784  0.853721    -0.034
+ 10  N     0.440371  0.706784  0.353721    -0.034
+ 11  N     0.440371  0.293216  0.146279    -0.034
+ 12  Cl    0.195111  0.783655  0.480009     0.04
+ 13  Cl    0.368239  0.912864  0.914764    -0.011
+ 14  Cl    0.795953  0.086013  0.886681     0.033
+ 15  Cl    0.168583  0.440152  0.603775    -0.002
+ 16  Cl    0.077033  0.160037  0.200922    -0.017
+ 17  Cl    0.804889  0.216345  0.519991     0.04
+ 18  Cl    0.631761  0.087136  0.085236    -0.011
+ 19  Cl    0.287011  0.5       0.25        -0.001
+ 20  Cl    0.68177   0.336578  0.279199     0.004
+ 21  Cl    0.31823   0.336578  0.779199     0.004
+ 22  Cl    0.631761  0.912864  0.414764    -0.011
+ 23  Cl    0.368239  0.087136  0.585236    -0.011
+ 24  Cl    0.513431  0         0.75         0.007
+ 25  Cl    0.204047  0.913987  0.113319     0.033
+ 26  Cl    0.486569  0         0.25         0.007
+ 27  Cl    0.68177   0.663422  0.220801     0.004
+ 28  Cl    0.077033  0.839963  0.299078    -0.017
+ 29  Cl    0.831417  0.440152  0.103775    -0.002
+ 30  Cl    0.616918  0.412836  0.920217     0.009
+ 31  Cl    0.712989  0.5       0.75        -0.001
+ 32  Cl    0.804889  0.783655  0.980009     0.04
+ 33  Cl    0.383082  0.412836  0.420217     0.009
+ 34  Cl    0.383082  0.587164  0.079783     0.009
+ 35  Cl    0.795953  0.913987  0.613319     0.033
+ 36  Cl    0.168583  0.559848  0.896225    -0.002
+ 37  Cl    0.922967  0.839963  0.799078    -0.017
+ 38  Cl    0.204047  0.086013  0.386681     0.033
+ 39  Cl    0.31823   0.663422  0.720801     0.004
+ 40  Cl    0.195111  0.216345  0.019991     0.04
+ 41  Cl    0.831417  0.559848  0.396225    -0.002
+ 42  Cl    0.922967  0.160037  0.700922    -0.017
+ 43  Cl    0.616918  0.587164  0.579783     0.009","Mo₂NCl₈ crystallizes in the monoclinic P2/c space group. The structure is one-dimensional and consists of two Mo₂NCl₈ ribbons oriented in the (1, 0, 0) direction. Mo⁵⁺ is bonded to one N³⁻ and five Cl¹⁻ atoms to form corner-sharing MoNCl₅ octahedra. The corner-sharing octahedral tilt angles are 51°. The Mo–N bond length is 2.11 Å. There are a spread of Mo–Cl bond distances ranging from 2.27–2.60 Å. Mo⁶⁺ is bonded in a 6-coordinate geometry to one N³⁻ and five Cl¹⁻ atoms. The Mo–N bond length is 1.71 Å. There are a spread of Mo–Cl bond distances ranging from 2.27–2.94 Å. N³⁻ is bonded in a linear geometry to one Mo⁵⁺ and one Mo⁶⁺ atom. There are nine inequivalent Cl¹⁻ sites. In the first Cl¹⁻ site, Cl¹⁻ is bonded in a single-bond geometry to one Mo⁵⁺ atom. In the second Cl¹⁻ site, Cl¹⁻ is bonded in a single-bond geometry to one Mo⁵⁺ atom. In the third Cl¹⁻ site, Cl¹⁻ is bonded in a single-bond geometry to one Mo⁵⁺ atom. In the fourth Cl¹⁻ site, Cl¹⁻ is bonded in a single-bond geometry to one Mo⁶⁺ atom. In the fifth Cl¹⁻ site, Cl¹⁻ is bonded in a single-bond geometry to one Mo⁵⁺ atom. In the sixth Cl¹⁻ site, Cl¹⁻ is bonded in an L-shaped geometry to two equivalent Mo⁶⁺ atoms. In the seventh Cl¹⁻ site, Cl¹⁻ is bonded in a distorted L-shaped geometry to two equivalent Mo⁶⁺ atoms. In the eighth Cl¹⁻ site, Cl¹⁻ is bonded in a bent 120 degrees geometry to two equivalent Mo⁵⁺ atoms. In the ninth Cl¹⁻ site, Cl¹⁻ is bonded in a single-bond geometry to one Mo⁶⁺ atom.",0.0,1300.2696805422202,False
+mp-28603,NaLiSe,"Full Formula (Na4 Li4 Se4)
+Reduced Formula: NaLiSe
+abc   :   4.239269   7.118969   7.680864
+angles:  90.000000  90.000000  90.000000
+pbc   :       True       True       True
+Sites (12)
+  #  SP       a         b         c    magmom
+---  ----  ----  --------  --------  --------
+  0  Na    0.75  0.487335  0.314695         0
+  1  Na    0.25  0.512665  0.685305         0
+  2  Na    0.75  0.987335  0.185305         0
+  3  Na    0.25  0.012665  0.814695         0
+  4  Li    0.75  0.355928  0.926792         0
+  5  Li    0.25  0.644072  0.073208         0
+  6  Li    0.75  0.855928  0.573208         0
+  7  Li    0.25  0.144072  0.426792         0
+  8  Se    0.75  0.722645  0.894888        -0
+  9  Se    0.25  0.277355  0.105112        -0
+ 10  Se    0.75  0.222645  0.605112        -0
+ 11  Se    0.25  0.777355  0.394888        -0","NaLiSe crystallizes in the orthorhombic Pnma space group. Na¹⁺ is bonded to five equivalent Se²⁻ atoms to form distorted NaSe₅ trigonal bipyramids that share corners with eight equivalent LiSe₄ tetrahedra, corners with eight equivalent NaSe₅ trigonal bipyramids, edges with six equivalent LiSe₄ tetrahedra, and edges with six equivalent NaSe₅ trigonal bipyramids. There is one shorter (2.95 Å) and four longer (3.07 Å) Na–Se bond lengths. Li¹⁺ is bonded to four equivalent Se²⁻ atoms to form LiSe₄ tetrahedra that share corners with eight equivalent LiSe₄ tetrahedra, corners with eight equivalent NaSe₅ trigonal bipyramids, edges with two equivalent LiSe₄ tetrahedra, and edges with six equivalent NaSe₅ trigonal bipyramids. There are a spread of Li–Se bond distances ranging from 2.61–2.68 Å. Se²⁻ is bonded in a 9-coordinate geometry to five equivalent Na¹⁺ and four equivalent Li¹⁺ atoms.",2.4375,231.8024974784136,True
+mp-770805,Li6Hf2O7,"Full Formula (Li12 Hf4 O14)
+Reduced Formula: Li6Hf2O7
+abc   :   5.967762   5.277054  10.235579
+angles:  69.953479  90.000000  90.000000
+pbc   :       True       True       True
+Sites (30)
+  #  SP            a         b          c    magmom
+---  ----  ---------  --------  ---------  --------
+  0  Li     0.779813  0.207188   0.142721         0
+  1  Li     0.235309  0.215175   0.137773         0
+  2  Li     0.49539   0.840084   0.124078         0
+  3  Li     0.99539   0.159916   0.375922         0
+  4  Li     0.735309  0.784825   0.362227         0
+  5  Li     0.279813  0.792812   0.357279         0
+  6  Li     0.720187  0.207188   0.642721         0
+  7  Li     0.264691  0.215175   0.637773         0
+  8  Li     0.00461   0.840084   0.624078         0
+  9  Li     0.50461   0.159916   0.875922         0
+ 10  Li     0.764691  0.784825   0.862227         0
+ 11  Li     0.220187  0.792812   0.857279         0
+ 12  Hf     0.006363  0.729317   0.133312        -0
+ 13  Hf     0.506363  0.270683   0.366688        -0
+ 14  Hf     0.493637  0.729317   0.633312        -0
+ 15  Hf     0.993637  0.270683   0.866688        -0
+ 16  O     -0         0.5       -0               -0
+ 17  O      0.765636  0.990012   0.003348        -0
+ 18  O      0.507542  0.039774   0.24547          0
+ 19  O      0.277896  0.519209   0.237275        -0
+ 20  O      0.777896  0.480791   0.262725        -0
+ 21  O      0.007542  0.960226   0.25453          0
+ 22  O      0.265636  0.009988   0.496652        -0
+ 23  O      0.5       0.5        0.5             -0
+ 24  O      0.734364  0.990012   0.503348        -0
+ 25  O      0.992458  0.039774   0.74547          0
+ 26  O      0.222104  0.519209   0.737275        -0
+ 27  O      0.722104  0.480791   0.762725        -0
+ 28  O      0.492458  0.960226   0.75453          0
+ 29  O      0.234364  0.009988   0.996652        -0","Li₆Hf₂O₇ crystallizes in the monoclinic P2₁/c space group. There are three inequivalent Li¹⁺ sites. In the first Li¹⁺ site, Li¹⁺ is bonded to five O²⁻ atoms to form LiO₅ trigonal bipyramids that share corners with four equivalent LiO₅ square pyramids, corners with three equivalent LiO₅ trigonal bipyramids, edges with four equivalent HfO₆ octahedra, and edges with two equivalent LiO₅ square pyramids. There are a spread of Li–O bond distances ranging from 2.00–2.20 Å. In the second Li¹⁺ site, Li¹⁺ is bonded to five O²⁻ atoms to form LiO₅ square pyramids that share corners with three equivalent LiO₅ square pyramids, corners with four equivalent LiO₅ trigonal bipyramids, edges with four equivalent HfO₆ octahedra, and edges with two equivalent LiO₅ trigonal bipyramids. There are a spread of Li–O bond distances ranging from 2.03–2.23 Å. In the third Li¹⁺ site, Li¹⁺ is bonded in a 5-coordinate geometry to five O²⁻ atoms. There are a spread of Li–O bond distances ranging from 1.93–2.62 Å. Hf⁴⁺ is bonded to six O²⁻ atoms to form HfO₆ octahedra that share corners with three equivalent HfO₆ octahedra,  an edgeedge with one HfO₆ octahedra, edges with four equivalent LiO₅ square pyramids, and edges with four equivalent LiO₅ trigonal bipyramids. The corner-sharing octahedral tilt angles range from 0–11°. There are a spread of Hf–O bond distances ranging from 2.02–2.15 Å. There are four inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded to four Li¹⁺ and two equivalent Hf⁴⁺ atoms to form OLi₄Hf₂ octahedra that share corners with six equivalent OLi₅Hf octahedra and edges with ten OLi₄Hf₂ octahedra. The corner-sharing octahedral tilt angles range from 2–20°. In the second O²⁻ site, O²⁻ is bonded to four Li¹⁺ and two equivalent Hf⁴⁺ atoms to form a mixture of edge and corner-sharing OLi₄Hf₂ octahedra. The corner-sharing octahedral tilt angles range from 3–27°. In the third O²⁻ site, O²⁻ is bonded to five Li¹⁺ and one Hf⁴⁺ atom to form a mixture of edge and corner-sharing OLi₅Hf octahedra. The corner-sharing octahedral tilt angles range from 2–20°. In the fourth O²⁻ site, O²⁻ is bonded to four Li¹⁺ and two equivalent Hf⁴⁺ atoms to form a mixture of distorted edge and corner-sharing OLi₄Hf₂ octahedra. The corner-sharing octahedral tilt angles range from 3–27°.",3.9985,302.8117885870648,True
+mp-1217972,SrPrMnO4,"Full Formula (Sr1 Pr1 Mn1 O4)
+Reduced Formula: SrPrMnO4
+abc   :   6.984222   6.984222   6.984222
+angles: 147.858367 147.858367  46.094488
+pbc   :       True       True       True
+Sites (7)
+  #  SP           a         b    c    magmom
+---  ----  --------  --------  ---  --------
+  0  Sr    0.644866  0.644866  0       0.002
+  1  Pr    0.358366  0.358366  0       0.017
+  2  Mn    0.003365  0.003365  0       3.891
+  3  O     0.832522  0.832522  0       0.003
+  4  O     0.175856  0.175856  0       0.022
+  5  O     0.992512  0.492512  0.5    -0.027
+  6  O     0.492512  0.992512  0.5    -0.027","SrPrMnO₄ is (La,Ba)CuO4-derived structured and crystallizes in the tetragonal I4mm space group. Sr²⁺ is bonded in a 9-coordinate geometry to nine O²⁻ atoms. There are a spread of Sr–O bond distances ranging from 2.41–2.76 Å. Pr³⁺ is bonded in a 9-coordinate geometry to nine O²⁻ atoms. There are a spread of Pr–O bond distances ranging from 2.35–2.75 Å. Mn³⁺ is bonded to six O²⁻ atoms to form corner-sharing MnO₆ octahedra. The corner-sharing octahedral tilt angles are 8°. There are a spread of Mn–O bond distances ranging from 1.94–2.22 Å. There are three inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded to one Sr²⁺, four equivalent Pr³⁺, and one Mn³⁺ atom to form distorted OSrPr₄Mn octahedra that share corners with seventeen OSr₂Pr₂Mn₂ octahedra, edges with eight OSrPr₄Mn octahedra, and faces with four equivalent OSr₂Pr₂Mn₂ octahedra. The corner-sharing octahedral tilt angles range from 0–53°. In the second O²⁻ site, O²⁻ is bonded to four equivalent Sr²⁺, one Pr³⁺, and one Mn³⁺ atom to form distorted OSr₄PrMn octahedra that share corners with seventeen OSr₂Pr₂Mn₂ octahedra, edges with eight OSrPr₄Mn octahedra, and faces with four equivalent OSr₂Pr₂Mn₂ octahedra. The corner-sharing octahedral tilt angles range from 0–54°. In the third O²⁻ site, O²⁻ is bonded to two equivalent Sr²⁺, two equivalent Pr³⁺, and two equivalent Mn³⁺ atoms to form a mixture of distorted corner, edge, and face-sharing OSr₂Pr₂Mn₂ octahedra. The corner-sharing octahedral tilt angles range from 8–54°.",0.0,96.09469439570223,False
+mp-1100876,YBO3,"Full Formula (Y2 B2 O6)
+Reduced Formula: YBO3
+abc   :   3.951427   3.986749   8.411535
+angles:  90.000000  90.000000 111.715902
+pbc   :       True       True       True
+Sites (10)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Y     0.079963  0.077188  0.000172         0
+  1  Y     0.079963  0.077188  0.499828         0
+  2  B     0.49699   0.768326  0.75            -0
+  3  B     0.767599  0.490545  0.25            -0
+  4  O     0.995557  0.849006  0.25            -0
+  5  O     0.331713  0.670958  0.601852        -0
+  6  O     0.331713  0.670958  0.898148        -0
+  7  O     0.6707    0.32385   0.397639        -0
+  8  O     0.6707    0.32385   0.102361        -0
+  9  O     0.858101  0.000131  0.75            -0","YBO₃ crystallizes in the monoclinic Pm space group. Y³⁺ is bonded in a 6-coordinate geometry to six O²⁻ atoms. There are a spread of Y–O bond distances ranging from 2.26–2.36 Å. There are two inequivalent B³⁺ sites. In the first B³⁺ site, B³⁺ is bonded in a trigonal planar geometry to three O²⁻ atoms. There is one shorter (1.38 Å) and two longer (1.39 Å) B–O bond lengths. In the second B³⁺ site, B³⁺ is bonded in a trigonal planar geometry to three O²⁻ atoms. There is one shorter (1.38 Å) and two longer (1.39 Å) B–O bond lengths. There are four inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a distorted trigonal planar geometry to two equivalent Y³⁺ and one B³⁺ atom. In the second O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to two equivalent Y³⁺ and one B³⁺ atom. In the third O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to two equivalent Y³⁺ and one B³⁺ atom. In the fourth O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to two equivalent Y³⁺ and one B³⁺ atom.",4.4,123.1056118722788,False
+mp-555908,CoF2,"Full Formula (Co2 F4)
+Reduced Formula: CoF2
+abc   :   3.199165   4.643519   4.643519
+angles:  90.000025  90.000000  90.000000
+pbc   :       True       True       True
+Sites (6)
+  #  SP       a          b          c    magmom
+---  ----  ----  ---------  ---------  --------
+  0  Co    -0    -0         -0            2.774
+  1  Co     0.5   0.5        0.5          2.774
+  2  F      0     0.304337   0.304337     0.099
+  3  F      0     0.695663   0.695663     0.099
+  4  F      0.5   0.195663   0.804337     0.099
+  5  F      0.5   0.804337   0.195663     0.099",CoF₂ is Rutile structured and crystallizes in the tetragonal P4₂/mnm space group. Co²⁺ is bonded to six equivalent F¹⁻ atoms to form a mixture of edge and corner-sharing CoF₆ octahedra. The corner-sharing octahedral tilt angles are 51°. There are two shorter (2.04 Å) and four longer (2.08 Å) Co–F bond lengths. F¹⁻ is bonded in a trigonal planar geometry to three equivalent Co²⁺ atoms.,2.2721,68.98126085349506,True
+mp-983497,Pa3Zn,"Full Formula (Pa3 Zn1)
+Reduced Formula: Pa3Zn
+abc   :   4.508804   4.508804   4.508804
+angles:  90.000000  90.000000  90.000000
+pbc   :       True       True       True
+Sites (4)
+  #  SP      a    b    c    magmom
+---  ----  ---  ---  ---  --------
+  0  Pa    0.5  0    0       0.061
+  1  Pa    0    0.5  0       0.061
+  2  Pa    0    0    0.5     0.061
+  3  Zn    0.5  0.5  0.5     0.003","Pa₃Zn is Uranium Silicide structured and crystallizes in the cubic Pm̅3m space group. Pa is bonded to eight equivalent Pa and four equivalent Zn atoms to form PaPa₈Zn₄ cuboctahedra that share corners with twelve equivalent PaPa₈Zn₄ cuboctahedra, edges with eight equivalent ZnPa₁₂ cuboctahedra, edges with sixteen equivalent PaPa₈Zn₄ cuboctahedra, faces with four equivalent ZnPa₁₂ cuboctahedra, and faces with fourteen equivalent PaPa₈Zn₄ cuboctahedra. All Pa–Pa bond lengths are 3.19 Å. All Pa–Zn bond lengths are 3.19 Å. Zn is bonded to twelve equivalent Pa atoms to form ZnPa₁₂ cuboctahedra that share corners with twelve equivalent ZnPa₁₂ cuboctahedra, edges with twenty-four equivalent PaPa₈Zn₄ cuboctahedra, faces with six equivalent ZnPa₁₂ cuboctahedra, and faces with twelve equivalent PaPa₈Zn₄ cuboctahedra.",0.0,91.66089007301768,False
+mp-1193957,Pr(Al5Ru)2,"Full Formula (Pr2 Al20 Ru4)
+Reduced Formula: Pr(Al5Ru)2
+abc   :   6.849844   6.849844   9.148195
+angles:  90.000000  90.000000  97.000669
+pbc   :       True       True       True
+Sites (26)
+  #  SP           a         b          c    magmom
+---  ----  --------  --------  ---------  --------
+  0  Pr    0.876928  0.123072   0.75             0
+  1  Pr    0.123072  0.876928   0.25             0
+  2  Al    0.407985  0.137979   0.75             0
+  3  Al    0.137979  0.407985   0.25             0
+  4  Al    0.592015  0.862021   0.25             0
+  5  Al    0.862021  0.592015   0.75             0
+  6  Al    0.517665  0.779446   0.75             0
+  7  Al    0.779446  0.517665   0.25             0
+  8  Al    0.482335  0.220554   0.25             0
+  9  Al    0.220554  0.482335   0.75             0
+ 10  Al    0.837587  0.162413   0.398298        -0
+ 11  Al    0.162413  0.837587   0.601702        -0
+ 12  Al    0.837587  0.162413   0.101702        -0
+ 13  Al    0.162413  0.837587   0.898298        -0
+ 14  Al    0.622397  0.377603   0.551181        -0
+ 15  Al    0.377603  0.622397   0.448819        -0
+ 16  Al    0.622397  0.377603   0.948819        -0
+ 17  Al    0.377603  0.622397   0.051181        -0
+ 18  Al    0.770898  0.770898  -0                0
+ 19  Al    0.770898  0.770898   0.5              0
+ 20  Al    0.229102  0.229102  -0                0
+ 21  Al    0.229102  0.229102   0.5              0
+ 22  Ru    0.5       0         -0               -0
+ 23  Ru    0         0.5       -0               -0
+ 24  Ru    0.5       0          0.5             -0
+ 25  Ru    0         0.5        0.5             -0","Pr(RuAl₅)₂ crystallizes in the orthorhombic Cmcm space group. Pr is bonded in a 20-coordinate geometry to four equivalent Ru and sixteen Al atoms. All Pr–Ru bond lengths are 3.49 Å. There are a spread of Pr–Al bond distances ranging from 3.19–3.67 Å. Ru is bonded in a 10-coordinate geometry to two equivalent Pr and ten Al atoms. There are a spread of Ru–Al bond distances ranging from 2.58–2.77 Å. There are five inequivalent Al sites. In the first Al site, Al is bonded in a distorted bent 120 degrees geometry to two equivalent Pr and two equivalent Ru atoms. In the second Al site, Al is bonded in a 2-coordinate geometry to one Pr and two equivalent Ru atoms. In the third Al site, Al is bonded in a 2-coordinate geometry to two equivalent Pr and two equivalent Ru atoms. In the fourth Al site, Al is bonded in a 2-coordinate geometry to one Pr and two equivalent Ru atoms. In the fifth Al site, Al is bonded in a distorted linear geometry to two equivalent Pr and two equivalent Ru atoms.",0.0,426.03656285848353,False
+mp-1212496,Hf6BCl14,"Full Formula (Hf12 B2 Cl28)
+Reduced Formula: Hf6BCl14
+abc   :   9.469634   9.469634  11.469815
+angles:  90.000000  90.000000  96.606544
+pbc   :       True       True       True
+Sites (42)
+  #  SP           a         b          c    magmom
+---  ----  --------  --------  ---------  --------
+  0  Hf    0.186901  0.95161    0.115934     0.083
+  1  Hf    0.813099  0.04839    0.884066     0.083
+  2  Hf    0.313099  0.54839    0.615934     0.083
+  3  Hf    0.45161   0.686901   0.384066     0.083
+  4  Hf    0.686901  0.45161    0.384066     0.083
+  5  Hf    0.54839   0.313099   0.615934     0.083
+  6  Hf    0.04839   0.813099   0.884066     0.083
+  7  Hf    0.95161   0.186901   0.115934     0.083
+  8  Hf    0.350576  0.350576   0.392392     0.169
+  9  Hf    0.649424  0.649424   0.607608     0.169
+ 10  Hf    0.149424  0.149424   0.892392     0.169
+ 11  Hf    0.850576  0.850576   0.107608     0.169
+ 12  B     0         0         -0           -0.047
+ 13  B     0.5       0.5        0.5         -0.047
+ 14  Cl    0.534149  0.289569   0.250959     0.004
+ 15  Cl    0.465851  0.710431   0.749041     0.004
+ 16  Cl    0.965851  0.210431   0.750959     0.004
+ 17  Cl    0.789569  0.034149   0.249041     0.004
+ 18  Cl    0.034149  0.789569   0.249041     0.004
+ 19  Cl    0.210431  0.965851   0.750959     0.004
+ 20  Cl    0.710431  0.465851   0.749041     0.004
+ 21  Cl    0.289569  0.534149   0.250959     0.004
+ 22  Cl    0.366204  0.11999    0.00964      0.003
+ 23  Cl    0.633796  0.88001    0.99036      0.003
+ 24  Cl    0.133796  0.38001    0.50964      0.003
+ 25  Cl    0.61999   0.866204   0.49036      0.003
+ 26  Cl    0.866204  0.61999    0.49036      0.003
+ 27  Cl    0.38001   0.133796   0.50964      0.003
+ 28  Cl    0.88001   0.633796   0.99036      0.003
+ 29  Cl    0.11999   0.366204   0.00964      0.003
+ 30  Cl    0.399643  0.899643   0.25         0.005
+ 31  Cl    0.600357  0.100357   0.75         0.005
+ 32  Cl    0.100357  0.600357   0.75         0.005
+ 33  Cl    0.899643  0.399643   0.25         0.005
+ 34  Cl    0.251817  0.748183  -0           -0.003
+ 35  Cl    0.748183  0.251817  -0           -0.003
+ 36  Cl    0.248183  0.751817   0.5         -0.003
+ 37  Cl    0.751817  0.248183   0.5         -0.003
+ 38  Cl    0.157501  0.157501   0.260886     0.002
+ 39  Cl    0.842499  0.842499   0.739114     0.002
+ 40  Cl    0.342499  0.342499   0.760886     0.002
+ 41  Cl    0.657501  0.657501   0.239114     0.002","Hf₆BCl₁₄ crystallizes in the orthorhombic Cmce space group. There are two inequivalent Hf sites. In the first Hf site, Hf is bonded to one B and five Cl atoms to form a mixture of edge and corner-sharing HfBCl₅ octahedra. The corner-sharing octahedral tilt angles range from 0–46°. The Hf–B bond length is 2.32 Å. There are a spread of Hf–Cl bond distances ranging from 2.49–2.64 Å. In the second Hf site, Hf is bonded to one B and five Cl atoms to form a mixture of distorted edge and corner-sharing HfBCl₅ octahedra. The corner-sharing octahedral tilt angles range from 0–46°. The Hf–B bond length is 2.25 Å. There are a spread of Hf–Cl bond distances ranging from 2.50–3.05 Å. B is bonded in an octahedral geometry to six Hf atoms. There are five inequivalent Cl sites. In the first Cl site, Cl is bonded in an L-shaped geometry to two Hf atoms. In the second Cl site, Cl is bonded in a bent 150 degrees geometry to two equivalent Hf atoms. In the third Cl site, Cl is bonded in an L-shaped geometry to two equivalent Hf atoms. In the fourth Cl site, Cl is bonded in a 3-coordinate geometry to three Hf atoms. In the fifth Cl site, Cl is bonded in an L-shaped geometry to two Hf atoms.",0.0160999999999997,1021.7138952480552,False
+mp-1220609,NbCr2,"Full Formula (Nb8 Cr16)
+Reduced Formula: NbCr2
+abc   :   7.819867   7.819867   7.819867
+angles: 118.367072 118.367072  92.852378
+pbc   :       True       True       True
+Sites (24)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Nb    0.340702  0.340702  0           -0.001
+  1  Nb    0.659298  0.659298  0           -0.001
+  2  Nb    0.552983  0.052983  0.105966    -0
+  3  Nb    0.947017  0.447017  0.894034    -0
+  4  Nb    0.947017  0.052983  0.5         -0.001
+  5  Nb    0.552983  0.447017  0.5         -0
+  6  Nb    0.940421  0.440421  0.5         -0.001
+  7  Nb    0.559579  0.059579  0.5         -0.001
+  8  Cr    0.128177  0.377304  0.249127    -0.001
+  9  Cr    0.12095   0.871823  0.249127    -0.002
+ 10  Cr    0.622696  0.871823  0.750873    -0.001
+ 11  Cr    0.128177  0.87905   0.750873    -0.002
+ 12  Cr    0.915345  0.756558  0.841213     0.005
+ 13  Cr    0.925868  0.084655  0.841213     0.005
+ 14  Cr    0.243442  0.084655  0.158787     0.005
+ 15  Cr    0.915345  0.074132  0.158787     0.005
+ 16  Cr    0.340361  0.003406  0.663046     0.004
+ 17  Cr    0.322685  0.659639  0.663046     0.005
+ 18  Cr    0.996594  0.659639  0.336954     0.005
+ 19  Cr    0.340361  0.677315  0.336954     0.005
+ 20  Cr    0.705814  0.705814  0.411629     0.025
+ 21  Cr    0.294186  0.294186  0.588371     0.026
+ 22  Cr    0.294186  0.705814  0           -0.015
+ 23  Cr    0.705814  0.294186  0            0.047","Cr₂Nb is Frank-Kasper $\mu$ Phase-like structured and crystallizes in the tetragonal I̅4m2 space group. There are three inequivalent Nb sites. In the first Nb site, Nb is bonded in a 14-coordinate geometry to four equivalent Nb and ten Cr atoms. All Nb–Nb bond lengths are 3.06 Å. There are a spread of Nb–Cr bond distances ranging from 2.70–3.04 Å. In the second Nb site, Nb is bonded in a 14-coordinate geometry to six Nb and eight Cr atoms. There are two shorter (3.03 Å) and two longer (3.16 Å) Nb–Nb bond lengths. There are a spread of Nb–Cr bond distances ranging from 2.65–2.85 Å. In the third Nb site, Nb is bonded in a 14-coordinate geometry to four equivalent Nb and ten Cr atoms. There are a spread of Nb–Cr bond distances ranging from 2.70–2.95 Å. There are four inequivalent Cr sites. In the first Cr site, Cr is bonded to four Nb and eight Cr atoms to form a mixture of distorted corner and face-sharing CrNb₄Cr₈ cuboctahedra. There are a spread of Cr–Cr bond distances ranging from 2.39–2.76 Å. In the second Cr site, Cr is bonded in a 12-coordinate geometry to four Nb and eight Cr atoms. There are a spread of Cr–Cr bond distances ranging from 2.54–2.75 Å. In the third Cr site, Cr is bonded to four Nb and eight Cr atoms to form a mixture of corner and face-sharing CrNb₄Cr₈ cuboctahedra. There are a spread of Cr–Cr bond distances ranging from 2.60–2.68 Å. In the fourth Cr site, Cr is bonded in a 12-coordinate geometry to six Nb and six Cr atoms.",0.0,346.0112913616442,False
+mp-1217217,Ti3Bi6WO18,"Full Formula (Ti3 Bi6 W1 O18)
+Reduced Formula: Ti3Bi6WO18
+abc   :   5.407790   5.453829  13.066827
+angles:  90.409641 101.789534  89.931850
+pbc   :       True       True       True
+Sites (28)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Ti    0.335568  0.9576    0.175946         0
+  1  Ti    0.15761   0.953938  0.822196         0
+  2  Ti    0.662162  0.44884   0.819207         0
+  3  Bi    0.576801  0.99877   0.601806        -0
+  4  Bi    0.980036  0.987979  0.398002         0
+  5  Bi    0.434346  0.493125  0.399668         0
+  6  Bi    0.030114  0.496336  0.602194        -0
+  7  Bi    0.243903  0.508595  0.983463         0
+  8  Bi    0.728678  0.99611   0.984017         0
+  9  W     0.831843  0.447204  0.170933         0
+ 10  O     0.745627  0.728638  0.498559         0
+ 11  O     0.247781  0.728793  0.502563         0
+ 12  O     0.256967  0.230518  0.501529         0
+ 13  O     0.756871  0.230214  0.498539         0
+ 14  O     0.36746   0.6318    0.833029        -0
+ 15  O     0.546445  0.638952  0.178621        -0
+ 16  O     0.636529  0.142267  0.179086        -0
+ 17  O     0.468873  0.134722  0.833317        -0
+ 18  O     0.326333  0.912622  0.004001        -0
+ 19  O     0.68341   0.412178  0.010084        -0
+ 20  O     0.902422  0.713702  0.867715        -0
+ 21  O     0.028913  0.712007  0.135993        -0
+ 22  O     0.100362  0.218656  0.138944        -0
+ 23  O     0.962703  0.216974  0.864433        -0
+ 24  O     0.3378    0.935989  0.314592        -0
+ 25  O     0.032063  0.941094  0.684559         0
+ 26  O     0.649179  0.444281  0.682055         0
+ 27  O     0.969199  0.445099  0.314946        -0","Bi₆Ti₃WO₁₈ is Pb (Zr_0.50 Ti_0.48) O_3-derived structured and crystallizes in the triclinic P1 space group. There are three inequivalent Ti⁴⁺ sites. In the first Ti⁴⁺ site, Ti⁴⁺ is bonded to six O²⁻ atoms to form distorted TiO₆ octahedra that share corners with four equivalent WO₆ octahedra. The corner-sharing octahedral tilt angles range from 23–29°. There are a spread of Ti–O bond distances ranging from 1.81–2.25 Å. In the second Ti⁴⁺ site, Ti⁴⁺ is bonded in a 6-coordinate geometry to six O²⁻ atoms. There are a spread of Ti–O bond distances ranging from 1.79–2.38 Å. In the third Ti⁴⁺ site, Ti⁴⁺ is bonded in a 6-coordinate geometry to six O²⁻ atoms. There are a spread of Ti–O bond distances ranging from 1.78–2.48 Å. W⁶⁺ is bonded to six O²⁻ atoms to form WO₆ octahedra that share corners with four equivalent TiO₆ octahedra. The corner-sharing octahedral tilt angles range from 23–29°. There are a spread of W–O bond distances ranging from 1.88–2.10 Å. There are six inequivalent Bi³⁺ sites. In the first Bi³⁺ site, Bi³⁺ is bonded in a 6-coordinate geometry to six O²⁻ atoms. There are a spread of Bi–O bond distances ranging from 2.22–2.64 Å. In the second Bi³⁺ site, Bi³⁺ is bonded in a 6-coordinate geometry to six O²⁻ atoms. There are a spread of Bi–O bond distances ranging from 2.23–2.72 Å. In the third Bi³⁺ site, Bi³⁺ is bonded in a 6-coordinate geometry to six O²⁻ atoms. There are a spread of Bi–O bond distances ranging from 2.24–2.67 Å. In the fourth Bi³⁺ site, Bi³⁺ is bonded in a 6-coordinate geometry to six O²⁻ atoms. There are a spread of Bi–O bond distances ranging from 2.23–2.65 Å. In the fifth Bi³⁺ site, Bi³⁺ is bonded in a 8-coordinate geometry to eight O²⁻ atoms. There are a spread of Bi–O bond distances ranging from 2.25–2.82 Å. In the sixth Bi³⁺ site, Bi³⁺ is bonded in a 8-coordinate geometry to eight O²⁻ atoms. There are a spread of Bi–O bond distances ranging from 2.29–2.81 Å. There are eighteen inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded to four Bi³⁺ atoms to form a mixture of edge and corner-sharing OBi₄ tetrahedra. In the second O²⁻ site, O²⁻ is bonded to four Bi³⁺ atoms to form a mixture of edge and corner-sharing OBi₄ tetrahedra. In the third O²⁻ site, O²⁻ is bonded to four Bi³⁺ atoms to form a mixture of edge and corner-sharing OBi₄ tetrahedra. In the fourth O²⁻ site, O²⁻ is bonded to four Bi³⁺ atoms to form a mixture of edge and corner-sharing OBi₄ tetrahedra. In the fifth O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to two Ti⁴⁺ and one Bi³⁺ atom. In the sixth O²⁻ site, O²⁻ is bonded in a distorted bent 150 degrees geometry to one Ti⁴⁺, one W⁶⁺, and one Bi³⁺ atom. In the seventh O²⁻ site, O²⁻ is bonded in a distorted bent 150 degrees geometry to one Ti⁴⁺, one W⁶⁺, and one Bi³⁺ atom. In the eighth O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to two Ti⁴⁺ and one Bi³⁺ atom. In the ninth O²⁻ site, O²⁻ is bonded in a distorted see-saw-like geometry to two Ti⁴⁺ and two Bi³⁺ atoms. In the tenth O²⁻ site, O²⁻ is bonded in a distorted see-saw-like geometry to one Ti⁴⁺, one W⁶⁺, and two Bi³⁺ atoms. In the eleventh O²⁻ site, O²⁻ is bonded in a 4-coordinate geometry to two Ti⁴⁺ and two Bi³⁺ atoms. In the twelfth O²⁻ site, O²⁻ is bonded in a distorted bent 150 degrees geometry to one Ti⁴⁺, one W⁶⁺, and two Bi³⁺ atoms. In the thirteenth O²⁻ site, O²⁻ is bonded in a distorted bent 150 degrees geometry to one Ti⁴⁺, one W⁶⁺, and two Bi³⁺ atoms. In the fourteenth O²⁻ site, O²⁻ is bonded in a 4-coordinate geometry to two Ti⁴⁺ and two Bi³⁺ atoms. In the fifteenth O²⁻ site, O²⁻ is bonded in a distorted single-bond geometry to one Ti⁴⁺ and two Bi³⁺ atoms. In the sixteenth O²⁻ site, O²⁻ is bonded in a distorted single-bond geometry to one Ti⁴⁺ and two Bi³⁺ atoms. In the seventeenth O²⁻ site, O²⁻ is bonded in a distorted single-bond geometry to one Ti⁴⁺ and two Bi³⁺ atoms. In the eighteenth O²⁻ site, O²⁻ is bonded in a 1-coordinate geometry to one W⁶⁺ and two Bi³⁺ atoms.",2.2298,377.2426284960878,False
+mp-1095406,Ba3(LiSb)4,"Full Formula (Ba3 Li4 Sb4)
+Reduced Formula: Ba3(LiSb)4
+abc   :   5.034300   7.708152   9.491146
+angles: 113.958232 105.379450  90.000000
+pbc   :       True       True       True
+Sites (11)
+  #  SP            a          b          c    magmom
+---  ----  ---------  ---------  ---------  --------
+  0  Ba     0.132259   0.632259   0.264518         0
+  1  Ba     0.867741   0.367741   0.735482         0
+  2  Ba    -0         -0         -0               -0
+  3  Li     0.675676   0.981753   0.351354         0
+  4  Li     0.324324   0.018247   0.648646         0
+  5  Li     0.324324   0.630399   0.648646         0
+  6  Li     0.675676   0.369601   0.351354         0
+  7  Sb     0.786884   0.786884   0.573767        -0
+  8  Sb     0.213116   0.213116   0.426233        -0
+  9  Sb     0.5        0.684488   0                0
+ 10  Sb     0.5        0.315512  -0                0","Ba₃(LiSb)₄ crystallizes in the orthorhombic Immm space group. Li¹⁺ is bonded to one Sb³⁻ and three equivalent Sb²⁻ atoms to form LiSb₄ tetrahedra that share  a cornercorner with one BaSb₆ octahedra, corners with ten equivalent LiSb₄ tetrahedra, edges with two equivalent BaSb₆ octahedra, and edges with three equivalent LiSb₄ tetrahedra. The corner-sharing octahedral tilt angles are 52°. The Li–Sb bond length is 3.06 Å. There is one shorter (2.99 Å) and two longer (3.00 Å) Li–Sb bond lengths. There are two inequivalent Ba²⁺ sites. In the first Ba²⁺ site, Ba²⁺ is bonded in a 6-coordinate geometry to two equivalent Sb²⁻ and four equivalent Sb³⁻ atoms. Both Ba–Sb bond lengths are 3.60 Å. All Ba–Sb bond lengths are 3.64 Å. In the second Ba²⁺ site, Ba²⁺ is bonded to two equivalent Sb²⁻ and four equivalent Sb³⁻ atoms to form BaSb₆ octahedra that share corners with four equivalent LiSb₄ tetrahedra, edges with two equivalent BaSb₆ octahedra, and edges with eight equivalent LiSb₄ tetrahedra. Both Ba–Sb bond lengths are 3.54 Å. All Ba–Sb bond lengths are 3.49 Å. Sb²⁻ is bonded in a 9-coordinate geometry to six equivalent Li¹⁺ and three Ba²⁺ atoms. Sb³⁻ is bonded in a 9-coordinate geometry to two equivalent Li¹⁺, six Ba²⁺, and one Sb³⁻ atom. The Sb–Sb bond length is 2.86 Å.",0.0,322.08720842972,False
+mp-1218603,Sr3Ti(GaO2)10,"Full Formula (Sr3 Ti1 Ga10 O20)
+Reduced Formula: Sr3Ti(GaO2)10
+abc   :   9.833393   9.833393   5.154088
+angles:  75.164203  75.164203  73.922894
+pbc   :       True       True       True
+Sites (34)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Sr    0.27758   0.27758   0.713294         0
+  1  Sr    0.72242   0.72242   0.286706         0
+  2  Sr    0         0         0                0
+  3  Ti    0.5       0.5       0                0
+  4  Ga    0.007299  0.278108  0.345793         0
+  5  Ga    0.278108  0.007299  0.345793         0
+  6  Ga    0.992701  0.721892  0.654207         0
+  7  Ga    0.721892  0.992701  0.654207         0
+  8  Ga    0.635035  0.364965  0.5              0
+  9  Ga    0.364965  0.635035  0.5              0
+ 10  Ga    0.856628  0.423029  0.83413          0
+ 11  Ga    0.423029  0.856628  0.83413          0
+ 12  Ga    0.143372  0.576971  0.16587          0
+ 13  Ga    0.576971  0.143372  0.16587          0
+ 14  O     0.906538  0.906538  0.496196        -0
+ 15  O     0.093462  0.093462  0.503804        -0
+ 16  O     0.30753   0.5429    0.892943        -0
+ 17  O     0.5429    0.30753   0.892943        -0
+ 18  O     0.69247   0.4571    0.107057        -0
+ 19  O     0.4571    0.69247   0.107057        -0
+ 20  O     0.82816   0.333587  0.574961        -0
+ 21  O     0.333587  0.82816   0.574961        -0
+ 22  O     0.17184   0.666413  0.425039        -0
+ 23  O     0.666413  0.17184   0.425039        -0
+ 24  O     0.605378  0.875382  0.651024        -0
+ 25  O     0.875382  0.605378  0.651024        -0
+ 26  O     0.394622  0.124618  0.348976        -0
+ 27  O     0.124618  0.394622  0.348976        -0
+ 28  O     0.566639  0.566639  0.611102        -0
+ 29  O     0.433361  0.433361  0.388898        -0
+ 30  O     0.002014  0.280674  0.985417        -0
+ 31  O     0.280674  0.002014  0.985417        -0
+ 32  O     0.997986  0.719326  0.014583        -0
+ 33  O     0.719326  0.997986  0.014583        -0","Sr₃TiGa₁₀O₂₀ crystallizes in the monoclinic C2/m space group. There are two inequivalent Sr²⁺ sites. In the first Sr²⁺ site, Sr²⁺ is bonded in a 7-coordinate geometry to seven O²⁻ atoms. There are a spread of Sr–O bond distances ranging from 2.48–3.09 Å. In the second Sr²⁺ site, Sr²⁺ is bonded in a 6-coordinate geometry to six O²⁻ atoms. There are two shorter (2.51 Å) and four longer (2.75 Å) Sr–O bond lengths. Ti⁴⁺ is bonded to six O²⁻ atoms to form TiO₆ octahedra that share corners with four equivalent GaO₄ tetrahedra and edges with four equivalent GaO₆ octahedra. There are two shorter (1.94 Å) and four longer (2.01 Å) Ti–O bond lengths. There are three inequivalent Ga³⁺ sites. In the first Ga³⁺ site, Ga³⁺ is bonded to four O²⁻ atoms to form GaO₄ tetrahedra that share  a cornercorner with one GaO₆ octahedra and corners with four GaO₄ tetrahedra. The corner-sharing octahedral tilt angles are 52°. There are a spread of Ga–O bond distances ranging from 1.84–1.88 Å. In the second Ga³⁺ site, Ga³⁺ is bonded to six O²⁻ atoms to form GaO₆ octahedra that share corners with six GaO₄ tetrahedra,  an edgeedge with one GaO₆ octahedra, and edges with two equivalent TiO₆ octahedra. There are a spread of Ga–O bond distances ranging from 1.96–2.09 Å. In the third Ga³⁺ site, Ga³⁺ is bonded to four O²⁻ atoms to form GaO₄ tetrahedra that share  a cornercorner with one TiO₆ octahedra, corners with two equivalent GaO₆ octahedra, and corners with three equivalent GaO₄ tetrahedra. The corner-sharing octahedral tilt angles range from 45–63°. There are a spread of Ga–O bond distances ranging from 1.84–1.89 Å. There are six inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a trigonal planar geometry to three Ga³⁺ atoms. In the second O²⁻ site, O²⁻ is bonded in a distorted trigonal planar geometry to one Sr²⁺ and two Ga³⁺ atoms. In the third O²⁻ site, O²⁻ is bonded to one Sr²⁺, one Ti⁴⁺, and two equivalent Ga³⁺ atoms to form a mixture of distorted edge and corner-sharing OSrTiGa₂ tetrahedra. In the fourth O²⁻ site, O²⁻ is bonded to two Sr²⁺ and two Ga³⁺ atoms to form distorted OSr₂Ga₂ tetrahedra that share corners with three OSrTiGa₂ tetrahedra and  an edgeedge with one OSr₂Ga₂ tetrahedra. In the fifth O²⁻ site, O²⁻ is bonded in a distorted trigonal planar geometry to one Sr²⁺ and two equivalent Ga³⁺ atoms. In the sixth O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to one Sr²⁺, one Ti⁴⁺, and two Ga³⁺ atoms.",2.6334,453.63277915437016,False
+mp-1246249,Mn2Cd9N8,"Full Formula (Mn2 Cd9 N8)
+Reduced Formula: Mn2Cd9N8
+abc   :   9.384970   4.627228   7.426122
+angles:  90.000005  78.473326  75.728131
+pbc   :       True       True       True
+Sites (19)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Mn    0.413564  0.793218  0.772433     1.578
+  1  Mn    0.586436  0.206782  0.227567     1.576
+  2  Cd    0         0.5       0.5          0.005
+  3  Cd    0.084343  0.957829  0.797727     0.002
+  4  Cd    0.915657  0.042171  0.202273     0.002
+  5  Cd    0.680103  0.659948  0.413365     0.01
+  6  Cd    0.319897  0.340052  0.586635     0.01
+  7  Cd    0.796446  0.601776  0.941854     0.028
+  8  Cd    0.203554  0.398224  0.058146     0.028
+  9  Cd    0.404307  0.797846  0.237485     0.001
+ 10  Cd    0.595693  0.202154  0.762515     0.002
+ 11  N     0.285657  0.857171  0.98783     -0.021
+ 12  N     0.714343  0.142829  0.01217     -0.021
+ 13  N     0.326006  0.836997  0.579757     0
+ 14  N     0.673994  0.163003  0.420243     0
+ 15  N     0.612158  0.693921  0.742194    -0.011
+ 16  N     0.387842  0.306079  0.257806    -0.011
+ 17  N     0.958568  0.520716  0.229536     0.014
+ 18  N     0.041432  0.479284  0.770464     0.014","Mn₂Cd₉N₈ crystallizes in the monoclinic C2/m space group. Mn³⁺ is bonded in a trigonal planar geometry to three N³⁻ atoms. There are two shorter (1.77 Å) and one longer (1.78 Å) Mn–N bond length. There are five inequivalent Cd²⁺ sites. In the first Cd²⁺ site, Cd²⁺ is bonded in a linear geometry to two equivalent N³⁻ atoms. Both Cd–N bond lengths are 2.12 Å. In the second Cd²⁺ site, Cd²⁺ is bonded to four N³⁻ atoms to form distorted CdN₄ trigonal pyramids that share corners with two equivalent CdN₅ trigonal bipyramids, corners with two equivalent CdN₄ trigonal pyramids, and edges with two equivalent CdN₅ trigonal bipyramids. There are a spread of Cd–N bond distances ranging from 2.36–2.53 Å. In the third Cd²⁺ site, Cd²⁺ is bonded in a see-saw-like geometry to four N³⁻ atoms. There are a spread of Cd–N bond distances ranging from 2.31–2.62 Å. In the fourth Cd²⁺ site, Cd²⁺ is bonded to five N³⁻ atoms to form distorted CdN₅ trigonal bipyramids that share corners with two equivalent CdN₅ trigonal bipyramids, corners with two equivalent CdN₄ trigonal pyramids,  an edgeedge with one CdN₅ trigonal bipyramid, and edges with two equivalent CdN₄ trigonal pyramids. There are a spread of Cd–N bond distances ranging from 2.33–2.84 Å. In the fifth Cd²⁺ site, Cd²⁺ is bonded in a rectangular see-saw-like geometry to four N³⁻ atoms. There are a spread of Cd–N bond distances ranging from 2.32–2.49 Å. There are four inequivalent N³⁻ sites. In the first N³⁻ site, N³⁻ is bonded to one Mn³⁺ and four Cd²⁺ atoms to form a mixture of distorted edge and corner-sharing NMnCd₄ trigonal bipyramids. In the second N³⁻ site, N³⁻ is bonded to one Mn³⁺ and four Cd²⁺ atoms to form a mixture of distorted edge and corner-sharing NMnCd₄ trigonal bipyramids. In the third N³⁻ site, N³⁻ is bonded to one Mn³⁺ and four Cd²⁺ atoms to form a mixture of distorted edge and corner-sharing NMnCd₄ trigonal bipyramids. In the fourth N³⁻ site, N³⁻ is bonded in a 6-coordinate geometry to six Cd²⁺ atoms.",0.0,305.8210278756666,False
+mp-1183913,CsPdO3,"Full Formula (Cs1 Pd1 O3)
+Reduced Formula: CsPdO3
+abc   :   4.199705   4.199705   4.199705
+angles:  90.000000  90.000000  90.000000
+pbc   :       True       True       True
+Sites (5)
+  #  SP      a    b    c    magmom
+---  ----  ---  ---  ---  --------
+  0  Cs    0    0    0       0.099
+  1  Pd    0.5  0.5  0.5     0.519
+  2  O     0.5  0.5  0       0.224
+  3  O     0.5  0    0.5     0.312
+  4  O     0    0.5  0.5     0.732","CsPdO₃ is (Cubic) Perovskite structured and crystallizes in the cubic Pm̅3m space group. Cs¹⁺ is bonded to twelve equivalent O¹⁻ atoms to form CsO₁₂ cuboctahedra that share corners with twelve equivalent CsO₁₂ cuboctahedra, faces with six equivalent CsO₁₂ cuboctahedra, and faces with eight equivalent PdO₆ octahedra. All Cs–O bond lengths are 2.97 Å. Pd²⁺ is bonded to six equivalent O¹⁻ atoms to form PdO₆ octahedra that share corners with six equivalent PdO₆ octahedra and faces with eight equivalent CsO₁₂ cuboctahedra. The corner-sharing octahedra are not tilted. All Pd–O bond lengths are 2.10 Å. O¹⁻ is bonded to four equivalent Cs¹⁺ and two equivalent Pd²⁺ atoms to form a mixture of distorted edge, face, and corner-sharing OCs₄Pd₂ octahedra. The corner-sharing octahedral tilt angles range from 0–60°.",0.0,74.07238969648931,False
+mp-1206261,Sm2Ge6Au,"Full Formula (Sm2 Ge6 Au1)
+Reduced Formula: Sm2Ge6Au
+abc   :   4.181215   4.175556  11.343387
+angles:  90.000000 100.620431  90.000000
+pbc   :       True       True       True
+Sites (9)
+  #  SP           a    b         c    magmom
+---  ----  --------  ---  --------  --------
+  0  Sm    0.778375  0.5  0.556751    -0
+  1  Sm    0.11885   0.5  0.237701     0.001
+  2  Ge    0.490866  0.5  0.981732    -0
+  3  Ge    0.378199  0.5  0.756399    -0
+  4  Ge    0.991466  0    0.982931    -0
+  5  Ge    0.878435  0    0.75687     -0
+  6  Ge    0.672157  0    0.344313    -0
+  7  Ge    0.238339  0    0.476678    -0
+  8  Au    0.560312  0    0.120625    -0","Sm₂AuGe₆ crystallizes in the orthorhombic Amm2 space group. There are two inequivalent Sm sites. In the first Sm site, Sm is bonded in a 10-coordinate geometry to ten Ge atoms. There are a spread of Sm–Ge bond distances ranging from 3.05–3.16 Å. In the second Sm site, Sm is bonded in a 14-coordinate geometry to four equivalent Au and ten Ge atoms. All Sm–Au bond lengths are 3.23 Å. There are a spread of Sm–Ge bond distances ranging from 3.18–3.54 Å. Au is bonded in a 9-coordinate geometry to four equivalent Sm and five Ge atoms. There are a spread of Au–Ge bond distances ranging from 2.49–2.60 Å. There are six inequivalent Ge sites. In the first Ge site, Ge is bonded in a 2-coordinate geometry to two equivalent Sm, two equivalent Au, and one Ge atom. The Ge–Ge bond length is 2.51 Å. In the second Ge site, Ge is bonded in a 7-coordinate geometry to two equivalent Sm and five Ge atoms. All Ge–Ge bond lengths are 2.95 Å. In the third Ge site, Ge is bonded in a 2-coordinate geometry to two equivalent Sm, two equivalent Au, and one Ge atom. The Ge–Ge bond length is 2.52 Å. In the fourth Ge site, Ge is bonded in a 7-coordinate geometry to two equivalent Sm and five Ge atoms. In the fifth Ge site, Ge is bonded in a 9-coordinate geometry to six Sm, one Au, and two equivalent Ge atoms. Both Ge–Ge bond lengths are 2.56 Å. In the sixth Ge site, Ge is bonded in a 8-coordinate geometry to six Sm and two equivalent Ge atoms.",0.0,194.6504864773545,False
+mp-1180288,Na2Hg3(S2O)2,"Full Formula (Na4 Hg6 S8 O4)
+Reduced Formula: Na2Hg3(S2O)2
+abc   :   9.159663   9.159663   9.159663
+angles: 131.456904 119.619097  81.008487
+pbc   :       True       True       True
+Sites (22)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Na    0.739677  0.515721  0.255398        -0
+  1  Na    0.260323  0.484279  0.744602        -0
+  2  Na    0.239677  0.984279  0.223957        -0
+  3  Na    0.760322  0.015721  0.776043        -0
+  4  Hg    0.25      0.75      0.5             -0
+  5  Hg    0.75      0.25      0.5             -0
+  6  Hg    0.426567  0.25      0.176567        -0
+  7  Hg    0.073433  0.25      0.823433        -0
+  8  Hg    0.573433  0.75      0.823433        -0
+  9  Hg    0.926567  0.75      0.176567        -0
+ 10  S     0.165027  0.355866  0.312142        -0
+ 11  S     0.043724  0.852885  0.687858        -0
+ 12  S     0.456276  0.144134  0.809162        -0
+ 13  S     0.334973  0.647115  0.190838        -0
+ 14  S     0.834973  0.644134  0.687858        -0
+ 15  S     0.956276  0.147115  0.312142        -0
+ 16  S     0.543724  0.855866  0.190838        -0
+ 17  S     0.665027  0.352885  0.809162        -0
+ 18  O     0.953149  0.263275  0.216425        -0
+ 19  O     0.046851  0.736725  0.783575        -0
+ 20  O     0.453149  0.236725  0.689874        -0
+ 21  O     0.546851  0.763275  0.310126        -0","Na₂Hg₃(S₂O)₂ crystallizes in the orthorhombic Ibam space group. Na¹⁺ is bonded to four equivalent S¹⁻ and two equivalent O²⁻ atoms to form distorted NaS₄O₂ octahedra that share edges with two equivalent ONa₂S₂ tetrahedra and faces with two equivalent NaS₄O₂ octahedra. There are two shorter (2.93 Å) and two longer (2.98 Å) Na–S bond lengths. There is one shorter (2.58 Å) and one longer (2.74 Å) Na–O bond length. There are two inequivalent Hg²⁺ sites. In the first Hg²⁺ site, Hg²⁺ is bonded in a distorted rectangular see-saw-like geometry to four equivalent S¹⁻ atoms. All Hg–S bond lengths are 2.82 Å. In the second Hg²⁺ site, Hg²⁺ is bonded in a 2-coordinate geometry to two equivalent S¹⁻ atoms. Both Hg–S bond lengths are 2.97 Å. S¹⁻ is bonded in a distorted single-bond geometry to two equivalent Na¹⁺, two Hg²⁺, and one O²⁻ atom. The S–O bond length is 1.76 Å. O²⁻ is bonded to two equivalent Na¹⁺ and two equivalent S¹⁻ atoms to form ONa₂S₂ tetrahedra that share corners with two equivalent ONa₂S₂ tetrahedra and edges with two equivalent NaS₄O₂ octahedra.",0.0,483.1527233250544,False
+mp-561036,FeTe6O13,"Full Formula (Fe2 Te12 O26)
+Reduced Formula: FeTe6O13
+abc   :   8.659133   8.659133   8.659133
+angles:  72.116419  72.116414  72.116417
+pbc   :       True       True       True
+Sites (40)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Fe    0.742821  0.742821  0.742821     3.648
+  1  Fe    0.257179  0.257179  0.257179     3.648
+  2  Te    0.667036  0.060044  0.98625      0.002
+  3  Te    0.4714    0.175389  0.579897     0.007
+  4  Te    0.175389  0.579897  0.4714       0.007
+  5  Te    0.939956  0.01375   0.332964     0.002
+  6  Te    0.420103  0.5286    0.824611     0.007
+  7  Te    0.5286    0.824611  0.420103     0.007
+  8  Te    0.824611  0.420103  0.5286       0.007
+  9  Te    0.060044  0.98625   0.667036     0.002
+ 10  Te    0.332964  0.939956  0.01375      0.002
+ 11  Te    0.01375   0.332964  0.939956     0.002
+ 12  Te    0.98625   0.667036  0.060044     0.002
+ 13  Te    0.579897  0.4714    0.175389     0.007
+ 14  O     0.388681  0.699644  0.625943     0.001
+ 15  O     0.912473  0.912473  0.912473    -0.002
+ 16  O     0.897045  0.921178  0.602262     0.03
+ 17  O     0.374057  0.611319  0.300356     0.001
+ 18  O     0.635434  0.884383  0.543381     0.039
+ 19  O     0.199927  0.696224  0.946893     0.003
+ 20  O     0.397738  0.102956  0.078822     0.03
+ 21  O     0.087527  0.087527  0.087527    -0.002
+ 22  O     0.303776  0.053107  0.800073     0.003
+ 23  O     0.456619  0.364566  0.115617     0.039
+ 24  O     0.611319  0.300356  0.374057     0.001
+ 25  O     0.364566  0.115617  0.456619     0.039
+ 26  O     0.884383  0.543381  0.635434     0.039
+ 27  O     0.946893  0.199927  0.696224     0.003
+ 28  O     0.602262  0.897045  0.921178     0.03
+ 29  O     0.921178  0.602262  0.897045     0.03
+ 30  O     0.102956  0.078822  0.397738     0.03
+ 31  O     0.696224  0.946893  0.199927     0.003
+ 32  O     0.699644  0.625943  0.388681     0.001
+ 33  O     0.053107  0.800073  0.303776     0.003
+ 34  O     0.078822  0.397738  0.102956     0.03
+ 35  O     0.543381  0.635434  0.884383     0.039
+ 36  O     0.625943  0.388681  0.699644     0.001
+ 37  O     0.300356  0.374057  0.611319     0.001
+ 38  O     0.800073  0.303776  0.053107     0.003
+ 39  O     0.115617  0.456619  0.364566     0.039","FeTe₆O₁₃ crystallizes in the trigonal R̅3 space group. Fe²⁺ is bonded in an octahedral geometry to six O²⁻ atoms. There are three shorter (2.13 Å) and three longer (2.22 Å) Fe–O bond lengths. There are two inequivalent Te⁴⁺ sites. In the first Te⁴⁺ site, Te⁴⁺ is bonded in a 4-coordinate geometry to four O²⁻ atoms. There are a spread of Te–O bond distances ranging from 1.88–2.20 Å. In the second Te⁴⁺ site, Te⁴⁺ is bonded in a 5-coordinate geometry to five O²⁻ atoms. There are a spread of Te–O bond distances ranging from 1.89–2.60 Å. There are five inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a distorted bent 150 degrees geometry to two equivalent Te⁴⁺ atoms. In the second O²⁻ site, O²⁻ is bonded in a trigonal planar geometry to three equivalent Te⁴⁺ atoms. In the third O²⁻ site, O²⁻ is bonded in a distorted trigonal planar geometry to one Fe²⁺ and two equivalent Te⁴⁺ atoms. In the fourth O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to one Fe²⁺ and two equivalent Te⁴⁺ atoms. In the fifth O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to two Te⁴⁺ atoms.",2.2236,571.5815878208988,False
+mp-862360,Sc2NiIr,"Full Formula (Sc2 Ni1 Ir1)
+Reduced Formula: Sc2NiIr
+abc   :   4.512420   4.512420   4.512420
+angles:  60.000430  60.000430  60.000429
+pbc   :       True       True       True
+Sites (4)
+  #  SP            a          b          c    magmom
+---  ----  ---------  ---------  ---------  --------
+  0  Sc    -0         -0         -0               -0
+  1  Sc     0.500001   0.500001   0.500001         0
+  2  Ni     0.749999   0.749999   0.749999        -0
+  3  Ir     0.25       0.25       0.25             0",Sc₂IrNi is Heusler structured and crystallizes in the cubic Fm̅3m space group. Sc is bonded in a body-centered cubic geometry to four equivalent Ir and four equivalent Ni atoms. All Sc–Ir bond lengths are 2.78 Å. All Sc–Ni bond lengths are 2.78 Å. Ir is bonded in a body-centered cubic geometry to eight equivalent Sc atoms. Ni is bonded in a body-centered cubic geometry to eight equivalent Sc atoms.,0.0,64.97071916246263,False
+mp-557909,Zr(PO3)4,"Full Formula (Zr8 P32 O96)
+Reduced Formula: Zr(PO3)4
+abc   :   8.622743   9.918670  20.870804
+angles:  90.000000  90.000000  90.000000
+pbc   :       True       True       True
+Sites (136)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Zr    0.998873  0.019932  0.883694        -0
+  1  Zr    0.498873  0.980068  0.116306        -0
+  2  Zr    0.498873  0.019932  0.616306        -0
+  3  Zr    0.498146  0.485642  0.866856        -0
+  4  Zr    0.998146  0.485642  0.633144        -0
+  5  Zr    0.498146  0.514358  0.366856        -0
+  6  Zr    0.998873  0.980068  0.383694        -0
+  7  Zr    0.998146  0.514358  0.133144        -0
+  8  P     0.264649  0.987739  0.260815         0
+  9  P     0.771294  0.507141  0.98854          0
+ 10  P     0.119385  0.511139  0.797249         0
+ 11  P     0.384278  0.635308  0.122124        -0
+ 12  P     0.622725  0.00649   0.452477        -0
+ 13  P     0.381191  0.142116  0.876189        -0
+ 14  P     0.122725  0.00649   0.047523        -0
+ 15  P     0.261459  0.767589  0.83536         -0
+ 16  P     0.761459  0.232411  0.16464         -0
+ 17  P     0.261139  0.260045  0.092877         0
+ 18  P     0.764649  0.987739  0.239185         0
+ 19  P     0.619385  0.488861  0.202751         0
+ 20  P     0.264649  0.012261  0.760815         0
+ 21  P     0.761139  0.260045  0.407123         0
+ 22  P     0.119385  0.488861  0.297249         0
+ 23  P     0.261459  0.232411  0.33536         -0
+ 24  P     0.261139  0.739955  0.592877         0
+ 25  P     0.884278  0.364692  0.877876        -0
+ 26  P     0.622725  0.99351   0.952477         0
+ 27  P     0.761139  0.739955  0.907123         0
+ 28  P     0.381191  0.857884  0.376189        -0
+ 29  P     0.761459  0.767589  0.66464         -0
+ 30  P     0.271294  0.492859  0.01146          0
+ 31  P     0.271294  0.507141  0.51146          0
+ 32  P     0.122725  0.99351   0.547523        -0
+ 33  P     0.884278  0.635308  0.377876        -0
+ 34  P     0.764649  0.012261  0.739185         0
+ 35  P     0.771294  0.492859  0.48854          0
+ 36  P     0.881191  0.857884  0.123811        -0
+ 37  P     0.384278  0.364692  0.622124        -0
+ 38  P     0.881191  0.142116  0.623811        -0
+ 39  P     0.619385  0.511139  0.702751         0
+ 40  O     0.324005  0.860921  0.777382         0
+ 41  O     0.26867   0.443159  0.814379         0
+ 42  O     0.76867   0.443159  0.685621         0
+ 43  O     0.499668  0.02563   0.896864         0
+ 44  O     0.87539   0.112934  0.699319         0
+ 45  O     0.608231  0.511879  0.462914         0
+ 46  O     0.888152  0.82714   0.881009         0
+ 47  O     0.042968  0.48143   0.734243        -0
+ 48  O     0.602035  0.025971  0.711948         0
+ 49  O     0.76867   0.556841  0.185621         0
+ 50  O     0.492176  0.514537  0.147779         0
+ 51  O     0.888152  0.17286   0.381009         0
+ 52  O     0.725468  0.119821  0.593793         0
+ 53  O     0.635093  0.672889  0.699428         0
+ 54  O     0.883364  0.400727  0.953114        -0
+ 55  O     0.396247  0.317175  0.355938         0
+ 56  O     0.824005  0.860921  0.722618        -0
+ 57  O     0.388152  0.82714   0.618991         0
+ 58  O     0.225468  0.880179  0.406207         0
+ 59  O     0.542968  0.51857   0.265757        -0
+ 60  O     0.800019  0.50321   0.558686         0
+ 61  O     0.224483  0.376024  0.649107        -0
+ 62  O     0.044226  0.98037   0.984607        -0
+ 63  O     0.45556   0.723072  0.386352        -0
+ 64  O     0.724483  0.623976  0.350893        -0
+ 65  O     0.108231  0.488121  0.537086         0
+ 66  O     0.544226  0.01963   0.015393        -0
+ 67  O     0.37539   0.112934  0.800681         0
+ 68  O     0.300019  0.50321   0.941314         0
+ 69  O     0.883364  0.599273  0.453114        -0
+ 70  O     0.793054  0.963231  0.308427        -0
+ 71  O     0.793054  0.036769  0.808427        -0
+ 72  O     0.102035  0.974029  0.288052         0
+ 73  O     0.832993  0.653659  0.965245         0
+ 74  O     0.492176  0.485463  0.647779         0
+ 75  O     0.95556   0.723072  0.113648        -0
+ 76  O     0.184286  0.145083  0.384246         0
+ 77  O     0.684286  0.854917  0.615754         0
+ 78  O     0.275162  0.060063  0.561651         0
+ 79  O     0.275162  0.939937  0.061651        -0
+ 80  O     0.135434  0.167749  0.056415        -0
+ 81  O     0.635434  0.832251  0.943585        -0
+ 82  O     0.775162  0.060063  0.938349        -0
+ 83  O     0.293054  0.036769  0.691573        -0
+ 84  O     0.135093  0.672889  0.800572         0
+ 85  O     0.544226  0.98037   0.515393        -0
+ 86  O     0.468754  0.766509  0.129259         0
+ 87  O     0.635434  0.167749  0.443585        -0
+ 88  O     0.968754  0.766509  0.370741         0
+ 89  O     0.396247  0.682825  0.855938         0
+ 90  O     0.635093  0.327111  0.199428         0
+ 91  O     0.724483  0.376024  0.850893        -0
+ 92  O     0.968754  0.233491  0.870741         0
+ 93  O     0.999668  0.97437   0.103136         0
+ 94  O     0.225468  0.119821  0.906207         0
+ 95  O     0.896247  0.682825  0.644062         0
+ 96  O     0.608231  0.488121  0.962914         0
+ 97  O     0.183823  0.646782  0.639334         0
+ 98  O     0.775162  0.939937  0.438349         0
+ 99  O     0.800019  0.49679   0.058686         0
+100  O     0.135093  0.327111  0.300572         0
+101  O     0.183823  0.353218  0.139334         0
+102  O     0.102035  0.025971  0.788052         0
+103  O     0.45556   0.276928  0.886352        -0
+104  O     0.135434  0.832251  0.556415        -0
+105  O     0.332993  0.346341  0.034755         0
+106  O     0.87539   0.887066  0.199319         0
+107  O     0.542968  0.48143   0.765757        -0
+108  O     0.044226  0.01963   0.484607        -0
+109  O     0.383364  0.400727  0.546886        -0
+110  O     0.725468  0.880179  0.093793         0
+111  O     0.992176  0.485463  0.852221         0
+112  O     0.37539   0.887066  0.300681         0
+113  O     0.602035  0.974029  0.211948         0
+114  O     0.108231  0.511879  0.037086         0
+115  O     0.224483  0.623976  0.149107        -0
+116  O     0.324005  0.139079  0.277382        -0
+117  O     0.300019  0.49679   0.441314         0
+118  O     0.26867   0.556841  0.314379         0
+119  O     0.95556   0.276928  0.613648        -0
+120  O     0.683823  0.353218  0.360666         0
+121  O     0.468754  0.233491  0.629259         0
+122  O     0.383364  0.599273  0.046886        -0
+123  O     0.042968  0.51857   0.234243        -0
+124  O     0.896247  0.317175  0.144062         0
+125  O     0.832993  0.346341  0.465245         0
+126  O     0.499668  0.97437   0.396864         0
+127  O     0.824005  0.139079  0.222618        -0
+128  O     0.999668  0.02563   0.603136         0
+129  O     0.332993  0.653659  0.534755         0
+130  O     0.683823  0.646782  0.860666         0
+131  O     0.388152  0.17286   0.118991         0
+132  O     0.992176  0.514537  0.352221         0
+133  O     0.293054  0.963231  0.191573        -0
+134  O     0.184286  0.854917  0.884246         0
+135  O     0.684286  0.145083  0.115754         0","Zr(PO₃)₄ crystallizes in the orthorhombic Pca2₁ space group. There are two inequivalent Zr⁴⁺ sites. In the first Zr⁴⁺ site, Zr⁴⁺ is bonded in a 8-coordinate geometry to eight O²⁻ atoms. There are a spread of Zr–O bond distances ranging from 2.14–2.38 Å. In the second Zr⁴⁺ site, Zr⁴⁺ is bonded in a 8-coordinate geometry to eight O²⁻ atoms. There are a spread of Zr–O bond distances ranging from 2.14–2.32 Å. There are eight inequivalent P⁵⁺ sites. In the first P⁵⁺ site, P⁵⁺ is bonded to four O²⁻ atoms to form corner-sharing PO₄ tetrahedra. There are a spread of P–O bond distances ranging from 1.49–1.62 Å. In the second P⁵⁺ site, P⁵⁺ is bonded to four O²⁻ atoms to form corner-sharing PO₄ tetrahedra. There are a spread of P–O bond distances ranging from 1.49–1.62 Å. In the third P⁵⁺ site, P⁵⁺ is bonded to four O²⁻ atoms to form corner-sharing PO₄ tetrahedra. There are two shorter (1.50 Å) and two longer (1.61 Å) P–O bond lengths. In the fourth P⁵⁺ site, P⁵⁺ is bonded to four O²⁻ atoms to form corner-sharing PO₄ tetrahedra. There are a spread of P–O bond distances ranging from 1.49–1.61 Å. In the fifth P⁵⁺ site, P⁵⁺ is bonded to four O²⁻ atoms to form corner-sharing PO₄ tetrahedra. There are a spread of P–O bond distances ranging from 1.50–1.61 Å. In the sixth P⁵⁺ site, P⁵⁺ is bonded to four O²⁻ atoms to form corner-sharing PO₄ tetrahedra. There are two shorter (1.50 Å) and two longer (1.60 Å) P–O bond lengths. In the seventh P⁵⁺ site, P⁵⁺ is bonded to four O²⁻ atoms to form corner-sharing PO₄ tetrahedra. There are a spread of P–O bond distances ranging from 1.49–1.62 Å. In the eighth P⁵⁺ site, P⁵⁺ is bonded to four O²⁻ atoms to form corner-sharing PO₄ tetrahedra. There are two shorter (1.50 Å) and two longer (1.61 Å) P–O bond lengths. There are twenty-four inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a bent 120 degrees geometry to two P⁵⁺ atoms. In the second O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to one Zr⁴⁺ and one P⁵⁺ atom. In the third O²⁻ site, O²⁻ is bonded in a bent 150 degrees geometry to two P⁵⁺ atoms. In the fourth O²⁻ site, O²⁻ is bonded in a bent 120 degrees geometry to two P⁵⁺ atoms. In the fifth O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to one Zr⁴⁺ and one P⁵⁺ atom. In the sixth O²⁻ site, O²⁻ is bonded in a bent 150 degrees geometry to one Zr⁴⁺ and one P⁵⁺ atom. In the seventh O²⁻ site, O²⁻ is bonded in a distorted bent 150 degrees geometry to one Zr⁴⁺ and one P⁵⁺ atom. In the eighth O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to one Zr⁴⁺ and one P⁵⁺ atom. In the ninth O²⁻ site, O²⁻ is bonded in a bent 150 degrees geometry to two P⁵⁺ atoms. In the tenth O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to one Zr⁴⁺ and one P⁵⁺ atom. In the eleventh O²⁻ site, O²⁻ is bonded in a bent 120 degrees geometry to two P⁵⁺ atoms. In the twelfth O²⁻ site, O²⁻ is bonded in a bent 120 degrees geometry to two P⁵⁺ atoms. In the thirteenth O²⁻ site, O²⁻ is bonded in a distorted bent 150 degrees geometry to one Zr⁴⁺ and one P⁵⁺ atom. In the fourteenth O²⁻ site, O²⁻ is bonded in a distorted bent 150 degrees geometry to one Zr⁴⁺ and one P⁵⁺ atom. In the fifteenth O²⁻ site, O²⁻ is bonded in a distorted bent 150 degrees geometry to one Zr⁴⁺ and one P⁵⁺ atom. In the sixteenth O²⁻ site, O²⁻ is bonded in a distorted bent 150 degrees geometry to one Zr⁴⁺ and one P⁵⁺ atom. In the seventeenth O²⁻ site, O²⁻ is bonded in a distorted bent 150 degrees geometry to one Zr⁴⁺ and one P⁵⁺ atom. In the eighteenth O²⁻ site, O²⁻ is bonded in a distorted single-bond geometry to one Zr⁴⁺ and one P⁵⁺ atom. In the nineteenth O²⁻ site, O²⁻ is bonded in a bent 120 degrees geometry to two P⁵⁺ atoms. In the twentieth O²⁻ site, O²⁻ is bonded in a distorted single-bond geometry to one Zr⁴⁺ and one P⁵⁺ atom. In the twenty-first O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to one Zr⁴⁺ and one P⁵⁺ atom. In the twenty-second O²⁻ site, O²⁻ is bonded in a bent 120 degrees geometry to two P⁵⁺ atoms. In the twenty-third O²⁻ site, O²⁻ is bonded in a distorted bent 150 degrees geometry to one Zr⁴⁺ and one P⁵⁺ atom. In the twenty-fourth O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to one Zr⁴⁺ and one P⁵⁺ atom.",4.1128,1784.9993530658935,False
+mp-1175643,Li9Mn2Co5O16,"Full Formula (Li9 Mn2 Co5 O16)
+Reduced Formula: Li9Mn2Co5O16
+abc   :   3.036008   9.788484  10.009671
+angles:  87.527222  88.137475  82.888628
+pbc   :       True       True       True
+Sites (32)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Li    0.618631  0.258454  0.437045     0.005
+  1  Li    0.88366   0.744817  0.309714     0.007
+  2  Li    0.127817  0.252701  0.186945     0.003
+  3  Li    0.37706   0.748989  0.064186     0.005
+  4  Li    0.62294   0.251011  0.935814     0.005
+  5  Li    0.872183  0.747299  0.813055     0.003
+  6  Li    0.11634   0.255183  0.690286     0.007
+  7  Li    0.381369  0.741546  0.562955     0.005
+  8  Li    0         0.5       0.5          0.013
+  9  Mn    0.757159  0.99973   0.626571     3.84
+ 10  Mn    0.242841  0.00027   0.373429     3.84
+ 11  Co    0.501336  0.498656  0.258814     2.407
+ 12  Co    0.746928  0.999412  0.123111     2.015
+ 13  Co    0         0.5       0            0.005
+ 14  Co    0.253072  0.000588  0.876889     2.015
+ 15  Co    0.498664  0.501344  0.741186     2.407
+ 16  O     0.158342  0.118172  0.52819      0.001
+ 17  O     0.440424  0.614624  0.387411     0.261
+ 18  O     0.655259  0.115563  0.27582     -0.03
+ 19  O     0.910536  0.612829  0.151695     0.062
+ 20  O     0.197968  0.116516  0.02749     -0.001
+ 21  O     0.449777  0.609856  0.899338     0.02
+ 22  O     0.708034  0.114515  0.781871     0.033
+ 23  O     0.917162  0.614203  0.664295     0.133
+ 24  O     0.082838  0.385797  0.335705     0.133
+ 25  O     0.291966  0.885485  0.218129     0.033
+ 26  O     0.550223  0.390144  0.100662     0.02
+ 27  O     0.802032  0.883484  0.97251     -0.001
+ 28  O     0.089464  0.387171  0.848305     0.062
+ 29  O     0.344741  0.884437  0.72418     -0.03
+ 30  O     0.559576  0.385376  0.612589     0.261
+ 31  O     0.841658  0.881828  0.47181      0.001","Li₉Mn₂Co₅O₁₆ is Caswellsilverite-derived structured and crystallizes in the triclinic P̅1 space group. There are five inequivalent Li¹⁺ sites. In the first Li¹⁺ site, Li¹⁺ is bonded to six O²⁻ atoms to form LiO₆ octahedra that share  a cornercorner with one CoO₆ octahedra, corners with two equivalent MnO₆ octahedra, corners with three equivalent CoO₆ octahedra,  an edgeedge with one CoO₆ octahedra, edges with three equivalent MnO₆ octahedra, and edges with eight LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 4–8°. There are a spread of Li–O bond distances ranging from 2.17–2.23 Å. In the second Li¹⁺ site, Li¹⁺ is bonded to six O²⁻ atoms to form LiO₆ octahedra that share  a cornercorner with one MnO₆ octahedra, corners with two equivalent LiO₆ octahedra, corners with three CoO₆ octahedra,  an edgeedge with one CoO₆ octahedra, edges with two equivalent MnO₆ octahedra, edges with two equivalent CoO₆ octahedra, and edges with seven LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 5–11°. There are a spread of Li–O bond distances ranging from 2.08–2.31 Å. In the third Li¹⁺ site, Li¹⁺ is bonded to six O²⁻ atoms to form LiO₆ octahedra that share  a cornercorner with one LiO₆ octahedra, corners with two equivalent MnO₆ octahedra, corners with three CoO₆ octahedra,  an edgeedge with one MnO₆ octahedra, edges with two equivalent CoO₆ octahedra, edges with three CoO₆ octahedra, and edges with six LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 3–8°. There are a spread of Li–O bond distances ranging from 2.01–2.25 Å. In the fourth Li¹⁺ site, Li¹⁺ is bonded to six O²⁻ atoms to form LiO₆ octahedra that share  a cornercorner with one MnO₆ octahedra, corners with two equivalent CoO₆ octahedra, corners with three equivalent CoO₆ octahedra,  an edgeedge with one CoO₆ octahedra, edges with five CoO₆ octahedra, and edges with six LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 4–9°. There are a spread of Li–O bond distances ranging from 2.07–2.25 Å. In the fifth Li¹⁺ site, Li¹⁺ is bonded to six O²⁻ atoms to form LiO₆ octahedra that share corners with six LiO₆ octahedra, edges with four equivalent CoO₆ octahedra, and edges with eight LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 8–11°. There are a spread of Li–O bond distances ranging from 2.02–2.23 Å. Mn³⁺ is bonded to six O²⁻ atoms to form MnO₆ octahedra that share corners with six LiO₆ octahedra, edges with two equivalent CoO₆ octahedra, edges with four equivalent MnO₆ octahedra, and edges with six LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 5–8°. There are a spread of Mn–O bond distances ranging from 1.95–2.26 Å. Co⁴⁺ is bonded to six O²⁻ atoms to form distorted CoO₆ octahedra that share corners with six LiO₆ octahedra, edges with two equivalent CoO₆ octahedra, edges with two equivalent CoO₆ octahedra, and edges with eight LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 4–9°. There are a spread of Co–O bond distances ranging from 1.74–2.27 Å. There are two inequivalent Co³⁺ sites. In the first Co³⁺ site, Co³⁺ is bonded to six O²⁻ atoms to form CoO₆ octahedra that share corners with six LiO₆ octahedra, edges with two equivalent MnO₆ octahedra, edges with four equivalent CoO₆ octahedra, and edges with six LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 3–8°. There are a spread of Co–O bond distances ranging from 1.92–2.13 Å. In the second Co³⁺ site, Co³⁺ is bonded to six O²⁻ atoms to form CoO₆ octahedra that share corners with six LiO₆ octahedra, edges with two equivalent CoO₆ octahedra, edges with four equivalent CoO₆ octahedra, and edges with six LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 7–8°. There are a spread of Co–O bond distances ranging from 1.91–2.13 Å. There are eight inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded to three Li¹⁺ and three equivalent Mn³⁺ atoms to form OLi₃Mn₃ octahedra that share corners with six OLi₃Mn₂Co octahedra and edges with twelve OLi₃Mn₃ octahedra. The corner-sharing octahedral tilt angles range from 0–4°. In the second O²⁻ site, O²⁻ is bonded to five Li¹⁺ and one Co⁴⁺ atom to form OLi₅Co octahedra that share corners with six OLi₅Co octahedra and edges with twelve OLi₃Mn₃ octahedra. The corner-sharing octahedral tilt angles range from 0–7°. In the third O²⁻ site, O²⁻ is bonded to three Li¹⁺, two equivalent Mn³⁺, and one Co³⁺ atom to form a mixture of edge and corner-sharing OLi₃Mn₂Co octahedra. The corner-sharing octahedral tilt angles range from 0–6°. In the fourth O²⁻ site, O²⁻ is bonded to three Li¹⁺, one Co³⁺, and two equivalent Co⁴⁺ atoms to form OLi₃Co₃ octahedra that share corners with six OLi₃Mn₃ octahedra and edges with twelve OLi₅Co octahedra. The corner-sharing octahedral tilt angles range from 0–8°. In the fifth O²⁻ site, O²⁻ is bonded to three Li¹⁺ and three equivalent Co³⁺ atoms to form a mixture of edge and corner-sharing OLi₃Co₃ octahedra. The corner-sharing octahedral tilt angles range from 1–3°. In the sixth O²⁻ site, O²⁻ is bonded to three Li¹⁺, one Co⁴⁺, and two equivalent Co³⁺ atoms to form OLi₃Co₃ octahedra that share corners with six OLi₅Co octahedra and edges with twelve OLi₃Mn₂Co octahedra. The corner-sharing octahedral tilt angles range from 0–7°. In the seventh O²⁻ site, O²⁻ is bonded to three Li¹⁺, one Mn³⁺, and two equivalent Co³⁺ atoms to form a mixture of edge and corner-sharing OLi₃MnCo₂ octahedra. The corner-sharing octahedral tilt angles range from 1–5°. In the eighth O²⁻ site, O²⁻ is bonded to four Li¹⁺ and two equivalent Co⁴⁺ atoms to form a mixture of edge and corner-sharing OLi₄Co₂ octahedra. The corner-sharing octahedral tilt angles range from 0–8°.",0.0067000000000003,294.7927215418352,False
+mp-1091398,YSiAg,"Full Formula (Y3 Si3 Ag3)
+Reduced Formula: YSiAg
+abc   :   7.037516   7.037516   4.193895
+angles:  90.000000  90.000000 119.999992
+pbc   :       True       True       True
+Sites (9)
+  #  SP            a          b     c    magmom
+---  ----  ---------  ---------  ----  --------
+  0  Y      0          0.41727    0.5        -0
+  1  Y      0.58273    0.58273    0.5        -0
+  2  Y      0.41727    0          0.5        -0
+  3  Si     0.333333   0.666667   0           0
+  4  Si     0.666667   0.333333  -0           0
+  5  Si    -0         -0          0.5        -0
+  6  Ag    -0          0.750265  -0          -0
+  7  Ag     0.249735   0.249735   0          -0
+  8  Ag     0.750265  -0          0          -0","YAgSi crystallizes in the hexagonal P̅62m space group. Y³⁺ is bonded to five Si⁴⁻ atoms to form a mixture of distorted edge and corner-sharing YSi₅ square pyramids. There is one shorter (2.95 Å) and four longer (2.99 Å) Y–Si bond lengths. Ag¹⁺ is bonded in a 4-coordinate geometry to four Si⁴⁻ atoms. There are two shorter (2.70 Å) and two longer (2.76 Å) Ag–Si bond lengths. There are two inequivalent Si⁴⁻ sites. In the first Si⁴⁻ site, Si⁴⁻ is bonded in a 9-coordinate geometry to six equivalent Y³⁺ and three equivalent Ag¹⁺ atoms. In the second Si⁴⁻ site, Si⁴⁻ is bonded in a 9-coordinate geometry to three equivalent Y³⁺ and six equivalent Ag¹⁺ atoms.",0.0,179.88172247113428,False
+mp-18562,Na2Si2Se5,"Full Formula (Na8 Si8 Se20)
+Reduced Formula: Na2Si2Se5
+abc   :   9.430297   9.430297  10.961741
+angles:  90.000000  90.000000  89.799850
+pbc   :       True       True       True
+Sites (36)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Na    0.578741  0.078546  0.75            -0
+  1  Na    0.421259  0.921454  0.25            -0
+  2  Na    0.921454  0.421259  0.75            -0
+  3  Na    0.078546  0.578741  0.25            -0
+  4  Na    0.148235  0.148235  0.5             -0
+  5  Na    0.851765  0.851765  0               -0
+  6  Na    0.851765  0.851765  0.5             -0
+  7  Na    0.148235  0.148235  0               -0
+  8  Si    0.585205  0.685934  0.75             0
+  9  Si    0.414795  0.314066  0.25             0
+ 10  Si    0.314066  0.414795  0.75             0
+ 11  Si    0.685934  0.585205  0.25             0
+ 12  Si    0.253794  0.746206  0.917194        -0
+ 13  Si    0.746206  0.253794  0.417194        -0
+ 14  Si    0.253794  0.746206  0.582806        -0
+ 15  Si    0.746206  0.253794  0.082806        -0
+ 16  Se    0.728693  0.814489  0.25            -0
+ 17  Se    0.271307  0.185511  0.75            -0
+ 18  Se    0.185511  0.271307  0.25            -0
+ 19  Se    0.814489  0.728693  0.75            -0
+ 20  Se    0.157568  0.842432  0.081535         0
+ 21  Se    0.842432  0.157568  0.581535         0
+ 22  Se    0.157568  0.842432  0.418465         0
+ 23  Se    0.842432  0.157568  0.918465         0
+ 24  Se    0.151843  0.848157  0.75            -0
+ 25  Se    0.848157  0.151843  0.25            -0
+ 26  Se    0.50683   0.207546  0.078249         0
+ 27  Se    0.49317   0.792454  0.578249         0
+ 28  Se    0.792454  0.49317   0.421751         0
+ 29  Se    0.207546  0.50683   0.921751         0
+ 30  Se    0.49317   0.792454  0.921751         0
+ 31  Se    0.50683   0.207546  0.421751         0
+ 32  Se    0.207546  0.50683   0.578249         0
+ 33  Se    0.792454  0.49317   0.078249         0
+ 34  Se    0.552991  0.447009  0.75            -0
+ 35  Se    0.447009  0.552991  0.25            -0","Na₂Si₂Se₅ crystallizes in the orthorhombic Cmcm space group. There are two inequivalent Na¹⁺ sites. In the first Na¹⁺ site, Na¹⁺ is bonded in a 6-coordinate geometry to six Se²⁻ atoms. There are a spread of Na–Se bond distances ranging from 3.11–3.54 Å. In the second Na¹⁺ site, Na¹⁺ is bonded in a 6-coordinate geometry to six Se²⁻ atoms. There are a spread of Na–Se bond distances ranging from 3.03–3.58 Å. There are two inequivalent Si⁴⁺ sites. In the first Si⁴⁺ site, Si⁴⁺ is bonded to four Se²⁻ atoms to form corner-sharing SiSe₄ tetrahedra. There are a spread of Si–Se bond distances ranging from 2.23–2.32 Å. In the second Si⁴⁺ site, Si⁴⁺ is bonded to four Se²⁻ atoms to form corner-sharing SiSe₄ tetrahedra. There are a spread of Si–Se bond distances ranging from 2.23–2.32 Å. There are five inequivalent Se²⁻ sites. In the first Se²⁻ site, Se²⁻ is bonded to three Na¹⁺ and one Si⁴⁺ atom to form distorted corner-sharing SeNa₃Si tetrahedra. In the second Se²⁻ site, Se²⁻ is bonded in a 5-coordinate geometry to four Na¹⁺ and one Si⁴⁺ atom. In the third Se²⁻ site, Se²⁻ is bonded in a water-like geometry to two equivalent Si⁴⁺ atoms. In the fourth Se²⁻ site, Se²⁻ is bonded in a 4-coordinate geometry to two Na¹⁺ and two Si⁴⁺ atoms. In the fifth Se²⁻ site, Se²⁻ is bonded in a distorted water-like geometry to two equivalent Na¹⁺ and two equivalent Si⁴⁺ atoms.",2.4355,974.8272141079,False
+mp-1228095,Ba3Mo2(NO3)2,"Full Formula (Ba3 Mo2 N2 O6)
+Reduced Formula: Ba3Mo2(NO3)2
+abc   :   8.027011   8.027011   8.027010
+angles:  44.618743  44.618743  44.618739
+pbc   :       True       True       True
+Sites (13)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Ba    0.201553  0.201553  0.201553        -0
+  1  Ba    0.798447  0.798447  0.798447        -0
+  2  Ba    0         0         0               -0
+  3  Mo    0.59353   0.59353   0.59353          0
+  4  Mo    0.40647   0.40647   0.40647          0
+  5  N     0.674235  0.674235  0.674235        -0
+  6  N     0.325765  0.325765  0.325765        -0
+  7  O     0.267697  0.267697  0.768148         0
+  8  O     0.768148  0.267697  0.267697         0
+  9  O     0.267697  0.768148  0.267697         0
+ 10  O     0.732303  0.732303  0.231852         0
+ 11  O     0.231852  0.732303  0.732303         0
+ 12  O     0.732303  0.231852  0.732303         0","Ba₃Mo₂(NO₃)₂ crystallizes in the trigonal R̅3m space group. There are two inequivalent Ba²⁺ sites. In the first Ba²⁺ site, Ba²⁺ is bonded in a 10-coordinate geometry to one N³⁻ and nine equivalent O²⁻ atoms. The Ba–N bond length is 2.69 Å. There are three shorter (2.79 Å) and six longer (3.12 Å) Ba–O bond lengths. In the second Ba²⁺ site, Ba²⁺ is bonded in a 6-coordinate geometry to six equivalent O²⁻ atoms. All Ba–O bond lengths are 2.81 Å. Mo⁶⁺ is bonded in a tetrahedral geometry to one N³⁻ and three equivalent O²⁻ atoms. The Mo–N bond length is 1.75 Å. All Mo–O bond lengths are 1.86 Å. N³⁻ is bonded in a distorted linear geometry to one Ba²⁺ and one Mo⁶⁺ atom. O²⁻ is bonded in a 1-coordinate geometry to four Ba²⁺ and one Mo⁶⁺ atom.",3.1689,232.0549332898044,False
+mp-730460,Na5H3(CO3)4,"Full Formula (Na10 H6 C8 O24)
+Reduced Formula: Na5H3(CO3)4
+abc   :   3.510836  10.134372  15.725487
+angles: 107.758844  95.552810  95.143612
+pbc   :       True       True       True
+Sites (48)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Na    0.214104  0.326677  0.951562        -0
+  1  Na    0.785896  0.673323  0.048438        -0
+  2  Na    0.187974  0.818181  0.900622         0
+  3  Na    0.812026  0.181819  0.099378         0
+  4  Na    0.819563  0.281678  0.720131         0
+  5  Na    0.180437  0.718322  0.279869         0
+  6  Na    0.572329  0.786371  0.691899        -0
+  7  Na    0.427671  0.213629  0.308101        -0
+  8  Na    0.228202  0.252155  0.522615        -0
+  9  Na    0.771798  0.747845  0.477385        -0
+ 10  H     0.274175  0.530152  0.749258         0
+ 11  H     0.725825  0.469848  0.250742         0
+ 12  H     0.5       0.5       0.5             -0
+ 13  H     0.997877  0.045677  0.758677         0
+ 14  H     0.002123  0.954323  0.241323         0
+ 15  H     0.5       0         0.5             -0
+ 16  C     0.583412  0.524559  0.861946        -0
+ 17  C     0.416588  0.475441  0.138054        -0
+ 18  C     0.861323  0.531184  0.623095         0
+ 19  C     0.138677  0.468816  0.376905         0
+ 20  C     0.761567  0.062768  0.870804        -0
+ 21  C     0.238433  0.937232  0.129196        -0
+ 22  C     0.241026  0.004729  0.618602         0
+ 23  C     0.758974  0.995271  0.381398         0
+ 24  O     0.713934  0.445288  0.903389         0
+ 25  O     0.286066  0.554712  0.096611         0
+ 26  O     0.625329  0.657094  0.890905        -0
+ 27  O     0.374671  0.342906  0.109095        -0
+ 28  O     0.379459  0.459261  0.77876          0
+ 29  O     0.620541  0.540739  0.22124          0
+ 30  O     0.057694  0.616559  0.696644        -0
+ 31  O     0.942306  0.383441  0.303356        -0
+ 32  O     0.8197    0.398745  0.605272        -0
+ 33  O     0.1803    0.601255  0.394728        -0
+ 34  O     0.690874  0.587994  0.565782         0
+ 35  O     0.309126  0.412006  0.434218         0
+ 36  O     0.694914  0.147164  0.944363         0
+ 37  O     0.305086  0.852836  0.055637         0
+ 38  O     0.697105  0.93023   0.846283         0
+ 39  O     0.302895  0.06977   0.153717         0
+ 40  O     0.925835  0.122094  0.813305         0
+ 41  O     0.074165  0.877906  0.186695         0
+ 42  O     0.111092  0.938394  0.670473        -0
+ 43  O     0.888908  0.061606  0.329527        -0
+ 44  O     0.261762  0.137215  0.637503        -0
+ 45  O     0.738238  0.862785  0.362497        -0
+ 46  O     0.355422  0.928524  0.542322        -0
+ 47  O     0.644578  0.071476  0.457678        -0","Na₅H₃(CO₃)₄ crystallizes in the triclinic P̅1 space group. There are five inequivalent Na¹⁺ sites. In the first Na¹⁺ site, Na¹⁺ is bonded in a 7-coordinate geometry to seven O²⁻ atoms. There are a spread of Na–O bond distances ranging from 2.35–2.68 Å. In the second Na¹⁺ site, Na¹⁺ is bonded to five O²⁻ atoms to form distorted NaO₅ trigonal bipyramids that share corners with two equivalent NaO₆ octahedra and edges with two equivalent NaO₅ trigonal bipyramids. The corner-sharing octahedral tilt angles range from 80–82°. There are a spread of Na–O bond distances ranging from 2.32–2.41 Å. In the third Na¹⁺ site, Na¹⁺ is bonded in a 6-coordinate geometry to six O²⁻ atoms. There are a spread of Na–O bond distances ranging from 2.35–2.52 Å. In the fourth Na¹⁺ site, Na¹⁺ is bonded to six O²⁻ atoms to form distorted NaO₆ octahedra that share  a cornercorner with one NaO₆ octahedra, corners with two equivalent NaO₅ trigonal bipyramids, and edges with two equivalent NaO₆ octahedra. The corner-sharing octahedral tilt angles are 91°. There are a spread of Na–O bond distances ranging from 2.39–2.54 Å. In the fifth Na¹⁺ site, Na¹⁺ is bonded to six O²⁻ atoms to form a mixture of distorted edge and corner-sharing NaO₆ octahedra. The corner-sharing octahedral tilt angles are 91°. There are a spread of Na–O bond distances ranging from 2.35–2.53 Å. There are four inequivalent C⁴⁺ sites. In the first C⁴⁺ site, C⁴⁺ is bonded in a trigonal planar geometry to three O²⁻ atoms. There are two shorter (1.27 Å) and one longer (1.37 Å) C–O bond length. In the second C⁴⁺ site, C⁴⁺ is bonded in a trigonal planar geometry to three O²⁻ atoms. There are a spread of C–O bond distances ranging from 1.28–1.33 Å. In the third C⁴⁺ site, C⁴⁺ is bonded in a trigonal planar geometry to three O²⁻ atoms. There are two shorter (1.27 Å) and one longer (1.37 Å) C–O bond length. In the fourth C⁴⁺ site, C⁴⁺ is bonded in a trigonal planar geometry to three O²⁻ atoms. There are a spread of C–O bond distances ranging from 1.28–1.33 Å. There are four inequivalent H¹⁺ sites. In the first H¹⁺ site, H¹⁺ is bonded in a distorted linear geometry to two O²⁻ atoms. There is one shorter (1.04 Å) and one longer (1.57 Å) H–O bond length. In the second H¹⁺ site, H¹⁺ is bonded in a linear geometry to two equivalent O²⁻ atoms. Both H–O bond lengths are 1.23 Å. In the third H¹⁺ site, H¹⁺ is bonded in a linear geometry to two O²⁻ atoms. There is one shorter (1.04 Å) and one longer (1.59 Å) H–O bond length. In the fourth H¹⁺ site, H¹⁺ is bonded in a linear geometry to two equivalent O²⁻ atoms. Both H–O bond lengths are 1.23 Å. There are twelve inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a 1-coordinate geometry to three equivalent Na¹⁺ and one C⁴⁺ atom. In the second O²⁻ site, O²⁻ is bonded to three Na¹⁺ and one C⁴⁺ atom to form distorted corner-sharing ONa₃C trigonal pyramids. In the third O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to two equivalent Na¹⁺, one C⁴⁺, and one H¹⁺ atom. In the fourth O²⁻ site, O²⁻ is bonded in a 4-coordinate geometry to two equivalent Na¹⁺, one C⁴⁺, and one H¹⁺ atom. In the fifth O²⁻ site, O²⁻ is bonded in a distorted rectangular see-saw-like geometry to three Na¹⁺ and one C⁴⁺ atom. In the sixth O²⁻ site, O²⁻ is bonded in a distorted bent 120 degrees geometry to two Na¹⁺, one C⁴⁺, and one H¹⁺ atom. In the seventh O²⁻ site, O²⁻ is bonded in a distorted rectangular see-saw-like geometry to three Na¹⁺ and one C⁴⁺ atom. In the eighth O²⁻ site, O²⁻ is bonded in a 4-coordinate geometry to three Na¹⁺ and one C⁴⁺ atom. In the ninth O²⁻ site, O²⁻ is bonded in a distorted water-like geometry to two Na¹⁺, one C⁴⁺, and one H¹⁺ atom. In the tenth O²⁻ site, O²⁻ is bonded in a 4-coordinate geometry to two equivalent Na¹⁺, one C⁴⁺, and one H¹⁺ atom. In the eleventh O²⁻ site, O²⁻ is bonded in a distorted rectangular see-saw-like geometry to three Na¹⁺ and one C⁴⁺ atom. In the twelfth O²⁻ site, O²⁻ is bonded in a distorted bent 120 degrees geometry to two equivalent Na¹⁺, one C⁴⁺, and one H¹⁺ atom.",4.9055,526.1447734714227,True
+mp-1220159,NdGa3Pd,"Full Formula (Nd1 Ga3 Pd1)
+Reduced Formula: NdGa3Pd
+abc   :   6.133839   6.133839   6.133839
+angles: 139.906628 139.906628  57.995098
+pbc   :       True       True       True
+Sites (5)
+  #  SP            a          b     c    magmom
+---  ----  ---------  ---------  ----  --------
+  0  Nd    -0         -0          0           0
+  1  Ga     0.615504   0.615504  -0           0
+  2  Ga     0.384496   0.384496   0           0
+  3  Ga     0.75       0.25       0.5        -0
+  4  Pd     0.25       0.75       0.5         0","NdPdGa₃ crystallizes in the tetragonal I̅4m2 space group. Nd is bonded in a 16-coordinate geometry to four equivalent Pd and twelve Ga atoms. All Nd–Pd bond lengths are 3.44 Å. There are eight shorter (3.24 Å) and four longer (3.44 Å) Nd–Ga bond lengths. Pd is bonded to four equivalent Nd and eight Ga atoms to form distorted PdNd₄Ga₈ cuboctahedra that share corners with four equivalent GaNd₄Ga₄Pd₄ cuboctahedra, corners with twelve equivalent PdNd₄Ga₈ cuboctahedra, edges with two equivalent GaNd₄Ga₄Pd₄ cuboctahedra, faces with four equivalent PdNd₄Ga₈ cuboctahedra, and faces with four equivalent GaNd₄Ga₄Pd₄ cuboctahedra. There are four shorter (2.58 Å) and four longer (2.99 Å) Pd–Ga bond lengths. There are two inequivalent Ga sites. In the first Ga site, Ga is bonded in a 9-coordinate geometry to four equivalent Nd, two equivalent Pd, and three Ga atoms. There is one shorter (2.49 Å) and two longer (2.58 Å) Ga–Ga bond lengths. In the second Ga site, Ga is bonded to four equivalent Nd, four equivalent Pd, and four equivalent Ga atoms to form GaNd₄Ga₄Pd₄ cuboctahedra that share corners with four equivalent PdNd₄Ga₈ cuboctahedra, corners with twelve equivalent GaNd₄Ga₄Pd₄ cuboctahedra, edges with two equivalent PdNd₄Ga₈ cuboctahedra, faces with four equivalent PdNd₄Ga₈ cuboctahedra, and faces with four equivalent GaNd₄Ga₄Pd₄ cuboctahedra.",0.0,94.8706734849257,False
+mp-569451,Sb2Pd5,"Full Formula (Sb12 Pd30)
+Reduced Formula: Sb2Pd5
+abc   :   7.665940   7.665940  14.032086
+angles:  89.999078  89.999080 119.996422
+pbc   :       True       True       True
+Sites (42)
+  #  SP            a          b         c    magmom
+---  ----  ---------  ---------  --------  --------
+  0  Sb     0.666663   0.333313  0.289922         0
+  1  Sb     0.333343   0.666746  0.790054         0
+  2  Sb     0.331006   0.331006  0.016903        -0
+  3  Sb    -2.7e-05    0.669063  0.0169           0
+  4  Sb    -1e-05     -1e-05     0.74327          0
+  5  Sb     3.8e-05    3.8e-05   0.243371         0
+  6  Sb     0.669053   0.669053  0.516931        -0
+  7  Sb     0.330911   9e-06     0.516935        -0
+  8  Sb     9e-06      0.330911  0.516935        -0
+  9  Sb     0.666746   0.333343  0.790054         0
+ 10  Sb     0.669063  -2.7e-05   0.0169           0
+ 11  Sb     0.333313   0.666663  0.289922         0
+ 12  Pd     0.627202   0.627202  0.923759         0
+ 13  Pd     0.629125  -1.9e-05   0.213022         0
+ 14  Pd     0.333356   0.666664  0.089295         0
+ 15  Pd     0.738031   0.738031  0.114868        -0
+ 16  Pd     0.309708  -0         0.322246        -0
+ 17  Pd     0.309687   0.309687  0.822177         0
+ 18  Pd     0.666664   0.333356  0.089295         0
+ 19  Pd     0.261975   7e-06     0.114886        -0
+ 20  Pd     0.262029   0.262029  0.614884        -0
+ 21  Pd     0.372754   0.372754  0.423787         0
+ 22  Pd    -0          0.309708  0.322246        -0
+ 23  Pd     0.999977   0.37279   0.923735        -0
+ 24  Pd     0.690266   0.690266  0.322256        -0
+ 25  Pd     0.370973   4.2e-05   0.713006         0
+ 26  Pd     1.9e-05    0.627245  0.423776        -0
+ 27  Pd     0.666652   0.333331  0.589335        -0
+ 28  Pd     0.629035   0.629035  0.713015        -0
+ 29  Pd    -1.8e-05   -1.8e-05   0.94369          0
+ 30  Pd     0.737954  -3.4e-05   0.614869        -0
+ 31  Pd    -3.4e-05    0.737954  0.614869        -0
+ 32  Pd     0.333331   0.666652  0.589335        -0
+ 33  Pd     0.690356  -1.7e-05   0.822203        -0
+ 34  Pd     0.627245   1.9e-05   0.423776        -0
+ 35  Pd    -3.2e-05   -3.2e-05   0.443707         0
+ 36  Pd     0.37083    0.37083   0.213018        -0
+ 37  Pd     0.372791   0.999977  0.923735        -0
+ 38  Pd    -1.9e-05    0.629125  0.213022         0
+ 39  Pd     4.2e-05    0.370973  0.713006         0
+ 40  Pd    -1.7e-05    0.690356  0.822203        -0
+ 41  Pd     7e-06      0.261975  0.114886        -0","Pd₅Sb₂ crystallizes in the hexagonal P6₃cm space group. There are six inequivalent Pd sites. In the first Pd site, Pd is bonded in a 1-coordinate geometry to two Pd and five Sb atoms. There is one shorter (2.90 Å) and one longer (2.96 Å) Pd–Pd bond length. There are a spread of Pd–Sb bond distances ranging from 2.65–3.06 Å. In the second Pd site, Pd is bonded in a 13-coordinate geometry to nine Pd and four Sb atoms. There are a spread of Pd–Pd bond distances ranging from 2.91–3.15 Å. There are a spread of Pd–Sb bond distances ranging from 2.68–2.91 Å. In the third Pd site, Pd is bonded in a 4-coordinate geometry to three equivalent Pd and four Sb atoms. There are three shorter (2.78 Å) and one longer (2.85 Å) Pd–Sb bond length. In the fourth Pd site, Pd is bonded in a 3-coordinate geometry to four Pd and three Sb atoms. The Pd–Pd bond length is 3.13 Å. All Pd–Sb bond lengths are 2.72 Å. In the fifth Pd site, Pd is bonded in a 4-coordinate geometry to four Pd and four Sb atoms. The Pd–Pd bond length is 2.95 Å. There are a spread of Pd–Sb bond distances ranging from 2.64–2.76 Å. In the sixth Pd site, Pd is bonded in a 13-coordinate geometry to nine Pd and four Sb atoms. There are three shorter (2.76 Å) and one longer (2.86 Å) Pd–Sb bond length. There are three inequivalent Sb sites. In the first Sb site, Sb is bonded in a 10-coordinate geometry to ten Pd atoms. In the second Sb site, Sb is bonded in a 10-coordinate geometry to ten Pd atoms. In the third Sb site, Sb is bonded in a 10-coordinate geometry to ten Pd atoms.",0.0,714.1663135436173,False
+mp-21339,CeCoGe,"Full Formula (Ce2 Co2 Ge2)
+Reduced Formula: CeCoGe
+abc   :   4.259528   4.259528   6.537557
+angles:  90.000000  90.000000  90.000000
+pbc   :       True       True       True
+Sites (6)
+  #  SP       a     b          c    magmom
+---  ----  ----  ----  ---------  --------
+  0  Ce    0.75  0.75   0.691816     0.772
+  1  Ce    0.25  0.25   0.308184     0.772
+  2  Co    0.75  0.25  -0            1.309
+  3  Co    0.25  0.75  -0            1.309
+  4  Ge    0.25  0.25   0.812278     0.012
+  5  Ge    0.75  0.75   0.187722     0.012",CeCoGe is Matlockite structured and crystallizes in the tetragonal P4/nmm space group. Ce³⁺ is bonded in a 5-coordinate geometry to five equivalent Ge⁴⁻ atoms. There are four shorter (3.05 Å) and one longer (3.25 Å) Ce–Ge bond length. Co¹⁺ is bonded to four equivalent Ge⁴⁻ atoms to form a mixture of corner and edge-sharing CoGe₄ tetrahedra. All Co–Ge bond lengths are 2.47 Å. Ge⁴⁻ is bonded in a 9-coordinate geometry to five equivalent Ce³⁺ and four equivalent Co¹⁺ atoms.,0.0,118.61469383493096,False
+mp-1177017,Li6Fe3P8O29,"Full Formula (Li12 Fe6 P16 O58)
+Reduced Formula: Li6Fe3P8O29
+abc   :   9.986820   9.986820  13.929474
+angles:  89.740538  89.740538  59.947539
+pbc   :       True       True       True
+Sites (92)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Li    0.311433  0.910256  0.062253     0
+  1  Li    0.663803  0.664737  0.379456     0.003
+  2  Li    0.664737  0.663803  0.879456     0.003
+  3  Li    0.910256  0.311433  0.562253     0
+  4  Li    0.777349  0.913909  0.56349      0.001
+  5  Li    0.089127  0.219646  0.936595     0.001
+  6  Li    0.913909  0.777349  0.06349      0.001
+  7  Li    0.219646  0.089127  0.436595     0.001
+  8  Li    0.089291  0.688202  0.440375     0.002
+  9  Li    0.221105  0.688949  0.937501     0.001
+ 10  Li    0.688202  0.089291  0.940375     0.002
+ 11  Li    0.688949  0.221105  0.437501     0.001
+ 12  Fe    0.430061  0.571641  0.745245     4.377
+ 13  Fe    0.571641  0.430061  0.245245     4.376
+ 14  Fe    0.43288   0.997854  0.250863     4.353
+ 15  Fe    0.573232  0.996483  0.748601     4.4
+ 16  Fe    0.997854  0.43288   0.750863     4.353
+ 17  Fe    0.996483  0.573232  0.248601     4.4
+ 18  P     0.322089  0.767592  0.3403       0.012
+ 19  P     0.325935  0.906412  0.842032     0.007
+ 20  P     0.767592  0.322089  0.8403       0.012
+ 21  P     0.666483  0.672488  0.125309     0.026
+ 22  P     0.672488  0.666483  0.625309     0.026
+ 23  P     0.906412  0.325935  0.342032     0.007
+ 24  P     0.089835  0.233637  0.160225     0.018
+ 25  P     0.766778  0.906603  0.343072     0.007
+ 26  P     0.233637  0.089835  0.660225     0.018
+ 27  P     0.906603  0.766778  0.843072     0.007
+ 28  P     0.08793   0.6767    0.660081     0.016
+ 29  P     0.332266  0.331812  0.869766     0.031
+ 30  P     0.331812  0.332266  0.369766     0.031
+ 31  P     0.236102  0.676693  0.156874     0.01
+ 32  P     0.6767    0.08793   0.160081     0.016
+ 33  P     0.676693  0.236102  0.656874     0.011
+ 34  O     0.222504  0.789017  0.244621    -0.004
+ 35  O     0.246978  0.753914  0.065529    -0.009
+ 36  O     0.332454  0.749056  0.842953     0.056
+ 37  O     0.218314  0.997501  0.750873     0.003
+ 38  O     0.234999  0.011634  0.567002    -0.213
+ 39  O     0.332364  0.916821  0.343615     0.015
+ 40  O     0.486737  0.626379  0.328273    -0.016
+ 41  O     0.52515   0.672654  0.666738    -0.124
+ 42  O     0.626379  0.486737  0.828273    -0.017
+ 43  O     0.753914  0.246978  0.56553     -0.01
+ 44  O     0.789017  0.222504  0.744621    -0.004
+ 45  O     0.749056  0.332454  0.342953     0.056
+ 46  O     0.512138  0.818022  0.156803    -0.035
+ 47  O     0.490259  0.880993  0.826052     0.054
+ 48  O     0.672654  0.52515   0.166738    -0.124
+ 49  O     0.661619  0.66787   0.015653    -0.232
+ 50  O     0.66787   0.661619  0.515653    -0.232
+ 51  O     0.818022  0.512138  0.656803    -0.036
+ 52  O     0.628556  0.879634  0.326974     0.058
+ 53  O     0.681907  0.809994  0.658068     0.043
+ 54  O     0.916821  0.332364  0.843615     0.015
+ 55  O     0.997501  0.218314  0.250873     0.003
+ 56  O     0.011634  0.234999  0.067002    -0.213
+ 57  O     0.000582  0.248561  0.431131    -0.004
+ 58  O     0.880993  0.490259  0.326052     0.054
+ 59  O     0.809994  0.681907  0.158068     0.042
+ 60  O     0.084071  0.248605  0.662146    -0.025
+ 61  O     0.879634  0.628556  0.826974     0.058
+ 62  O     0.748638  0.917311  0.845341     0.062
+ 63  O     0.248561  0.000582  0.931131    -0.004
+ 64  O     0.756212  0.99827   0.069871    -0.061
+ 65  O     0.785074  0.994271  0.250967     0.004
+ 66  O     0.248605  0.084071  0.162146    -0.025
+ 67  O     0.096896  0.381548  0.172798    -0.019
+ 68  O     0.917311  0.748638  0.345341     0.062
+ 69  O     0.186019  0.327429  0.838729    -0.007
+ 70  O     0.099882  0.519218  0.675828     0.02
+ 71  O     0.99827   0.756212  0.569871    -0.062
+ 72  O     0.001441  0.748638  0.931548     0.005
+ 73  O     0.994271  0.785074  0.750967     0.004
+ 74  O     0.084902  0.670636  0.159436     0.057
+ 75  O     0.327429  0.186019  0.338729    -0.005
+ 76  O     0.381548  0.096896  0.672798    -0.019
+ 77  O     0.18548   0.482835  0.338202    -0.034
+ 78  O     0.338272  0.332216  0.481158    -0.494
+ 79  O     0.332216  0.338272  0.981158    -0.501
+ 80  O     0.328182  0.484635  0.842112    -0.147
+ 81  O     0.519218  0.099882  0.175828     0.021
+ 82  O     0.482835  0.18548   0.838202    -0.036
+ 83  O     0.246842  0.662938  0.662477     0.002
+ 84  O     0.237327  0.753505  0.425489    -0.13
+ 85  O     0.377785  0.518822  0.176007     0.073
+ 86  O     0.484635  0.328182  0.342112    -0.147
+ 87  O     0.518822  0.377785  0.676007     0.073
+ 88  O     0.670636  0.084902  0.659436     0.057
+ 89  O     0.748638  0.001441  0.431548     0.005
+ 90  O     0.662938  0.246842  0.162477     0.003
+ 91  O     0.753505  0.237327  0.925489    -0.131","Li₆Fe₃P₈O₂₉ crystallizes in the monoclinic Cc space group. There are six inequivalent Li sites. In the first Li site, Li is bonded to four O atoms to form distorted LiO₄ tetrahedra that share corners with two LiO₄ tetrahedra, corners with four PO₄ tetrahedra, and  an edgeedge with one FeO₆ octahedra. There are a spread of Li–O bond distances ranging from 1.96–2.18 Å. In the second Li site, Li is bonded to four O atoms to form LiO₄ tetrahedra that share corners with three FeO₆ octahedra and corners with four PO₄ tetrahedra. The corner-sharing octahedral tilt angles range from 66–68°. There is one shorter (1.90 Å) and three longer (2.12 Å) Li–O bond lengths. In the third Li site, Li is bonded to four O atoms to form distorted LiO₄ tetrahedra that share corners with two LiO₄ tetrahedra, corners with four PO₄ tetrahedra, and  an edgeedge with one FeO₆ octahedra. There are a spread of Li–O bond distances ranging from 1.97–2.17 Å. In the fourth Li site, Li is bonded to four O atoms to form distorted LiO₄ tetrahedra that share  a cornercorner with one LiO₄ tetrahedra, corners with four PO₄ tetrahedra, and  an edgeedge with one FeO₆ octahedra. There are a spread of Li–O bond distances ranging from 1.95–2.23 Å. In the fifth Li site, Li is bonded to four O atoms to form distorted LiO₄ tetrahedra that share  a cornercorner with one LiO₄ tetrahedra, corners with four PO₄ tetrahedra, and  an edgeedge with one FeO₆ octahedra. There are a spread of Li–O bond distances ranging from 1.90–2.28 Å. In the sixth Li site, Li is bonded to four O atoms to form distorted LiO₄ tetrahedra that share corners with two LiO₄ tetrahedra, corners with four PO₄ tetrahedra, and  an edgeedge with one FeO₆ octahedra. There are a spread of Li–O bond distances ranging from 1.96–2.21 Å. There are three inequivalent Fe sites. In the first Fe site, Fe is bonded to six O atoms to form FeO₆ octahedra that share  a cornercorner with one LiO₄ tetrahedra, corners with six PO₄ tetrahedra, and  an edgeedge with one LiO₄ tetrahedra. There are a spread of Fe–O bond distances ranging from 1.94–2.12 Å. In the second Fe site, Fe is bonded to six O atoms to form FeO₆ octahedra that share  a cornercorner with one LiO₄ tetrahedra, corners with six PO₄ tetrahedra, and edges with two LiO₄ tetrahedra. There are a spread of Fe–O bond distances ranging from 1.93–2.04 Å. In the third Fe site, Fe is bonded to six O atoms to form FeO₆ octahedra that share  a cornercorner with one LiO₄ tetrahedra, corners with six PO₄ tetrahedra, and edges with two LiO₄ tetrahedra. There are a spread of Fe–O bond distances ranging from 1.97–2.06 Å. There are eight inequivalent P sites. In the first P site, P is bonded to four O atoms to form PO₄ tetrahedra that share corners with two FeO₆ octahedra,  a cornercorner with one PO₄ tetrahedra, and corners with three LiO₄ tetrahedra. The corner-sharing octahedral tilt angles range from 48–50°. There are a spread of P–O bond distances ranging from 1.50–1.61 Å. In the second P site, P is bonded to four O atoms to form PO₄ tetrahedra that share corners with two FeO₆ octahedra,  a cornercorner with one PO₄ tetrahedra, and corners with four LiO₄ tetrahedra. The corner-sharing octahedral tilt angles range from 47–50°. There are a spread of P–O bond distances ranging from 1.52–1.62 Å. In the third P site, P is bonded to four O atoms to form PO₄ tetrahedra that share corners with three FeO₆ octahedra and corners with three LiO₄ tetrahedra. The corner-sharing octahedral tilt angles range from 31–40°. There are a spread of P–O bond distances ranging from 1.53–1.56 Å. In the fourth P site, P is bonded to four O atoms to form PO₄ tetrahedra that share corners with two FeO₆ octahedra,  a cornercorner with one PO₄ tetrahedra, and corners with two LiO₄ tetrahedra. The corner-sharing octahedral tilt angles range from 41–46°. There are a spread of P–O bond distances ranging from 1.51–1.61 Å. In the fifth P site, P is bonded to four O atoms to form PO₄ tetrahedra that share corners with two FeO₆ octahedra,  a cornercorner with one PO₄ tetrahedra, and corners with four LiO₄ tetrahedra. The corner-sharing octahedral tilt angles range from 48–51°. There are a spread of P–O bond distances ranging from 1.51–1.61 Å. In the sixth P site, P is bonded to four O atoms to form PO₄ tetrahedra that share corners with two FeO₆ octahedra,  a cornercorner with one PO₄ tetrahedra, and corners with two LiO₄ tetrahedra. The corner-sharing octahedral tilt angles are 42°. There are a spread of P–O bond distances ranging from 1.52–1.62 Å. In the seventh P site, P is bonded to four O atoms to form PO₄ tetrahedra that share corners with three FeO₆ octahedra and corners with three LiO₄ tetrahedra. The corner-sharing octahedral tilt angles range from 36–39°. All P–O bond lengths are 1.55 Å. In the eighth P site, P is bonded to four O atoms to form PO₄ tetrahedra that share corners with two FeO₆ octahedra,  a cornercorner with one PO₄ tetrahedra, and corners with three LiO₄ tetrahedra. The corner-sharing octahedral tilt angles range from 41–46°. There are a spread of P–O bond distances ranging from 1.52–1.62 Å. There are twenty-nine inequivalent O sites. In the first O site, O is bonded in a distorted bent 150 degrees geometry to two P atoms. In the second O site, O is bonded in a trigonal planar geometry to two Li and one P atom. In the third O site, O is bonded in a trigonal planar geometry to one Li, one Fe, and one P atom. In the fourth O site, O is bonded in a distorted bent 150 degrees geometry to two P atoms. In the fifth O site, O is bonded in a bent 120 degrees geometry to one Li and one P atom. In the sixth O site, O is bonded in a distorted trigonal planar geometry to one Li, one Fe, and one P atom. In the seventh O site, O is bonded in a trigonal planar geometry to one Li, one Fe, and one P atom. In the eighth O site, O is bonded in a bent 150 degrees geometry to one Fe and one P atom. In the ninth O site, O is bonded in a distorted trigonal planar geometry to one Li, one Fe, and one P atom. In the tenth O site, O is bonded in a trigonal planar geometry to one Li, one Fe, and one P atom. In the eleventh O site, O is bonded in a linear geometry to one Li and one P atom. In the twelfth O site, O is bonded in a trigonal planar geometry to one Li, one Fe, and one P atom. In the thirteenth O site, O is bonded in a distorted trigonal planar geometry to one Li, one Fe, and one P atom. In the fourteenth O site, O is bonded in a trigonal planar geometry to two Li and one P atom. In the fifteenth O site, O is bonded in a distorted trigonal planar geometry to one Li, one Fe, and one P atom. In the sixteenth O site, O is bonded in a trigonal planar geometry to one Li, one Fe, and one P atom. In the seventeenth O site, O is bonded in a trigonal planar geometry to two Li and one P atom. In the eighteenth O site, O is bonded in a distorted bent 150 degrees geometry to two P atoms. In the nineteenth O site, O is bonded in a bent 150 degrees geometry to one Fe and one P atom. In the twentieth O site, O is bonded in a distorted trigonal planar geometry to one Li, one Fe, and one P atom. In the twenty-first O site, O is bonded in a bent 150 degrees geometry to one Fe and one P atom. In the twenty-second O site, O is bonded in a trigonal planar geometry to two Li and one P atom. In the twenty-third O site, O is bonded in a distorted trigonal planar geometry to one Li, one Fe, and one P atom. In the twenty-fourth O site, O is bonded in a 3-coordinate geometry to one Li, one Fe, and one P atom. In the twenty-fifth O site, O is bonded in a single-bond geometry to one P atom. In the twenty-sixth O site, O is bonded in a distorted trigonal planar geometry to one Li, one Fe, and one P atom. In the twenty-seventh O site, O is bonded in a bent 150 degrees geometry to one Fe and one P atom. In the twenty-eighth O site, O is bonded in a distorted bent 120 degrees geometry to one Li and one P atom. In the twenty-ninth O site, O is bonded in a bent 150 degrees geometry to one Fe and one P atom.",0.0239999999999999,1202.4971365293611,False
+mp-1016319,Mg7Si,"Full Formula (Mg7 Si1)
+Reduced Formula: Mg7Si
+abc   :   6.263135   6.263135   4.999349
+angles:  90.000000  90.000000 119.999992
+pbc   :       True       True       True
+Sites (8)
+  #  SP           a         b    c    magmom
+---  ----  --------  --------  ---  --------
+  0  Mg    0.833648  0.667296  0          -0
+  1  Mg    0.332704  0.166352  0          -0
+  2  Mg    0.833648  0.166352  0          -0
+  3  Mg    0.497436  0.502564  0.5        -0
+  4  Mg    0.005128  0.502564  0.5        -0
+  5  Mg    0.497436  0.994872  0.5        -0
+  6  Mg    0         0         0.5        -0
+  7  Si    0.333333  0.666667  0           0","Mg₇Si crystallizes in the hexagonal P̅6m2 space group. There are five inequivalent Mg sites. In the first Mg site, Mg is bonded to ten Mg and two equivalent Si atoms to form distorted MgMg₁₀Si₂ cuboctahedra that share corners with four equivalent SiMg₁₂ cuboctahedra, corners with fourteen MgMg₁₀Si₂ cuboctahedra, edges with two equivalent SiMg₁₂ cuboctahedra, edges with sixteen MgMg₁₀Si₂ cuboctahedra, faces with two equivalent SiMg₁₂ cuboctahedra, and faces with eighteen MgMg₁₀Si₂ cuboctahedra. There are a spread of Mg–Mg bond distances ranging from 3.08–3.14 Å. Both Mg–Si bond lengths are 3.13 Å. In the second Mg site, Mg is bonded to ten Mg and two equivalent Si atoms to form distorted MgMg₁₀Si₂ cuboctahedra that share corners with four equivalent SiMg₁₂ cuboctahedra, corners with fourteen MgMg₁₀Si₂ cuboctahedra, edges with two equivalent SiMg₁₂ cuboctahedra, edges with sixteen MgMg₁₀Si₂ cuboctahedra, faces with two equivalent SiMg₁₂ cuboctahedra, and faces with eighteen MgMg₁₀Si₂ cuboctahedra. There are two shorter (3.08 Å) and four longer (3.09 Å) Mg–Mg bond lengths. Both Mg–Si bond lengths are 3.13 Å. In the third Mg site, Mg is bonded to ten Mg and two equivalent Si atoms to form distorted MgMg₁₀Si₂ cuboctahedra that share corners with eighteen MgMg₁₀Si₂ cuboctahedra, edges with four equivalent SiMg₁₂ cuboctahedra, edges with fourteen MgMg₁₀Si₂ cuboctahedra, faces with two equivalent SiMg₁₂ cuboctahedra, and faces with eighteen MgMg₁₀Si₂ cuboctahedra. There are a spread of Mg–Mg bond distances ranging from 3.08–3.18 Å. Both Mg–Si bond lengths are 3.07 Å. In the fourth Mg site, Mg is bonded to ten Mg and two equivalent Si atoms to form distorted MgMg₁₀Si₂ cuboctahedra that share corners with eighteen MgMg₁₀Si₂ cuboctahedra, edges with four equivalent SiMg₁₂ cuboctahedra, edges with fourteen MgMg₁₀Si₂ cuboctahedra, faces with two equivalent SiMg₁₂ cuboctahedra, and faces with eighteen MgMg₁₀Si₂ cuboctahedra. There are a spread of Mg–Mg bond distances ranging from 3.08–3.18 Å. Both Mg–Si bond lengths are 3.07 Å. In the fifth Mg site, Mg is bonded to twelve Mg atoms to form MgMg₁₂ cuboctahedra that share corners with eighteen MgMg₁₀Si₂ cuboctahedra, edges with eighteen MgMg₁₀Si₂ cuboctahedra, faces with six equivalent SiMg₁₂ cuboctahedra, and faces with fourteen MgMg₁₀Si₂ cuboctahedra. Si is bonded to twelve Mg atoms to form SiMg₁₂ cuboctahedra that share corners with six equivalent SiMg₁₂ cuboctahedra, corners with twelve MgMg₁₀Si₂ cuboctahedra, edges with eighteen MgMg₁₀Si₂ cuboctahedra, faces with two equivalent SiMg₁₂ cuboctahedra, and faces with eighteen MgMg₁₀Si₂ cuboctahedra.",0.0,169.8351976309605,False
+mp-755297,Li2CoO2,"Full Formula (Li2 Co1 O2)
+Reduced Formula: Li2CoO2
+abc   :   3.153021   3.153021   5.124253
+angles:  90.000000  90.000000 120.000011
+pbc   :       True       True       True
+Sites (5)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Li    0.333333  0.666667  0.642531     0.009
+  1  Li    0.666667  0.333333  0.357469     0.009
+  2  Co    0         0         0            2.698
+  3  O     0.333333  0.666667  0.237127     0.115
+  4  O     0.666667  0.333333  0.762873     0.115","Li₂CoO₂ crystallizes in the trigonal P̅3m1 space group. Li¹⁺ is bonded to four equivalent O²⁻ atoms to form LiO₄ tetrahedra that share corners with six equivalent CoO₆ octahedra, corners with six equivalent LiO₄ tetrahedra, edges with three equivalent CoO₆ octahedra, and edges with three equivalent LiO₄ tetrahedra. The corner-sharing octahedral tilt angles range from 15–56°. There are three shorter (1.92 Å) and one longer (2.08 Å) Li–O bond length. Co²⁺ is bonded to six equivalent O²⁻ atoms to form CoO₆ octahedra that share corners with twelve equivalent LiO₄ tetrahedra, edges with six equivalent CoO₆ octahedra, and edges with six equivalent LiO₄ tetrahedra. All Co–O bond lengths are 2.19 Å. O²⁻ is bonded in a 7-coordinate geometry to four equivalent Li¹⁺ and three equivalent Co²⁺ atoms.",2.5492,44.11789058561146,False
+mp-1188293,ErMnGa,"Full Formula (Er6 Mn6 Ga6)
+Reduced Formula: ErMnGa
+abc   :   7.104267   8.133061   8.133061
+angles:  58.991582  64.103146  64.103146
+pbc   :       True       True       True
+Sites (18)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Er    0.912876  0.044016  0.544016    -0.189
+  1  Er    0.500909  0.955984  0.455984    -0.189
+  2  Er    0.090436  0.249932  0.749932    -0.197
+  3  Er    0.0903    0.750068  0.250068    -0.197
+  4  Er    0.50186   0.458523  0.958523    -0.183
+  5  Er    0.918907  0.541477  0.041477    -0.183
+  6  Mn    0.269623  0.116623  0.119717     3.165
+  7  Mn    0.505964  0.883377  0.880283     3.165
+  8  Mn    0.269623  0.619717  0.616623     3.164
+  9  Mn    0.505964  0.380283  0.383377     3.165
+ 10  Mn    0.737498  0.5       0.5          3.132
+ 11  Mn    0.737498  0         0            3.132
+ 12  Ga    0.168471  0.333944  0.335215    -0.095
+ 13  Ga    0.83763   0.666056  0.664785    -0.095
+ 14  Ga    0.168471  0.835215  0.833944    -0.095
+ 15  Ga    0.83763   0.164785  0.166056    -0.095
+ 16  Ga    0.501713  0.252458  0.752458    -0.157
+ 17  Ga    0.506629  0.747542  0.247542    -0.157","ErMnGa crystallizes in the orthorhombic Ima2 space group. There are three inequivalent Er sites. In the first Er site, Er is bonded in a 11-coordinate geometry to six Mn and five Ga atoms. There are four shorter (3.20 Å) and two longer (3.23 Å) Er–Mn bond lengths. There are three shorter (2.93 Å) and two longer (2.94 Å) Er–Ga bond lengths. In the second Er site, Er is bonded in a 11-coordinate geometry to six Mn and five Ga atoms. There are a spread of Er–Mn bond distances ranging from 3.21–3.26 Å. There are a spread of Er–Ga bond distances ranging from 2.91–2.94 Å. In the third Er site, Er is bonded in a 11-coordinate geometry to six Mn and five Ga atoms. There are two shorter (3.19 Å) and four longer (3.25 Å) Er–Mn bond lengths. There are a spread of Er–Ga bond distances ranging from 2.92–2.94 Å. There are two inequivalent Mn sites. In the first Mn site, Mn is bonded in a 12-coordinate geometry to six Er, two Mn, and four Ga atoms. There is one shorter (2.88 Å) and one longer (2.89 Å) Mn–Mn bond length. There are a spread of Mn–Ga bond distances ranging from 2.60–2.79 Å. In the second Mn site, Mn is bonded in a 12-coordinate geometry to six Er, two equivalent Mn, and four Ga atoms. There are two shorter (2.60 Å) and two longer (2.77 Å) Mn–Ga bond lengths. There are two inequivalent Ga sites. In the first Ga site, Ga is bonded in a 9-coordinate geometry to six Er and three Mn atoms. In the second Ga site, Ga is bonded in a 9-coordinate geometry to three Er and six Mn atoms.",0.0,348.390228412794,False
+mp-865599,Lu2RuPt,"Full Formula (Lu2 Ru1 Pt1)
+Reduced Formula: Lu2RuPt
+abc   :   4.728084   4.728084   4.728084
+angles:  60.000010  60.000010  60.000000
+pbc   :       True       True       True
+Sites (4)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Lu    0         0         0                0
+  1  Lu    0.500001  0.500001  0.500001         0
+  2  Ru    0.749999  0.749999  0.749999        -0
+  3  Pt    0.250001  0.250001  0.250001        -0",Lu₂RuPt is Heusler structured and crystallizes in the cubic Fm̅3m space group. Lu is bonded in a body-centered cubic geometry to four equivalent Ru and four equivalent Pt atoms. All Lu–Ru bond lengths are 2.92 Å. All Lu–Pt bond lengths are 2.92 Å. Ru is bonded in a body-centered cubic geometry to eight equivalent Lu atoms. Pt is bonded in a body-centered cubic geometry to eight equivalent Lu atoms.,0.0,74.73786146777907,False
+mp-863880,Li6VFe5O12,"Full Formula (Li6 V1 Fe5 O12)
+Reduced Formula: Li6VFe5O12
+abc   :   5.087010   5.079730  10.097195
+angles:  93.830740  85.843801  59.978886
+pbc   :       True       True       True
+Sites (24)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Li    0.289837  0.045454  0.241943     0.01
+  1  Li    0.947686  0.717209  0.247709     0.011
+  2  Li    0.392127  0.60887   0.750427     0.011
+  3  Li    0.604722  0.392501  0.251147     0.011
+  4  Li    0.717441  0.945185  0.751643     0.01
+  5  Li    0.049475  0.288207  0.757148     0.01
+  6  V     0.999652  0.000797  9.1e-05     -1.803
+  7  Fe    0.499456  0.49865   0.500368     4.324
+  8  Fe    0.665688  0.663996  0.999925     4.282
+  9  Fe    0.3358    0.33586   0.999934     4.283
+ 10  Fe    0.832662  0.832657  0.499983     4.321
+ 11  Fe    0.166993  0.171292  0.499746     4.308
+ 12  O     0.134606  0.855016  0.606713     0.278
+ 13  O     0.306878  0.693957  0.115884     0.19
+ 14  O     0.541733  0.790646  0.390482     0.273
+ 15  O     0.202126  0.471033  0.388753     0.279
+ 16  O     0.972143  0.359599  0.113886     0.186
+ 17  O     0.639478  0.028086  0.113332     0.184
+ 18  O     0.359412  0.972957  0.886572     0.184
+ 19  O     0.028489  0.640219  0.88676      0.185
+ 20  O     0.794408  0.542444  0.610516     0.274
+ 21  O     0.470796  0.204108  0.610565     0.278
+ 22  O     0.694294  0.307094  0.883573     0.192
+ 23  O     0.854101  0.134161  0.392898     0.278","Li₆VFe₅O₁₂ is Caswellsilverite-derived structured and crystallizes in the triclinic P1 space group. There are six inequivalent Li¹⁺ sites. In the first Li¹⁺ site, Li¹⁺ is bonded to six O²⁻ atoms to form LiO₆ octahedra that share  a cornercorner with one VO₆ octahedra, corners with eight FeO₆ octahedra,  an edgeedge with one VO₆ octahedra, edges with two FeO₆ octahedra, edges with six LiO₆ octahedra, and  a faceface with one FeO₆ octahedra. The corner-sharing octahedral tilt angles range from 2–54°. There are a spread of Li–O bond distances ranging from 2.08–2.42 Å. In the second Li¹⁺ site, Li¹⁺ is bonded to six O²⁻ atoms to form LiO₆ octahedra that share  a cornercorner with one VO₆ octahedra, corners with eight FeO₆ octahedra,  an edgeedge with one VO₆ octahedra, edges with two FeO₆ octahedra, edges with six LiO₆ octahedra, and  a faceface with one FeO₆ octahedra. The corner-sharing octahedral tilt angles range from 4–54°. There are a spread of Li–O bond distances ranging from 2.04–2.31 Å. In the third Li¹⁺ site, Li¹⁺ is bonded to six O²⁻ atoms to form LiO₆ octahedra that share  a cornercorner with one VO₆ octahedra, corners with eight FeO₆ octahedra,  an edgeedge with one VO₆ octahedra, edges with two FeO₆ octahedra, edges with six LiO₆ octahedra, and  a faceface with one FeO₆ octahedra. The corner-sharing octahedral tilt angles range from 4–52°. There are a spread of Li–O bond distances ranging from 2.06–2.26 Å. In the fourth Li¹⁺ site, Li¹⁺ is bonded to six O²⁻ atoms to form LiO₆ octahedra that share  a cornercorner with one VO₆ octahedra, corners with eight FeO₆ octahedra,  an edgeedge with one VO₆ octahedra, edges with two FeO₆ octahedra, edges with six LiO₆ octahedra, and  a faceface with one FeO₆ octahedra. The corner-sharing octahedral tilt angles range from 4–52°. There are a spread of Li–O bond distances ranging from 2.06–2.25 Å. In the fifth Li¹⁺ site, Li¹⁺ is bonded to six O²⁻ atoms to form LiO₆ octahedra that share  a cornercorner with one VO₆ octahedra, corners with eight FeO₆ octahedra,  an edgeedge with one VO₆ octahedra, edges with two FeO₆ octahedra, edges with six LiO₆ octahedra, and  a faceface with one FeO₆ octahedra. The corner-sharing octahedral tilt angles range from 3–54°. There are a spread of Li–O bond distances ranging from 2.05–2.31 Å. In the sixth Li¹⁺ site, Li¹⁺ is bonded to six O²⁻ atoms to form LiO₆ octahedra that share  a cornercorner with one VO₆ octahedra, corners with eight FeO₆ octahedra,  an edgeedge with one VO₆ octahedra, edges with two FeO₆ octahedra, edges with six LiO₆ octahedra, and  a faceface with one FeO₆ octahedra. The corner-sharing octahedral tilt angles range from 3–53°. There are a spread of Li–O bond distances ranging from 2.09–2.42 Å. V³⁺ is bonded to six O²⁻ atoms to form VO₆ octahedra that share corners with six LiO₆ octahedra, edges with six LiO₆ octahedra, and edges with six FeO₆ octahedra. The corner-sharing octahedral tilt angles range from 4–5°. There are a spread of V–O bond distances ranging from 2.02–2.08 Å. There are five inequivalent Fe³⁺ sites. In the first Fe³⁺ site, Fe³⁺ is bonded to six O²⁻ atoms to form FeO₆ octahedra that share corners with twelve LiO₆ octahedra, edges with six FeO₆ octahedra, and faces with two LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 41–53°. There are a spread of Fe–O bond distances ranging from 1.98–2.02 Å. In the second Fe³⁺ site, Fe³⁺ is bonded to six O²⁻ atoms to form FeO₆ octahedra that share corners with six LiO₆ octahedra, edges with three equivalent VO₆ octahedra, edges with three equivalent FeO₆ octahedra, and edges with six LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 2–6°. There are a spread of Fe–O bond distances ranging from 2.03–2.06 Å. In the third Fe³⁺ site, Fe³⁺ is bonded to six O²⁻ atoms to form FeO₆ octahedra that share corners with six LiO₆ octahedra, edges with three equivalent VO₆ octahedra, edges with three equivalent FeO₆ octahedra, and edges with six LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 3–6°. There are two shorter (2.03 Å) and four longer (2.05 Å) Fe–O bond lengths. In the fourth Fe³⁺ site, Fe³⁺ is bonded to six O²⁻ atoms to form FeO₆ octahedra that share corners with twelve LiO₆ octahedra, edges with six FeO₆ octahedra, and faces with two LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 43–54°. There are a spread of Fe–O bond distances ranging from 1.97–2.03 Å. In the fifth Fe³⁺ site, Fe³⁺ is bonded to six O²⁻ atoms to form FeO₆ octahedra that share corners with twelve LiO₆ octahedra, edges with six FeO₆ octahedra, and faces with two LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 44–54°. There are a spread of Fe–O bond distances ranging from 2.02–2.08 Å. There are twelve inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a 6-coordinate geometry to three Li¹⁺ and three Fe³⁺ atoms. In the second O²⁻ site, O²⁻ is bonded to three Li¹⁺, one V³⁺, and two Fe³⁺ atoms to form a mixture of corner and edge-sharing OLi₃VFe₂ octahedra. The corner-sharing octahedral tilt angles range from 0–1°. In the third O²⁻ site, O²⁻ is bonded in a 6-coordinate geometry to three Li¹⁺ and three Fe³⁺ atoms. In the fourth O²⁻ site, O²⁻ is bonded in a 6-coordinate geometry to three Li¹⁺ and three Fe³⁺ atoms. In the fifth O²⁻ site, O²⁻ is bonded to three Li¹⁺, one V³⁺, and two Fe³⁺ atoms to form a mixture of corner and edge-sharing OLi₃VFe₂ octahedra. The corner-sharing octahedral tilt angles range from 0–1°. In the sixth O²⁻ site, O²⁻ is bonded to three Li¹⁺, one V³⁺, and two Fe³⁺ atoms to form a mixture of corner and edge-sharing OLi₃VFe₂ octahedra. The corner-sharing octahedral tilt angles range from 0–1°. In the seventh O²⁻ site, O²⁻ is bonded to three Li¹⁺, one V³⁺, and two Fe³⁺ atoms to form a mixture of corner and edge-sharing OLi₃VFe₂ octahedra. The corner-sharing octahedral tilt angles range from 0–1°. In the eighth O²⁻ site, O²⁻ is bonded to three Li¹⁺, one V³⁺, and two Fe³⁺ atoms to form a mixture of corner and edge-sharing OLi₃VFe₂ octahedra. The corner-sharing octahedral tilt angles range from 0–1°. In the ninth O²⁻ site, O²⁻ is bonded in a 6-coordinate geometry to three Li¹⁺ and three Fe³⁺ atoms. In the tenth O²⁻ site, O²⁻ is bonded in a 6-coordinate geometry to three Li¹⁺ and three Fe³⁺ atoms. In the eleventh O²⁻ site, O²⁻ is bonded to three Li¹⁺, one V³⁺, and two Fe³⁺ atoms to form a mixture of corner and edge-sharing OLi₃VFe₂ octahedra. The corner-sharing octahedral tilt angles range from 0–1°. In the twelfth O²⁻ site, O²⁻ is bonded in a 6-coordinate geometry to three Li¹⁺ and three Fe³⁺ atoms.",1.1222000000000003,223.7087259873711,False
+mp-532143,MnSiO3,"Full Formula (Mn16 Si16 O48)
+Reduced Formula: MnSiO3
+abc   :  10.274506  10.274506  10.274506
+angles: 109.124275 109.124275 110.167363
+pbc   :       True       True       True
+Sites (80)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Mn    0.258134  0.625654  0.115013     4.663
+  1  Mn    0.749032  0.749032  0            4.667
+  2  Mn    0.393121  0.008134  0.13248      4.663
+  3  Mn    0.510641  0.143121  0.884987     4.663
+  4  Mn    0.999032  0.499032  0.5          4.667
+  5  Mn    0.875654  0.260641  0.86752      4.663
+  6  Mn    0.625     0.375     0.25         4.646
+  7  Mn    0.625     0.875     0.25         4.646
+  8  Mn    0.625     0.375     0.75         4.646
+  9  Mn    0.125     0.375     0.75         4.646
+ 10  Mn    0.374346  0.489359  0.63248      4.663
+ 11  Mn    0.250968  0.250968  0            4.667
+ 12  Mn    0.739359  0.606879  0.615013     4.663
+ 13  Mn    0.856879  0.741866  0.36752      4.663
+ 14  Mn    0.500968  0.000968  0.5          4.667
+ 15  Mn    0.991866  0.124346  0.384987     4.663
+ 16  Si    0.75842   0.120719  0.109258     0.015
+ 17  Si    0.899162  0.50842   0.137701     0.015
+ 18  Si    0.011461  0.649162  0.890742     0.015
+ 19  Si    0.370719  0.761461  0.862299     0.015
+ 20  Si    0.625     0.875     0.75         0.003
+ 21  Si    0.879281  0.988539  0.637701     0.015
+ 22  Si    0.125     0.875     0.75         0.003
+ 23  Si    0.238539  0.100838  0.609258     0.015
+ 24  Si    0         0         0            0.003
+ 25  Si    0.125     0.875     0.25         0.003
+ 26  Si    0.125     0.375     0.25         0.003
+ 27  Si    0.350838  0.24158   0.362299     0.015
+ 28  Si    0.5       0.5       0            0.023
+ 29  Si    0.25      0.75      0.5          0.003
+ 30  Si    0.49158   0.629281  0.390742     0.015
+ 31  Si    0.75      0.25      0.5          0.023
+ 32  O     0.655845  0.674588  0.148428     0.06
+ 33  O     0.708545  0.072067  0.917194     0.029
+ 34  O     0.619485  0.15903   0.119697     0.055
+ 35  O     0.768677  0.986365  0.158264     0.049
+ 36  O     0.749788  0.369485  0.960455     0.055
+ 37  O     0.013003  0.944005  0.136749     0.024
+ 38  O     0.94131   0.279521  0.243797     0.025
+ 39  O     0.041351  0.458545  0.136478     0.029
+ 40  O     0.757417  0.405845  0.481257     0.06
+ 41  O     0.860413  0.518677  0.282312     0.049
+ 42  O     0.924588  0.27616   0.518743     0.06
+ 43  O     0.947513  0.69131   0.161789     0.025
+ 44  O     0.52616   0.507417  0.851572     0.06
+ 45  O     0.194005  0.557256  0.431002     0.024
+ 46  O     0.828101  0.610413  0.841736     0.049
+ 47  O     0.039333  0.499788  0.880303     0.055
+ 48  O     0.126254  0.763003  0.568998     0.024
+ 49  O     0.035724  0.697513  0.756203     0.025
+ 50  O     0.236365  0.578101  0.717688     0.049
+ 51  O     0.807256  0.876254  0.863251     0.024
+ 52  O     0.154873  0.791351  0.082806     0.029
+ 53  O     0.322067  0.904873  0.863522     0.029
+ 54  O     0.529521  0.785724  0.838211     0.025
+ 55  O     0.84097   0.960667  0.460455     0.055
+ 56  O     0.40903   0.789333  0.039545     0.055
+ 57  O     0.720479  0.964276  0.661789     0.025
+ 58  O     0.927933  0.845127  0.636478     0.029
+ 59  O     0.095127  0.958649  0.417194     0.029
+ 60  O     0.442744  0.873746  0.636749     0.024
+ 61  O     0.013635  0.171899  0.782312     0.049
+ 62  O     0.214276  0.052487  0.743797     0.025
+ 63  O     0.123746  0.986997  0.931002     0.024
+ 64  O     0.210667  0.250212  0.619697     0.055
+ 65  O     0.421899  0.139587  0.658264     0.049
+ 66  O     0.055995  0.192744  0.068998     0.024
+ 67  O     0.72384   0.242583  0.648428     0.06
+ 68  O     0.302487  0.05869   0.338211     0.025
+ 69  O     0.325412  0.47384   0.981257     0.06
+ 70  O     0.389587  0.231323  0.217688     0.049
+ 71  O     0.492583  0.344155  0.018743     0.06
+ 72  O     0.208649  0.291455  0.363522     0.029
+ 73  O     0.30869   0.470479  0.256203     0.025
+ 74  O     0.236997  0.805995  0.363251     0.024
+ 75  O     0.500212  0.380515  0.539545     0.055
+ 76  O     0.481323  0.763635  0.341736     0.049
+ 77  O     0.630515  0.59097   0.380303     0.055
+ 78  O     0.541455  0.677933  0.582806     0.029
+ 79  O     0.594155  0.075412  0.351572     0.06","MnSiO₃ is Esseneite-derived structured and crystallizes in the tetragonal I4₁/a space group. There are three inequivalent Mn²⁺ sites. In the first Mn²⁺ site, Mn²⁺ is bonded in a 8-coordinate geometry to eight O²⁻ atoms. There are a spread of Mn–O bond distances ranging from 2.18–2.74 Å. In the second Mn²⁺ site, Mn²⁺ is bonded in a 8-coordinate geometry to eight O²⁻ atoms. There are a spread of Mn–O bond distances ranging from 2.25–2.56 Å. In the third Mn²⁺ site, Mn²⁺ is bonded to six O²⁻ atoms to form MnO₆ octahedra that share corners with six SiO₄ tetrahedra. There are a spread of Mn–O bond distances ranging from 2.15–2.20 Å. There are four inequivalent Si⁴⁺ sites. In the first Si⁴⁺ site, Si⁴⁺ is bonded to four O²⁻ atoms to form SiO₄ tetrahedra that share corners with two equivalent MnO₆ octahedra and corners with two equivalent SiO₆ octahedra. The corner-sharing octahedral tilt angles range from 43–55°. There are a spread of Si–O bond distances ranging from 1.63–1.71 Å. In the second Si⁴⁺ site, Si⁴⁺ is bonded to six O²⁻ atoms to form corner-sharing SiO₆ octahedra. There are a spread of Si–O bond distances ranging from 1.77–1.85 Å. In the third Si⁴⁺ site, Si⁴⁺ is bonded to four equivalent O²⁻ atoms to form corner-sharing SiO₄ tetrahedra. The corner-sharing octahedral tilt angles are 38°. All Si–O bond lengths are 1.67 Å. In the fourth Si⁴⁺ site, Si⁴⁺ is bonded to four equivalent O²⁻ atoms to form SiO₄ tetrahedra that share corners with four equivalent MnO₆ octahedra. The corner-sharing octahedral tilt angles are 60°. All Si–O bond lengths are 1.65 Å. There are six inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a 4-coordinate geometry to three Mn²⁺ and one Si⁴⁺ atom. In the second O²⁻ site, O²⁻ is bonded in a 4-coordinate geometry to two equivalent Mn²⁺ and two Si⁴⁺ atoms. In the third O²⁻ site, O²⁻ is bonded in a distorted rectangular see-saw-like geometry to three Mn²⁺ and one Si⁴⁺ atom. In the fourth O²⁻ site, O²⁻ is bonded in a 4-coordinate geometry to three Mn²⁺ and one Si⁴⁺ atom. In the fifth O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to two Mn²⁺ and two Si⁴⁺ atoms. In the sixth O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to two Mn²⁺ and two Si⁴⁺ atoms.",2.4641,834.8583658931389,True
+mp-1201091,Ge2RuC4(Cl3O2)2,"Full Formula (Ge4 Ru2 C8 Cl12 O8)
+Reduced Formula: Ge2RuC4(Cl3O2)2
+abc   :  10.350204   8.660730  12.212082
+angles:  50.082420  90.000000  90.000000
+pbc   :       True       True       True
+Sites (34)
+  #  SP           a         b         c    magmom
+---  ----  --------  --------  --------  --------
+  0  Ge    0.330829  0.218702  0.494549        -0
+  1  Ge    0.169171  0.218702  0.994549        -0
+  2  Ge    0.669171  0.781298  0.505451        -0
+  3  Ge    0.830829  0.781298  0.005451        -0
+  4  Ru    0.5       0         0.5             -0
+  5  Ru    0         0         0               -0
+  6  C     0.517419  0.202866  0.290538        -0
+  7  C     0.982581  0.202866  0.790538        -0
+  8  C     0.482581  0.797134  0.709462        -0
+  9  C     0.017419  0.797134  0.209462        -0
+ 10  C     0.365942  0.863052  0.474571        -0
+ 11  C     0.134058  0.863052  0.974571        -0
+ 12  C     0.634058  0.136948  0.525429        -0
+ 13  C     0.865942  0.136948  0.025429        -0
+ 14  Cl    0.12956   0.127103  0.519384        -0
+ 15  Cl    0.37044   0.127103  0.019384        -0
+ 16  Cl    0.87044   0.872897  0.480616        -0
+ 17  Cl    0.62956   0.872897  0.980616        -0
+ 18  Cl    0.354271  0.24317   0.661053        -0
+ 19  Cl    0.145729  0.24317   0.161053        -0
+ 20  Cl    0.645729  0.75683   0.338947        -0
+ 21  Cl    0.854271  0.75683   0.838947        -0
+ 22  Cl    0.332324  0.534233  0.299071        -0
+ 23  Cl    0.167676  0.534233  0.799071        -0
+ 24  Cl    0.667676  0.465767  0.700929        -0
+ 25  Cl    0.832324  0.465767  0.200929        -0
+ 26  O     0.526993  0.319724  0.168646        -0
+ 27  O     0.973007  0.319724  0.668646        -0
+ 28  O     0.473007  0.680276  0.831354        -0
+ 29  O     0.026993  0.680276  0.331354        -0
+ 30  O     0.288742  0.784458  0.458336        -0
+ 31  O     0.211258  0.784458  0.958336        -0
+ 32  O     0.711258  0.215542  0.541664        -0
+ 33  O     0.788742  0.215542  0.041664        -0","Ru(CO)₄(GeCl₃)₂ is Ammonia-derived structured and crystallizes in the monoclinic P2₁/c space group. The structure is zero-dimensional and consists of eight CO clusters, four GeCl₃ clusters, and two Ru clusters. In each CO cluster, C²⁺ is bonded in a single-bond geometry to one O²⁻ atom. The C–O bond length is 1.15 Å. O²⁻ is bonded in a single-bond geometry to one C²⁺ atom. In each GeCl₃ cluster, Ge²⁺ is bonded in a trigonal non-coplanar geometry to three Cl¹⁻ atoms. There is one shorter (2.18 Å) and two longer (2.19 Å) Ge–Cl bond lengths. There are three inequivalent Cl¹⁻ sites. In the first Cl¹⁻ site, Cl¹⁻ is bonded in a single-bond geometry to one Ge²⁺ atom. In the second Cl¹⁻ site, Cl¹⁻ is bonded in a single-bond geometry to one Ge²⁺ atom. In the third Cl¹⁻ site, Cl¹⁻ is bonded in a single-bond geometry to one Ge²⁺ atom. In each Ru cluster, Ru²⁺ is bonded in a 1-coordinate geometry to  atoms.",3.1001,839.5963578482655,False
