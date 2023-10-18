@@ -7,7 +7,7 @@ import torch
 import pandas as pd
 import numpy as np
 from torch.utils.data import DataLoader, TensorDataset
-from utils import *
+from llmprop_utils import *
 
 np.random.seed(42)
 
