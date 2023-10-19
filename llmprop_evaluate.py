@@ -49,6 +49,7 @@ property = config.get('property_name')
 task_name = config.get('task_name')
 train_data_path = config.get('train_data_path')
 test_data_path = config.get('test_data_path')
+best_model_path = config.get('checkpoint')
 
 if task_name == "classification":
     if property not in ["is_gap_direct"]:
@@ -172,7 +173,8 @@ if freeze:
 base_model.resize_token_embeddings(len(tokenizer))
 
 # loading the checkpoint of the pretrained model
-best_model_path = f"checkpoints/samples/{task_name}/best_checkpoint_for_{property}.tar.gz"
+print(best_model_path)
+print(best_model_path[0:-7] + ".pt")
 decompressTarCheckpoints(best_model_path)
 best_model_path = best_model_path[0:-7] + ".pt"
 best_model = T5Predictor(base_model, base_model_output_size, drop_rate=drop_rate, pooling=pooling)
