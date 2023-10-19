@@ -178,10 +178,13 @@ def train(
                 best_epoch = epoch+1
 
                 # save the best model checkpoint
+                save_to_path = f"checkpoints/samples/{task_name}/best_checkpoint_for_{property}.pt"
                 if isinstance(model, nn.DataParallel):
-                    torch.save(model.module.state_dict(), f"checkpoints/samples/{task_name}/best_checkpoint_for_{property}.pt")
+                    torch.save(model.module.state_dict(), save_to_path)
+                    compressCheckpointsWithTar(save_to_path)
                 else:
-                    torch.save(model.state_dict(), f"checkpoints/samples/{task_name}/best_checkpoint_for_{property}.pt")
+                    torch.save(model.state_dict(), save_to_path)
+                    compressCheckpointsWithTar(save_to_path)
                 
                 # save statistics of the best model
                 training_stats.append(
@@ -218,10 +221,13 @@ def train(
                 best_epoch = epoch+1
 
                 # save the best model checkpoint
+                save_to_path = f"checkpoints/samples/{task_name}/best_checkpoint_for_{property}.pt"
                 if isinstance(model, nn.DataParallel):
-                    torch.save(model.module.state_dict(), f"checkpoints/samples/{task_name}/best_checkpoint_for_{property}.pt")
+                    torch.save(model.module.state_dict(), save_to_path)
+                    compressCheckpointsWithTar(save_to_path)
                 else:
-                    torch.save(model.state_dict(), f"checkpoints/samples/{task_name}/best_checkpoint_for_{property}.pt")
+                    torch.save(model.state_dict(), save_to_path)
+                    compressCheckpointsWithTar(save_to_path)
                 
                 # save statistics of the best model
                 training_stats.append(
@@ -409,6 +415,9 @@ if __name__ == "__main__":
     property = config.get('property_name')
     optimizer_type = config.get('optimizer')
     task_name = config.get('task_name')
+    train_data_path = config.get('train_data_path')
+    valid_data_path = config.get('valid_data_path')
+    test_data_path = config.get('test_data_path')
 
     if task_name == "classification":
         if property not in ["is_gap_direct"]:
@@ -429,9 +438,9 @@ if __name__ == "__main__":
         raise Exception("Please set the task_name to either 'band_gap', 'volume', or 'is_gap_direct'")
 
     # prepare the data
-    train_data = pd.read_csv("data/samples/textedge_prop_mp22_train.csv")
-    valid_data = pd.read_csv("data/samples/textedge_prop_mp22_valid.csv")
-    test_data = pd.read_csv("data/samples/textedge_prop_mp22_test.csv")
+    train_data = pd.read_csv(train_data_path)
+    valid_data = pd.read_csv(valid_data_path)
+    test_data = pd.read_csv(test_data_path)
 
     if property == "is_gap_direct":
         train_data.loc[train_data["is_gap_direct"] == True, "is_gap_direct"] = 1

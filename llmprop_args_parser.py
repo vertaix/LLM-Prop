@@ -59,7 +59,19 @@ def args_parser():
     parser.add_argument('--task_name', 
                         help='the name of the task: "regression" if propert_name is band_gap or volume or "classification" if property_name is is_gap_direct',
                         type=str,
-                        default = "regression")  
+                        default="regression")
+    parser.add_argument('--train_data_path',
+                        help="the path to the training data",
+                        type=str,
+                        default="data/samples/textedge_prop_mp22_train.csv")
+    parser.add_argument('--valid_data_path',
+                        help="the path to the valid data",
+                        type=str,
+                        default="data/samples/textedge_prop_mp22_valid.csv")
+    parser.add_argument('--test_data_path',
+                        help="the path to the test data",
+                        type=str,
+                        default="data/samples/textedge_prop_mp22_test.csv")  
     args = parser.parse_args()
     
     return args

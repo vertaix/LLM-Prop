@@ -47,6 +47,8 @@ pooling = config.get('pooling')
 normalizer_type = config.get('normalizer')
 property = config.get('property_name')
 task_name = config.get('task_name')
+train_data_path = config.get('train_data_path')
+test_data_path = config.get('test_data_path')
 
 if task_name == "classification":
     if property not in ["is_gap_direct"]:
@@ -67,17 +69,13 @@ else:
     raise Exception("Please set the task_name to either 'band_gap', 'volume', or 'is_gap_direct'")
 
 # prepare the data
-train_data = pd.read_csv("data/samples/textedge_prop_mp22_train.csv")
-# valid_data = pd.read_csv("data/samples/textedge_prop_mp22_valid.csv")
-test_data = pd.read_csv("data/samples/textedge_prop_mp22_test.csv")
+train_data = pd.read_csv(train_data_path)
+test_data = pd.read_csv(test_data_path)
 
 if property == "is_gap_direct":
     train_data.loc[train_data["is_gap_direct"] == True, "is_gap_direct"] = 1
     train_data.loc[train_data["is_gap_direct"] == False, "is_gap_direct"] = 0
     train_data.is_gap_direct = train_data.is_gap_direct.astype(float)
-    # valid_data.loc[valid_data["is_gap_direct"] == True, "is_gap_direct"] = 1
-    # valid_data.loc[valid_data["is_gap_direct"] == False, "is_gap_direct"] = 0
-    # valid_data.is_gap_direct = valid_data.is_gap_direct.astype(float)
     test_data.loc[test_data["is_gap_direct"] == True, "is_gap_direct"] = 1
     test_data.loc[test_data["is_gap_direct"] == False, "is_gap_direct"] = 0
     test_data.is_gap_direct = test_data.is_gap_direct.astype(float)
@@ -94,14 +92,12 @@ if preprocessing_strategy == "none":
 
 elif preprocessing_strategy == "bond_lengths_replaced_with_num":
     train_data['description'] = train_data['description'].apply(replace_bond_lengths_with_num)
-    # valid_data['description'] = valid_data['description'].apply(replace_bond_lengths_with_num)
     test_data['description'] = test_data['description'].apply(replace_bond_lengths_with_num)
     print(test_data['description'][0])
     print('-'*50)
 
 elif preprocessing_strategy == "bond_angles_replaced_with_ang":
     train_data['description'] = train_data['description'].apply(replace_bond_angles_with_ang)
-    # valid_data['description'] = valid_data['description'].apply(replace_bond_angles_with_ang)
     test_data['description'] = test_data['description'].apply(replace_bond_angles_with_ang) 
     print(test_data['description'][0])
     print('-'*50)
@@ -109,7 +105,6 @@ elif preprocessing_strategy == "bond_angles_replaced_with_ang":
 elif preprocessing_strategy == "no_stopwords":
     stopwords = get_cleaned_stopwords()
     train_data['description'] = train_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
-    # valid_data['description'] = valid_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
     test_data['description'] = test_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
     print(test_data['description'][0])
     print('-'*50)
@@ -119,9 +114,6 @@ elif preprocessing_strategy == "no_stopwords_and_lengths_and_angles_replaced":
     train_data['description'] = train_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
     train_data['description'] = train_data['description'].apply(replace_bond_lengths_with_num)
     train_data['description'] = train_data['description'].apply(replace_bond_angles_with_ang)
-    # valid_data['description'] = valid_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
-    # valid_data['description'] = valid_data['description'].apply(replace_bond_lengths_with_num)
-    # valid_data['description'] = valid_data['description'].apply(replace_bond_angles_with_ang)
     test_data['description'] = test_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
     test_data['description'] = test_data['description'].apply(replace_bond_lengths_with_num)
     test_data['description'] = test_data['description'].apply(replace_bond_angles_with_ang)
@@ -154,11 +146,8 @@ elif preprocessing_strategy == "no_stopwords_and_lengths_and_angles_replaced":
     tokenizer.add_tokens(["[NUM]"])
     tokenizer.add_tokens(["[ANG]"]) 
 
-# print('-'*50)
-# print(f"train data = {len(train_data)} samples")
 print(f"test data = {len(test_data)} samples")
 print('-'*50)
-# print(f"training on {get_sequence_len_stats(train_data, tokenizer, max_length)}% samples with whole sequence")
 print(f"testing on {get_sequence_len_stats(test_data, tokenizer, max_length)}% samples with whole sequence")
 print('-'*50)
 
@@ -183,7 +172,9 @@ if freeze:
 base_model.resize_token_embeddings(len(tokenizer))
 
 # loading the checkpoint of the pretrained model
-best_model_path = f"checkpoints/samples/{task_name}/best_checkpoint_for_{property}.pt" 
+best_model_path = f"checkpoints/samples/{task_name}/best_checkpoint_for_{property}.tar.gz"
+decompressTarCheckpoints(best_model_path)
+best_model_path = best_model_path[0:-7] + ".pt"
 best_model = T5Predictor(base_model, base_model_output_size, drop_rate=drop_rate, pooling=pooling)
 
 device_ids = [d for d in range(torch.cuda.device_count())]
