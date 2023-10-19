@@ -4,5 +4,12 @@ This repository contains the implementation of the LLM-Prop model. LLM-Prop is a
 For more details check our paper: 
 
 ## Installation
+You can install LLM-Prop by following these steps:
+```
+git clone https://github.com/vertaix/LLM-Prop.git
+cd LLM-Prop
+conda create -n <environment_name> requirement.txt
+conda activate <environment_name>
+```
 
 ## Usage
