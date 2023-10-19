@@ -5,7 +5,11 @@ This repository contains the implementation of the LLM-Prop model. LLM-Prop is a
 
 <p align="center">
     <img src="figures/llmprop_architecture.png" alt="image" width="50%" height="auto">
-    <span width="100%">LLM-Prop architecture</span>
+    
+</p>
+
+<p align="center>
+    <em>LLM-Prop architecture</em>
 </p>
 
 For more details check our paper: 
