@@ -270,6 +270,8 @@ def evaluate(
     train_labels_mean, 
     train_labels_std, 
     property,
+    device,
+    task_name,
     normalizer="z_norm"
 ):
     test_start_time = time.time()
@@ -326,6 +328,7 @@ def evaluate(
     average_test_loss = total_test_loss / len(test_dataloader)
     test_ending_time = time.time()
     testing_time = time_format(test_ending_time-test_start_time)
+    print("-"*50)
     print(f"testing took {testing_time}")
 
     return predictions_list, test_performance
@@ -450,6 +453,7 @@ if __name__ == "__main__":
     if preprocessing_strategy == "none":
         train_data = train_data
         valid_data = valid_data
+        test_data = test_data
 
     elif preprocessing_strategy == "bond_lengths_replaced_with_num":
         train_data['description'] = train_data['description'].apply(replace_bond_lengths_with_num)
@@ -642,23 +646,25 @@ if __name__ == "__main__":
         epochs, train_dataloader, valid_dataloader, device, normalizer=normalizer_type)
 
     print("======= Evaluating on test set ========")
-    best_model_path = f"checkpoints/{task_name}/best_checkpoint_for_{property}.pt" 
-    best_model = T5Predictor(base_model, base_model_output_size, drop_rate=drop_rate)
+    best_model_path = f"checkpoints/samples/{task_name}/best_checkpoint_for_{property}.pt" 
+    best_model = T5Predictor(base_model, base_model_output_size, drop_rate=drop_rate, pooling=pooling)
 
     if torch.cuda.device_count() > 1:
         print("Testing on", torch.cuda.device_count(), "GPUs!")
-        model = nn.DataParallel(model, device_ids=device_ids).cuda()
+        print("-"*50)
+        best_model = nn.DataParallel(best_model, device_ids=device_ids).cuda()
     else:
         print("No CUDA available! Testing on CPU!")
-        model.to(device)
+        print("-"*50)
+        best_model.to(device)
 
     if isinstance(best_model, nn.DataParallel):
-        model.module.load_state_dict(torch.load(best_model_path, map_location=torch.device(device)), strict=False)
+        best_model.module.load_state_dict(torch.load(best_model_path, map_location=torch.device(device)), strict=False)
     else:
         best_model.load_state_dict(torch.load(best_model_path, map_location=torch.device(device)), strict=False) 
         best_model.to(device)
     
-    _, test_performance = evaluate(best_model, mae_loss_function, test_dataloader, train_labels_mean, train_labels_std, property , normalizer=normalizer_type)
+    _, test_performance = evaluate(best_model, mae_loss_function, test_dataloader, train_labels_mean, train_labels_std, property, device, task_name, normalizer=normalizer_type)
     
 
     
