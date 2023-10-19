@@ -11,5 +11,15 @@ cd LLM-Prop
 conda create -n <environment_name> requirement.txt
 conda activate <environment_name>
 ```
-
 ## Usage
+### Training LLM-Prop from scratch
+```python
+python llmprop_train.py \
+--train_data_path= \
+--valid_data_path= \
+--test_data_path= \
+--epochs=200 \
+--task_name=regression \
+--property=band_gap
+
+```
