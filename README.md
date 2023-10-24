@@ -67,7 +67,7 @@ Then run ``` bash scripts/llmprop_evaluate.sh ```
 This is an ongoing work and the data is available upon request.
 
 ## Citation
-```python
+```bibtex
 @misc{rubungo2023llmprop,
       title={LLM-Prop: Predicting Physical And Electronic Properties Of Crystalline Solids From Their Text Descriptions}, 
       author={Andre Niyongabo Rubungo and Craig Arnold and Barry P. Rand and Adji Bousso Dieng},
