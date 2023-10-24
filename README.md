@@ -1,4 +1,4 @@
-# LLM-Prop: Predicting Physical And Electronic Properties Of Crystalline Solids From Their Text Descriptions
+# [LLM-Prop: Predicting Physical And Electronic Properties Of Crystalline Solids From Their Text Descriptions](https://doi.org/10.48550/arXiv.2310.14029)
 This repository contains the implementation of the LLM-Prop model. LLM-Prop is an efficiently finetuned large language model (T5 encoder) on crystals text descriptions to predict their properties. Given a text sequence that describes the crystal structure, LLM-Prop encodes the underlying crystal representation from its text description and output its properties such as band gap and volume. 
 
 <!-- ![](figures/llmprop_architecture.png) -->
@@ -63,4 +63,17 @@ python llmprop_evaluate.py \
 ```
 Then run ``` bash scripts/llmprop_evaluate.sh ```
 
+## Data availability
+This is an ongoing work and the data is available upon request.
+
 ## Citation
+```python
+@misc{rubungo2023llmprop,
+      title={LLM-Prop: Predicting Physical And Electronic Properties Of Crystalline Solids From Their Text Descriptions}, 
+      author={Andre Niyongabo Rubungo and Craig Arnold and Barry P. Rand and Adji Bousso Dieng},
+      year={2023},
+      eprint={2310.14029},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
