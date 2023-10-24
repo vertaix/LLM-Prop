@@ -64,7 +64,7 @@ python llmprop_evaluate.py \
 Then run ``` bash scripts/llmprop_evaluate.sh ```
 
 ## Data availability
-This is an ongoing work and the data is available upon request.
+This is work is still under review and the data will be released after the review process.
 
 ## Citation
 ```bibtex
