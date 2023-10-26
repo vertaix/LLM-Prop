@@ -68,12 +68,10 @@ This work is still under review and the data will be released after the review p
 
 ## Citation
 ```bibtex
-@misc{rubungo2023llmprop,
-      title={LLM-Prop: Predicting Physical And Electronic Properties Of Crystalline Solids From Their Text Descriptions}, 
-      author={Andre Niyongabo Rubungo and Craig Arnold and Barry P. Rand and Adji Bousso Dieng},
-      year={2023},
-      eprint={2310.14029},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@article{rubungo2023llm,
+  title={LLM-Prop: Predicting Physical And Electronic Properties Of Crystalline Solids From Their Text Descriptions},
+  author={Rubungo, Andre Niyongabo and Arnold, Craig and Rand, Barry P and Dieng, Adji Bousso},
+  journal={arXiv preprint arXiv:2310.14029},
+  year={2023}
 }
 ```
