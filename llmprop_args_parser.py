@@ -5,17 +5,17 @@ def args_parser():
     parser = argparse.ArgumentParser(description='LLM-Prop')
     
     parser.add_argument('--epochs',
-						help='Number of epochs',
-						type=int,
-						default=200)
+                        help='Number of epochs',
+                        type=int,
+                        default=200)
     parser.add_argument('--bs',
-						help='Batch size',
-						type=int,
-						default=64)
+                        help='Batch size',
+                        type=int,
+                        default=64)
     parser.add_argument('--lr',
-						help='Learning rate',
-						type=float,
-						default=0.001)
+                        help='Learning rate',
+                        type=float,
+                        default=0.001)
     parser.add_argument('--max_len',
                         help='Max input sequence length',
                         type=int,
@@ -71,7 +71,11 @@ def args_parser():
     parser.add_argument('--test_data_path',
                         help="the path to the test data",
                         type=str,
-                        default="data/samples/textedge_prop_mp22_test.csv")  
+                        default="data/samples/textedge_prop_mp22_test.csv")
+    parser.add_argument('--checkpoint',
+                        help="the path to the the best checkpoint for evaluation",
+                        type=str,
+                        default="") 
     args = parser.parse_args()
     
     return args

@@ -356,7 +356,7 @@ def replace_bond_lengths_and_angles_with_num_and_ang(sentence):
 
 def get_cleaned_stopwords():
     # from https://github.com/igorbrigadir/stopwords
-    stopword_files = glob.glob("../stopwords/en/*.txt")
+    stopword_files = glob.glob("stopwords/en/*.txt")
 
     all_stopwords_list = set()
 
