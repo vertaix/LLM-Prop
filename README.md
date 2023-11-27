@@ -9,7 +9,7 @@ This repository contains the implementation of the LLM-Prop model. LLM-Prop is a
     <em>LLM-Prop architecture</em>
 </p>
 
-For more details check [our paper](https://doi.org/10.48550/arXiv.2310.14029) 
+For more details check [our pre-print](https://doi.org/10.48550/arXiv.2310.14029). 
 
 ## Installation
 You can install LLM-Prop by following these steps:
