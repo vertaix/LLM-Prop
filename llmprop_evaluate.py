@@ -21,7 +21,6 @@ from llmprop_dataset import *
 from llmprop_args_parser import *
 from llmprop_train import *
 
-# if __name__ == "__main__":
 print("======= Evaluating on test set ========")
 
 # check if the GPU is available
@@ -29,8 +28,11 @@ if torch.cuda.is_available():
     device = torch.device("cuda")
     print(f'Number of available devices: {torch.cuda.device_count()}')
     print(f'Current device is: {torch.cuda.current_device()}')
+    print("Testing on", torch.cuda.device_count(), "GPUs!")
+    print('-'*50)
 else:
     print("No GPU available, please connect to the GPU first or continue to use CPU instead")
+    print('-'*50)
     device = torch.device("cpu")
 
 # parse Arguments
@@ -51,35 +53,19 @@ train_data_path = config.get('train_data_path')
 test_data_path = config.get('test_data_path')
 best_model_path = config.get('checkpoint')
 
-if task_name == "classification":
-    if property not in ["is_gap_direct"]:
-        raise Exception("When task_name is 'classification' please set the property name to 'is_gap_direct'")
-elif task_name == "regression":
-    if property not in ["band_gap", "volume"]:
-        raise Exception("When task_name is 'regression' please set the property name to either 'band_gap' or 'volume'")
-else:
-    raise Exception("Please set the task_name to either 'regression' or 'classification'")
-
-if property in ["is_gap_direct"]:
-    if task_name not in ["classification"]:
-        raise Exception("Please set the task_name to a 'classification'")
-elif property in ["band_gap", "volume"]:
-    if task_name not in ["regression"]:
-        raise Exception("Please set the task_name to a 'regression'")
-else:
-    raise Exception("Please set the task_name to either 'band_gap', 'volume', or 'is_gap_direct'")
-
 # prepare the data
 train_data = pd.read_csv(train_data_path)
 test_data = pd.read_csv(test_data_path)
 
-if property == "is_gap_direct":
-    train_data.loc[train_data["is_gap_direct"] == True, "is_gap_direct"] = 1
-    train_data.loc[train_data["is_gap_direct"] == False, "is_gap_direct"] = 0
-    train_data.is_gap_direct = train_data.is_gap_direct.astype(float)
-    test_data.loc[test_data["is_gap_direct"] == True, "is_gap_direct"] = 1
-    test_data.loc[test_data["is_gap_direct"] == False, "is_gap_direct"] = 0
-    test_data.is_gap_direct = test_data.is_gap_direct.astype(float)
+# check property type to determine the task name (whether it is regression or classification)
+if test_data[property].dtype == 'bool':
+    task_name = 'classification'
+
+    #converting True->1.0 and False->0.0
+    train_data[property] = train_data[property].astype(float)
+    test_data[property] = test_data[property].astype(float)
+else:
+    task_name = 'regression'
 
 train_labels_array = np.array(train_data[property])
 train_labels_mean = torch.mean(torch.tensor(train_labels_array))
@@ -173,8 +159,6 @@ if freeze:
 base_model.resize_token_embeddings(len(tokenizer))
 
 # loading the checkpoint of the pretrained model
-print(best_model_path)
-print(best_model_path[0:-7] + ".pt")
 decompressTarCheckpoints(best_model_path)
 best_model_path = best_model_path[0:-7] + ".pt"
 best_model = T5Predictor(base_model, base_model_output_size, drop_rate=drop_rate, pooling=pooling)
@@ -182,12 +166,8 @@ best_model = T5Predictor(base_model, base_model_output_size, drop_rate=drop_rate
 device_ids = [d for d in range(torch.cuda.device_count())]
 
 if torch.cuda.device_count() > 1:
-    print("Testing on", torch.cuda.device_count(), "GPUs!")
-    print("-"*50)
     best_model = nn.DataParallel(best_model, device_ids=device_ids).cuda()
 else:
-    print("No CUDA available! Testing on CPU!")
-    print("-"*50)
     best_model.to(device)
 
 if isinstance(best_model, nn.DataParallel):

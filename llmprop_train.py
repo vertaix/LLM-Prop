@@ -63,7 +63,6 @@ def train(
 
     for epoch in range(epochs):
         print(f"========== Epoch {epoch+1}/{epochs} =========")
-        print("Training...")
 
         epoch_starting_time = time.time() 
 
@@ -257,15 +256,14 @@ def train(
     train_ending_time = time.time()
     total_training_time = train_ending_time-training_starting_time
 
-    print("")
-    print("Training complete")
-    print(f"Training LLM_Prop on {task_name} prediction took {time_format(total_training_time)}")
+    print("\n========== Training complete ========")
+    print(f"Training LLM_Prop on {property} prediction took {time_format(total_training_time)}")
 
     if task_name == "classification":
-        print(f"The lowest roc score achieved on validation set on {property} is {best_roc} at {best_epoch}th epoch")
+        print(f"The lowest roc score achieved on validation set on {property} is {best_roc} at {best_epoch}th epoch \n")
 
     elif task_name == "regression":
-        print(f"The lowest mae error achieved on validation set on predicting {property} is {best_loss} at {best_epoch}th epoch")
+        print(f"The lowest mae error achieved on validation set on predicting {property} is {best_loss} at {best_epoch}th epoch \n")
     
     return training_stats, validation_predictions
 
@@ -323,68 +321,20 @@ def evaluate(
         
     if task_name == "classification":
         test_performance = get_roc_score(predictions_list, targets_list)
-        print(f"The roc score achieved on test set for predicting {property} is {test_performance}")
+        print(f"\n The roc score achieved on test set for predicting {property} is {test_performance}")
 
     elif task_name == "regression":
         predictions_tensor = torch.tensor(predictions_list)
         targets_tensor = torch.tensor(targets_list)
         test_performance = mae_loss_function(predictions_tensor.squeeze(), targets_tensor.squeeze())
-        print(f"The mae error achieved on test set for predicting {property} is {test_performance}")
+        print(f"\n The mae error achieved on test set for predicting {property} is {test_performance}")
 
     average_test_loss = total_test_loss / len(test_dataloader)
     test_ending_time = time.time()
     testing_time = time_format(test_ending_time-test_start_time)
-    print("-"*50)
-    print(f"testing took {testing_time}")
+    print(f"testing took {testing_time} \n")
 
     return predictions_list, test_performance
-
-def replace_bond_lengths_with_num(sentence):
-    sentence = re.sub(r"\d+(\.\d+)?(?:–\d+(\.\d+)?)?\s*Å", "[NUM]", sentence) # Regex pattern to match bond lengths and units
-    return sentence.strip()
-
-def replace_bond_angles_with_ang(sentence):
-    sentence = re.sub(r"\d+(\.\d+)?(?:–\d+(\.\d+)?)?\s*°", "[ANG]", sentence) # Regex pattern to match angles and units
-    sentence = re.sub(r"\d+(\.\d+)?(?:–\d+(\.\d+)?)?\s*degrees", "[ANG]", sentence) # Regex pattern to match angles and units
-    return sentence.strip()
-
-def replace_bond_lengths_and_angles_with_num_and_ang(sentence):
-    sentence = re.sub(r"\d+(\.\d+)?(?:–\d+(\.\d+)?)?\s*Å", "[NUM]", sentence) # Regex pattern to match bond lengths and units
-    sentence = re.sub(r"\d+(\.\d+)?(?:–\d+(\.\d+)?)?\s*°", "[ANG]", sentence) # Regex pattern to match angles and units
-    sentence = re.sub(r"\d+(\.\d+)?(?:–\d+(\.\d+)?)?\s*degrees", "[ANG]", sentence) # Regex pattern to match angles and units
-    return sentence.strip()
-
-def get_cleaned_stopwords():
-    # from https://github.com/igorbrigadir/stopwords
-    stopword_files = glob.glob("stopwords/en/*.txt")
-
-    all_stopwords_list = set()
-
-    for file_path in stopword_files:
-        all_stopwords_list |= set(readTEXT_to_LIST(file_path))
-
-    cleaned_list = {wrd.replace("\n", "").strip() for wrd in all_stopwords_list}
-    cleaned_list_for_mat = {wrd for wrd in cleaned_list if not wrd.isdigit()}
-    
-    return cleaned_list_for_mat
-
-def remove_mat_stopwords(sentence, stopwords_list):
-    words = sentence.split()
-    words_lower = sentence.lower().split()
-    sentence = ' '.join([words[i] for i in range(len(words)) if words_lower[i] not in stopwords_list])
-    return sentence
-
-def get_sequence_len_stats(df, tokenizer, max_len):
-    training_on = sum(1 for sent in df['description'].apply(tokenizer.tokenize) if len(sent) <= max_len)
-    return (training_on/len(df))*100
-
-def get_roc_score(predictions, targets):
-    roc_fn = BinaryAUROC(threshold=None)
-    x = torch.tensor(targets)
-    y = torch.tensor(predictions)
-    y = torch.round(torch.sigmoid(y))
-    roc_score = roc_fn(y, x)
-    return roc_score
 
 if __name__ == "__main__":
     # check if the GPU is available
@@ -392,8 +342,11 @@ if __name__ == "__main__":
         device = torch.device("cuda")
         print(f'Number of available devices: {torch.cuda.device_count()}')
         print(f'Current device is: {torch.cuda.current_device()}')
+        print("Training and testing on", torch.cuda.device_count(), "GPUs!")
+        print('-'*50)
     else:
         print("No GPU available, please connect to the GPU first or continue to use CPU instead")
+        print('-'*50)
         device = torch.device("cpu")
 
     # parse Arguments
@@ -419,39 +372,21 @@ if __name__ == "__main__":
     valid_data_path = config.get('valid_data_path')
     test_data_path = config.get('test_data_path')
 
-    if task_name == "classification":
-        if property not in ["is_gap_direct"]:
-            raise Exception("When task_name is 'classification' please set the property name to 'is_gap_direct'")
-    elif task_name == "regression":
-        if property not in ["band_gap", "volume"]:
-            raise Exception("When task_name is 'regression' please set the property name to either 'band_gap' or 'volume'")
-    else:
-        raise Exception("Please set the task_name to either 'regression' or 'classification'")
-
-    if property in ["is_gap_direct"]:
-        if task_name not in ["classification"]:
-            raise Exception("Please set the task_name to a 'classification'")
-    elif property in ["band_gap", "volume"]:
-        if task_name not in ["regression"]:
-            raise Exception("Please set the task_name to a 'regression'")
-    else:
-        raise Exception("Please set the task_name to either 'band_gap', 'volume', or 'is_gap_direct'")
-
     # prepare the data
     train_data = pd.read_csv(train_data_path)
     valid_data = pd.read_csv(valid_data_path)
     test_data = pd.read_csv(test_data_path)
 
-    if property == "is_gap_direct":
-        train_data.loc[train_data["is_gap_direct"] == True, "is_gap_direct"] = 1
-        train_data.loc[train_data["is_gap_direct"] == False, "is_gap_direct"] = 0
-        train_data.is_gap_direct = train_data.is_gap_direct.astype(float)
-        valid_data.loc[valid_data["is_gap_direct"] == True, "is_gap_direct"] = 1
-        valid_data.loc[valid_data["is_gap_direct"] == False, "is_gap_direct"] = 0
-        valid_data.is_gap_direct = valid_data.is_gap_direct.astype(float)
-        test_data.loc[test_data["is_gap_direct"] == True, "is_gap_direct"] = 1
-        test_data.loc[test_data["is_gap_direct"] == False, "is_gap_direct"] = 0
-        test_data.is_gap_direct = test_data.is_gap_direct.astype(float)
+    # check property type to determine the task name (whether it is regression or classification)
+    if train_data[property].dtype == 'bool':
+        task_name = 'classification'
+
+        #converting True->1.0 and False->0.0
+        train_data[property] = train_data[property].astype(float)
+        valid_data[property] = valid_data[property].astype(float) 
+        test_data[property] = test_data[property].astype(float)  
+    else:
+        task_name = 'regression'
     
     train_labels_array = np.array(train_data[property])
     train_labels_mean = torch.mean(torch.tensor(train_labels_array))
@@ -491,18 +426,18 @@ if __name__ == "__main__":
 
     elif preprocessing_strategy == "no_stopwords_and_lengths_and_angles_replaced":
         stopwords = get_cleaned_stopwords()
-        train_data['description'] = train_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
         train_data['description'] = train_data['description'].apply(replace_bond_lengths_with_num)
         train_data['description'] = train_data['description'].apply(replace_bond_angles_with_ang)
-        valid_data['description'] = valid_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
+        train_data['description'] = train_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1) 
         valid_data['description'] = valid_data['description'].apply(replace_bond_lengths_with_num)
         valid_data['description'] = valid_data['description'].apply(replace_bond_angles_with_ang)
-        test_data['description'] = test_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
+        valid_data['description'] = valid_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
         test_data['description'] = test_data['description'].apply(replace_bond_lengths_with_num)
         test_data['description'] = test_data['description'].apply(replace_bond_angles_with_ang)
+        test_data['description'] = test_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
         print(train_data['description'][0])
         print('-'*50)
-        print(valid_data['description'][3]) 
+        print(valid_data['description'][3])
 
     # define loss functions
     mae_loss_function = nn.L1Loss()
@@ -565,7 +500,6 @@ if __name__ == "__main__":
     device_ids = [d for d in range(torch.cuda.device_count())]
 
     if torch.cuda.device_count() > 1:
-        print("Training on", torch.cuda.device_count(), "GPUs!")
         model = nn.DataParallel(model, device_ids=device_ids).cuda()
     else:
         model.to(device)
@@ -650,7 +584,8 @@ if __name__ == "__main__":
         scheduler = torch.optim.lr_scheduler.LambdaLR(
             optimizer, lambda epoch: 1.0
         )
-
+    
+    print("======= Training ... ========")
     training_stats, validation_predictions = train(model, optimizer, scheduler, mae_loss_function, mae_loss_function, 
         epochs, train_dataloader, valid_dataloader, device, normalizer=normalizer_type)
 
@@ -658,13 +593,9 @@ if __name__ == "__main__":
     best_model_path = f"checkpoints/samples/{task_name}/best_checkpoint_for_{property}.pt" 
     best_model = T5Predictor(base_model, base_model_output_size, drop_rate=drop_rate, pooling=pooling)
 
-    if torch.cuda.device_count() > 1:
-        print("Testing on", torch.cuda.device_count(), "GPUs!")
-        print("-"*50)
+    if torch.cuda.is_available():
         best_model = nn.DataParallel(best_model, device_ids=device_ids).cuda()
     else:
-        print("No CUDA available! Testing on CPU!")
-        print("-"*50)
         best_model.to(device)
 
     if isinstance(best_model, nn.DataParallel):
@@ -674,6 +605,4 @@ if __name__ == "__main__":
         best_model.to(device)
     
     _, test_performance = evaluate(best_model, mae_loss_function, test_dataloader, train_labels_mean, train_labels_std, property, device, task_name, normalizer=normalizer_type)
-    
-
     
