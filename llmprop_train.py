@@ -272,7 +272,9 @@ def evaluate(
     mae_loss_function, 
     test_dataloader, 
     train_labels_mean, 
-    train_labels_std, 
+    train_labels_std,
+    train_labels_min,
+    train_labels_max, 
     property,
     device,
     task_name,
@@ -417,9 +419,9 @@ if __name__ == "__main__":
 
     elif preprocessing_strategy == "no_stopwords":
         stopwords = get_cleaned_stopwords()
-        train_data['description'] = train_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
-        valid_data['description'] = valid_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
-        test_data['description'] = test_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
+        train_data['description'] = train_data['description'].apply(remove_mat_stopwords)
+        valid_data['description'] = valid_data['description'].apply(remove_mat_stopwords)
+        test_data['description'] = test_data['description'].apply(remove_mat_stopwords)
         print(train_data['description'][0])
         print('-'*50)
         print(valid_data['description'][3])
@@ -428,13 +430,13 @@ if __name__ == "__main__":
         stopwords = get_cleaned_stopwords()
         train_data['description'] = train_data['description'].apply(replace_bond_lengths_with_num)
         train_data['description'] = train_data['description'].apply(replace_bond_angles_with_ang)
-        train_data['description'] = train_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1) 
+        train_data['description'] = train_data['description'].apply(remove_mat_stopwords) 
         valid_data['description'] = valid_data['description'].apply(replace_bond_lengths_with_num)
         valid_data['description'] = valid_data['description'].apply(replace_bond_angles_with_ang)
-        valid_data['description'] = valid_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
+        valid_data['description'] = valid_data['description'].apply(remove_mat_stopwords)
         test_data['description'] = test_data['description'].apply(replace_bond_lengths_with_num)
         test_data['description'] = test_data['description'].apply(replace_bond_angles_with_ang)
-        test_data['description'] = test_data.apply(lambda row: remove_mat_stopwords(row['description'], stopwords), axis=1)
+        test_data['description'] = test_data['description'].apply(remove_mat_stopwords)
         print(train_data['description'][0])
         print('-'*50)
         print(valid_data['description'][3])
@@ -591,12 +593,11 @@ if __name__ == "__main__":
 
     print("======= Evaluating on test set ========")
     best_model_path = f"checkpoints/samples/{task_name}/best_checkpoint_for_{property}.pt" 
+    
     best_model = T5Predictor(base_model, base_model_output_size, drop_rate=drop_rate, pooling=pooling)
 
     if torch.cuda.is_available():
         best_model = nn.DataParallel(best_model, device_ids=device_ids).cuda()
-    else:
-        best_model.to(device)
 
     if isinstance(best_model, nn.DataParallel):
         best_model.module.load_state_dict(torch.load(best_model_path, map_location=torch.device(device)), strict=False)
@@ -604,5 +605,5 @@ if __name__ == "__main__":
         best_model.load_state_dict(torch.load(best_model_path, map_location=torch.device(device)), strict=False) 
         best_model.to(device)
     
-    _, test_performance = evaluate(best_model, mae_loss_function, test_dataloader, train_labels_mean, train_labels_std, property, device, task_name, normalizer=normalizer_type)
+    _, test_performance = evaluate(best_model, mae_loss_function, test_dataloader, train_labels_mean, train_labels_std, train_labels_min, train_labels_max, property, device, task_name, normalizer=normalizer_type)
     

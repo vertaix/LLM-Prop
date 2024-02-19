@@ -123,14 +123,12 @@ def get_cleaned_stopwords():
     for file_path in stopword_files:
         all_stopwords_list |= set(readTEXT_to_LIST(file_path))
 
-    # cleaned_list = {wrd.replace("\n", "").strip() for wrd in all_stopwords_list}
-    # cleaned_list_for_mat = {wrd for wrd in cleaned_list if not wrd.isdigit()}
-    # cleaned_list_for_mat = {wrd for wrd in cleaned_list_for_mat for num_wrd in num_str if wrd.find(num_wrd) == -1}
     cleaned_list_for_mat = {wrd.replace("\n", "").strip() for wrd in all_stopwords_list} - {wrd for wrd in all_stopwords_list if wrd.isdigit()} - num_str
     
     return cleaned_list_for_mat
 
-def remove_mat_stopwords(sentence, stopwords_list):
+def remove_mat_stopwords(sentence):
+    stopwords_list = get_cleaned_stopwords()
     words = sentence.split()
     words_lower = sentence.lower().split()
     sentence = ' '.join([words[i] for i in range(len(words)) if words_lower[i] not in stopwords_list])

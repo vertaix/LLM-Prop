@@ -23,7 +23,7 @@ def args_parser():
     parser.add_argument('--dr',
                         help='Drop rate',
                         type=float,
-                        default=0.5)
+                        default=0.2)
     parser.add_argument('--warmup_steps',
                         help='Warmpup steps',
                         type=int,
