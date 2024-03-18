@@ -67,7 +67,7 @@ Then run ``` bash scripts/llmprop_evaluate.sh ```
 <!-- This work is still under review and the data will be released after the review process. -->
 **Note:** The data samples and checkpoints in this repository are just for the purpose of testing the LLM-Prop implementation pipeline only,  not intended to reproduce the results.
 
-To use TextEdge (a dataset collected in this work) for your work or reproducibility purporses, first directly dowload it [here](https://drive.google.com/uc?export=download&id=1X7k82y2LRa0OLZRoDgPQMnrPGzUZrNHA) (about 700 MB) and then replace the train, validation, and test samples in your local directory accordingly.
+To use TextEdge (a dataset collected in this work) for your work or reproducibility purporses, first dowload it [here](https://drive.google.com/uc?export=download&id=13lKJKWopYUAvydqOYJ3-OCJXWMa6kO7J) (about 700 MB) and then replace the train, validation, and test samples in your local directory accordingly.
 
 ## Citation
 ```bibtex
