@@ -11,10 +11,6 @@ This repository contains the implementation of the LLM-Prop model. LLM-Prop is a
 
 For more details check [our paper](https://www.nature.com/articles/s41524-025-01536-2) published in the npj Computational Materials. 
 
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=vertaix/LLM-Prop&type=date&legend=top-left)](https://www.star-history.com/#vertaix/LLM-Prop&type=date&legend=top-left)
-
 ## Installation
 You can install LLM-Prop by following these steps:
 ```
@@ -75,10 +71,18 @@ To use TextEdge (a dataset collected in this work) for your work or reproducibil
 
 ## Citation
 ```bibtex
-@article{rubungo2023llm,
-  title={LLM-Prop: Predicting Physical And Electronic Properties Of Crystalline Solids From Their Text Descriptions},
-  author={Rubungo, Andre Niyongabo and Arnold, Craig and Rand, Barry P and Dieng, Adji Bousso},
-  journal={arXiv preprint arXiv:2310.14029},
-  year={2023}
+@article{niyongabo2025llm,
+  title={LLM-Prop: predicting the properties of crystalline materials using large language models},
+  author={Niyongabo Rubungo, Andre and Arnold, Craig and Rand, Barry P and Dieng, Adji Bousso},
+  journal={npj Computational Materials},
+  volume={11},
+  number={1},
+  pages={186},
+  year={2025},
+  publisher={Nature Publishing Group UK London}
 }
 ```
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=vertaix/LLM-Prop&type=date&legend=top-left)](https://www.star-history.com/#vertaix/LLM-Prop&type=date&legend=top-left)
