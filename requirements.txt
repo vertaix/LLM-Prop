@@ -3,6 +3,6 @@ pandas==2.0.1
 transformers==4.23.1
 sentencepiece==0.1.97
 matplotlib==3.7.1
-tokenizera==0.13.1
+tokenizers==0.13.1
 torchmetrics==0.11.4
-sklearn==1.2.2
+scikit-learn==1.2.2
