@@ -1,4 +1,4 @@
-# [LLM-Prop: Predicting Physical And Electronic Properties Of Crystalline Solids From Their Text Descriptions](https://doi.org/10.48550/arXiv.2310.14029)
+# [LLM-Prop: Predicting the Properties of Crystalline Materials using Large Language Models](https://www.nature.com/articles/s41524-025-01536-2)
 This repository contains the implementation of the LLM-Prop model. LLM-Prop is an efficiently finetuned large language model (T5 encoder) on crystals text descriptions to predict their properties. Given a text sequence that describes the crystal structure, LLM-Prop encodes the underlying crystal representation from its text description and output its properties such as band gap and volume. 
 
 <!-- ![](figures/llmprop_architecture.png) -->
@@ -9,7 +9,11 @@ This repository contains the implementation of the LLM-Prop model. LLM-Prop is a
     <em>LLM-Prop architecture</em>
 </p>
 
-For more details check [our pre-print](https://doi.org/10.48550/arXiv.2310.14029). 
+For more details check [our paper](https://www.nature.com/articles/s41524-025-01536-2) published in the npj Computational Materials. 
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=vertaix/LLM-Prop&type=date&legend=top-left)](https://www.star-history.com/#vertaix/LLM-Prop&type=date&legend=top-left)
 
 ## Installation
 You can install LLM-Prop by following these steps:
